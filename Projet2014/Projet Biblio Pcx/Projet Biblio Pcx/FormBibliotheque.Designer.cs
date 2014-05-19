@@ -51,32 +51,12 @@
             this.tabController = new System.Windows.Forms.TabControl();
             this.tabPageRecherche = new System.Windows.Forms.TabPage();
             this.typeDataGridView = new System.Windows.Forms.DataGridView();
-            this.membreDataGridView = new System.Windows.Forms.DataGridView();
-            this.ouvrageDataGridView = new System.Windows.Forms.DataGridView();
-            this.auteurSuperviseurDataGridView = new System.Windows.Forms.DataGridView();
-            this.tabPageOuvrage = new System.Windows.Forms.TabPage();
-            this.auteurSuperviseurTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteurSuperviseurTableAdapter();
-            this.tableAdapterManager = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager();
-            this.ouvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvrageTableAdapter();
-            this.membreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.MembreTableAdapter();
-            this.typeTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TypeTableAdapter();
-            this.flowLayoutPanelOuvrage = new System.Windows.Forms.FlowLayoutPanel();
-            this.idOuvrageTextBox = new System.Windows.Forms.TextBox();
-            this.titreTextBox = new System.Windows.Forms.TextBox();
-            this.localisationTextBox = new System.Windows.Forms.TextBox();
-            this.dateCreationDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.sectionTextBox = new System.Windows.Forms.TextBox();
-            this.dateEmpruntDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.dureeEmpruntTextBox = new System.Windows.Forms.TextBox();
-            this.numTypeTextBox = new System.Windows.Forms.TextBox();
-            this.numMembreTextBox = new System.Windows.Forms.TextBox();
-            this.nomEntrepriseTextBox = new System.Windows.Forms.TextBox();
-            this.numSuperTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.biblioEPFCDataSet = new WindowsFormsApplication1.BiblioEPFCDataSet();
+            this.membreDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +66,7 @@
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.membreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ouvrageDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,11 +79,44 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.auteurSuperviseurDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.auteurSuperviseurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPageOuvrage = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanelOuvrage = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.idOuvrageTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.titreTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.localisationTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dateCreationDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.sectionTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dateEmpruntDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dureeEmpruntTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.numTypeTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
+            this.numMembreTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
+            this.nomEntrepriseTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
+            this.numSuperTextBox = new System.Windows.Forms.TextBox();
+            this.auteurSuperviseurOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.auteurSuperviseurTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteurSuperviseurTableAdapter();
+            this.tableAdapterManager = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager();
+            this.ouvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvrageTableAdapter();
+            this.membreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.MembreTableAdapter();
+            this.typeTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TypeTableAdapter();
+            this.auteurSuperviseurOuvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteurSuperviseurOuvrageTableAdapter();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             idOuvrageLabel = new System.Windows.Forms.Label();
             titreLabel = new System.Windows.Forms.Label();
             localisationLabel = new System.Windows.Forms.Label();
@@ -123,17 +137,128 @@
             this.tabController.SuspendLayout();
             this.tabPageRecherche.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membreDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ouvrageDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurDataGridView)).BeginInit();
-            this.tabPageOuvrage.SuspendLayout();
-            this.flowLayoutPanelOuvrage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membreDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membreBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvrageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurBindingSource)).BeginInit();
+            this.tabPageOuvrage.SuspendLayout();
+            this.flowLayoutPanelOuvrage.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
+            this.flowLayoutPanel8.SuspendLayout();
+            this.flowLayoutPanel9.SuspendLayout();
+            this.flowLayoutPanel10.SuspendLayout();
+            this.flowLayoutPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurOuvrageBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // idOuvrageLabel
+            // 
+            idOuvrageLabel.AutoSize = true;
+            idOuvrageLabel.Location = new System.Drawing.Point(3, 0);
+            idOuvrageLabel.Name = "idOuvrageLabel";
+            idOuvrageLabel.Size = new System.Drawing.Size(62, 13);
+            idOuvrageLabel.TabIndex = 0;
+            idOuvrageLabel.Text = "id Ouvrage:";
+            // 
+            // titreLabel
+            // 
+            titreLabel.AutoSize = true;
+            titreLabel.Location = new System.Drawing.Point(3, 0);
+            titreLabel.Name = "titreLabel";
+            titreLabel.Size = new System.Drawing.Size(27, 13);
+            titreLabel.TabIndex = 0;
+            titreLabel.Text = "titre:";
+            // 
+            // localisationLabel
+            // 
+            localisationLabel.AutoSize = true;
+            localisationLabel.Location = new System.Drawing.Point(3, 0);
+            localisationLabel.Name = "localisationLabel";
+            localisationLabel.Size = new System.Drawing.Size(62, 13);
+            localisationLabel.TabIndex = 0;
+            localisationLabel.Text = "localisation:";
+            // 
+            // dateCreationLabel
+            // 
+            dateCreationLabel.AutoSize = true;
+            dateCreationLabel.Location = new System.Drawing.Point(3, 0);
+            dateCreationLabel.Name = "dateCreationLabel";
+            dateCreationLabel.Size = new System.Drawing.Size(73, 13);
+            dateCreationLabel.TabIndex = 0;
+            dateCreationLabel.Text = "date Creation:";
+            // 
+            // sectionLabel
+            // 
+            sectionLabel.AutoSize = true;
+            sectionLabel.Location = new System.Drawing.Point(3, 0);
+            sectionLabel.Name = "sectionLabel";
+            sectionLabel.Size = new System.Drawing.Size(44, 13);
+            sectionLabel.TabIndex = 0;
+            sectionLabel.Text = "section:";
+            // 
+            // dateEmpruntLabel
+            // 
+            dateEmpruntLabel.AutoSize = true;
+            dateEmpruntLabel.Location = new System.Drawing.Point(3, 0);
+            dateEmpruntLabel.Name = "dateEmpruntLabel";
+            dateEmpruntLabel.Size = new System.Drawing.Size(73, 13);
+            dateEmpruntLabel.TabIndex = 0;
+            dateEmpruntLabel.Text = "date Emprunt:";
+            // 
+            // dureeEmpruntLabel
+            // 
+            dureeEmpruntLabel.AutoSize = true;
+            dureeEmpruntLabel.Location = new System.Drawing.Point(3, 0);
+            dureeEmpruntLabel.Name = "dureeEmpruntLabel";
+            dureeEmpruntLabel.Size = new System.Drawing.Size(79, 13);
+            dureeEmpruntLabel.TabIndex = 0;
+            dureeEmpruntLabel.Text = "duree Emprunt:";
+            // 
+            // numTypeLabel
+            // 
+            numTypeLabel.AutoSize = true;
+            numTypeLabel.Location = new System.Drawing.Point(3, 0);
+            numTypeLabel.Name = "numTypeLabel";
+            numTypeLabel.Size = new System.Drawing.Size(57, 13);
+            numTypeLabel.TabIndex = 0;
+            numTypeLabel.Text = "num Type:";
+            // 
+            // numMembreLabel
+            // 
+            numMembreLabel.AutoSize = true;
+            numMembreLabel.Location = new System.Drawing.Point(3, 0);
+            numMembreLabel.Name = "numMembreLabel";
+            numMembreLabel.Size = new System.Drawing.Size(71, 13);
+            numMembreLabel.TabIndex = 0;
+            numMembreLabel.Text = "num Membre:";
+            // 
+            // nomEntrepriseLabel
+            // 
+            nomEntrepriseLabel.AutoSize = true;
+            nomEntrepriseLabel.Location = new System.Drawing.Point(3, 0);
+            nomEntrepriseLabel.Name = "nomEntrepriseLabel";
+            nomEntrepriseLabel.Size = new System.Drawing.Size(80, 13);
+            nomEntrepriseLabel.TabIndex = 0;
+            nomEntrepriseLabel.Text = "nom Entreprise:";
+            // 
+            // numSuperLabel
+            // 
+            numSuperLabel.AutoSize = true;
+            numSuperLabel.Location = new System.Drawing.Point(3, 0);
+            numSuperLabel.Name = "numSuperLabel";
+            numSuperLabel.Size = new System.Drawing.Size(61, 13);
+            numSuperLabel.TabIndex = 0;
+            numSuperLabel.Text = "num Super:";
             // 
             // splitContainerGlobal
             // 
@@ -149,12 +274,13 @@
             // 
             this.splitContainerGlobal.Panel2.AutoScroll = true;
             this.splitContainerGlobal.Panel2.Controls.Add(this.tabController);
-            this.splitContainerGlobal.Size = new System.Drawing.Size(772, 533);
-            this.splitContainerGlobal.SplitterDistance = 169;
+            this.splitContainerGlobal.Size = new System.Drawing.Size(982, 533);
+            this.splitContainerGlobal.SplitterDistance = 183;
             this.splitContainerGlobal.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -166,7 +292,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.13133F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.86867F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(169, 533);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(183, 533);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // textBoxRecherche
@@ -174,22 +300,22 @@
             this.textBoxRecherche.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxRecherche.Location = new System.Drawing.Point(3, 16);
             this.textBoxRecherche.Name = "textBoxRecherche";
-            this.textBoxRecherche.Size = new System.Drawing.Size(163, 20);
+            this.textBoxRecherche.Size = new System.Drawing.Size(177, 20);
             this.textBoxRecherche.TabIndex = 1;
             this.textBoxRecherche.TextChanged += new System.EventHandler(this.textBoxRecherche_TextChanged);
             // 
             // groupBoxRadioButtonRecherche
             // 
-            this.groupBoxRadioButtonRecherche.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxRadioButtonRecherche.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxRadioButtonRecherche.Controls.Add(this.radioButtonType);
             this.groupBoxRadioButtonRecherche.Controls.Add(this.radioButtonMembre);
             this.groupBoxRadioButtonRecherche.Controls.Add(this.radioButtonAuteurSuperviseur);
             this.groupBoxRadioButtonRecherche.Controls.Add(this.radioButtonOuvrage);
             this.groupBoxRadioButtonRecherche.Location = new System.Drawing.Point(3, 56);
             this.groupBoxRadioButtonRecherche.Name = "groupBoxRadioButtonRecherche";
-            this.groupBoxRadioButtonRecherche.Size = new System.Drawing.Size(163, 474);
+            this.groupBoxRadioButtonRecherche.Size = new System.Drawing.Size(177, 474);
             this.groupBoxRadioButtonRecherche.TabIndex = 2;
             this.groupBoxRadioButtonRecherche.TabStop = false;
             this.groupBoxRadioButtonRecherche.Text = "Source";
@@ -253,7 +379,7 @@
             this.tabController.Location = new System.Drawing.Point(0, 0);
             this.tabController.Name = "tabController";
             this.tabController.SelectedIndex = 0;
-            this.tabController.Size = new System.Drawing.Size(599, 533);
+            this.tabController.Size = new System.Drawing.Size(795, 533);
             this.tabController.TabIndex = 0;
             // 
             // tabPageRecherche
@@ -266,7 +392,7 @@
             this.tabPageRecherche.Location = new System.Drawing.Point(4, 22);
             this.tabPageRecherche.Name = "tabPageRecherche";
             this.tabPageRecherche.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRecherche.Size = new System.Drawing.Size(591, 507);
+            this.tabPageRecherche.Size = new System.Drawing.Size(787, 507);
             this.tabPageRecherche.TabIndex = 0;
             this.tabPageRecherche.Text = "tabPageRecherche";
             this.tabPageRecherche.UseVisualStyleBackColor = true;
@@ -283,323 +409,8 @@
             this.typeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.typeDataGridView.Location = new System.Drawing.Point(3, 3);
             this.typeDataGridView.Name = "typeDataGridView";
-            this.typeDataGridView.Size = new System.Drawing.Size(585, 501);
+            this.typeDataGridView.Size = new System.Drawing.Size(781, 501);
             this.typeDataGridView.TabIndex = 3;
-            // 
-            // membreDataGridView
-            // 
-            this.membreDataGridView.AutoGenerateColumns = false;
-            this.membreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.membreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23});
-            this.membreDataGridView.DataSource = this.membreBindingSource;
-            this.membreDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.membreDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.membreDataGridView.Name = "membreDataGridView";
-            this.membreDataGridView.Size = new System.Drawing.Size(585, 501);
-            this.membreDataGridView.TabIndex = 2;
-            // 
-            // ouvrageDataGridView
-            // 
-            this.ouvrageDataGridView.AutoGenerateColumns = false;
-            this.ouvrageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ouvrageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15});
-            this.ouvrageDataGridView.DataSource = this.ouvrageBindingSource;
-            this.ouvrageDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ouvrageDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.ouvrageDataGridView.Name = "ouvrageDataGridView";
-            this.ouvrageDataGridView.Size = new System.Drawing.Size(585, 501);
-            this.ouvrageDataGridView.TabIndex = 1;
-            // 
-            // auteurSuperviseurDataGridView
-            // 
-            this.auteurSuperviseurDataGridView.AutoGenerateColumns = false;
-            this.auteurSuperviseurDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.auteurSuperviseurDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.auteurSuperviseurDataGridView.DataSource = this.auteurSuperviseurBindingSource;
-            this.auteurSuperviseurDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.auteurSuperviseurDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.auteurSuperviseurDataGridView.Name = "auteurSuperviseurDataGridView";
-            this.auteurSuperviseurDataGridView.Size = new System.Drawing.Size(585, 501);
-            this.auteurSuperviseurDataGridView.TabIndex = 0;
-            // 
-            // tabPageOuvrage
-            // 
-            this.tabPageOuvrage.Controls.Add(this.flowLayoutPanelOuvrage);
-            this.tabPageOuvrage.Location = new System.Drawing.Point(4, 22);
-            this.tabPageOuvrage.Name = "tabPageOuvrage";
-            this.tabPageOuvrage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageOuvrage.Size = new System.Drawing.Size(591, 507);
-            this.tabPageOuvrage.TabIndex = 1;
-            this.tabPageOuvrage.Text = "tabPageOuvrage";
-            this.tabPageOuvrage.UseVisualStyleBackColor = true;
-            // 
-            // auteurSuperviseurTableAdapter
-            // 
-            this.auteurSuperviseurTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AuteurSuperviseurTableAdapter = this.auteurSuperviseurTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ecrireTableAdapter = null;
-            this.tableAdapterManager.MembreTableAdapter = null;
-            this.tableAdapterManager.OuvrageTableAdapter = null;
-            this.tableAdapterManager.reserverTableAdapter = null;
-            this.tableAdapterManager.TypeTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // ouvrageTableAdapter
-            // 
-            this.ouvrageTableAdapter.ClearBeforeFill = true;
-            // 
-            // membreTableAdapter
-            // 
-            this.membreTableAdapter.ClearBeforeFill = true;
-            // 
-            // typeTableAdapter
-            // 
-            this.typeTableAdapter.ClearBeforeFill = true;
-            // 
-            // flowLayoutPanelOuvrage
-            // 
-            this.flowLayoutPanelOuvrage.Controls.Add(idOuvrageLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.idOuvrageTextBox);
-            this.flowLayoutPanelOuvrage.Controls.Add(titreLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.titreTextBox);
-            this.flowLayoutPanelOuvrage.Controls.Add(localisationLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.localisationTextBox);
-            this.flowLayoutPanelOuvrage.Controls.Add(dateCreationLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.dateCreationDateTimePicker);
-            this.flowLayoutPanelOuvrage.Controls.Add(sectionLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.sectionTextBox);
-            this.flowLayoutPanelOuvrage.Controls.Add(dateEmpruntLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.dateEmpruntDateTimePicker);
-            this.flowLayoutPanelOuvrage.Controls.Add(dureeEmpruntLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.dureeEmpruntTextBox);
-            this.flowLayoutPanelOuvrage.Controls.Add(numTypeLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.numTypeTextBox);
-            this.flowLayoutPanelOuvrage.Controls.Add(numMembreLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.numMembreTextBox);
-            this.flowLayoutPanelOuvrage.Controls.Add(nomEntrepriseLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.nomEntrepriseTextBox);
-            this.flowLayoutPanelOuvrage.Controls.Add(numSuperLabel);
-            this.flowLayoutPanelOuvrage.Controls.Add(this.numSuperTextBox);
-            this.flowLayoutPanelOuvrage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelOuvrage.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanelOuvrage.Name = "flowLayoutPanelOuvrage";
-            this.flowLayoutPanelOuvrage.Size = new System.Drawing.Size(585, 501);
-            this.flowLayoutPanelOuvrage.TabIndex = 0;
-            // 
-            // idOuvrageLabel
-            // 
-            idOuvrageLabel.AutoSize = true;
-            idOuvrageLabel.Location = new System.Drawing.Point(3, 0);
-            idOuvrageLabel.Name = "idOuvrageLabel";
-            idOuvrageLabel.Size = new System.Drawing.Size(62, 13);
-            idOuvrageLabel.TabIndex = 0;
-            idOuvrageLabel.Text = "id Ouvrage:";
-            // 
-            // idOuvrageTextBox
-            // 
-            this.idOuvrageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "idOuvrage", true));
-            this.idOuvrageTextBox.Location = new System.Drawing.Point(71, 3);
-            this.idOuvrageTextBox.Name = "idOuvrageTextBox";
-            this.idOuvrageTextBox.Size = new System.Drawing.Size(100, 20);
-            this.idOuvrageTextBox.TabIndex = 1;
-            // 
-            // titreLabel
-            // 
-            titreLabel.AutoSize = true;
-            titreLabel.Location = new System.Drawing.Point(177, 0);
-            titreLabel.Name = "titreLabel";
-            titreLabel.Size = new System.Drawing.Size(27, 13);
-            titreLabel.TabIndex = 2;
-            titreLabel.Text = "titre:";
-            // 
-            // titreTextBox
-            // 
-            this.titreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "titre", true));
-            this.titreTextBox.Location = new System.Drawing.Point(210, 3);
-            this.titreTextBox.Name = "titreTextBox";
-            this.titreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.titreTextBox.TabIndex = 3;
-            // 
-            // localisationLabel
-            // 
-            localisationLabel.AutoSize = true;
-            localisationLabel.Location = new System.Drawing.Point(316, 0);
-            localisationLabel.Name = "localisationLabel";
-            localisationLabel.Size = new System.Drawing.Size(62, 13);
-            localisationLabel.TabIndex = 4;
-            localisationLabel.Text = "localisation:";
-            // 
-            // localisationTextBox
-            // 
-            this.localisationTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "localisation", true));
-            this.localisationTextBox.Location = new System.Drawing.Point(384, 3);
-            this.localisationTextBox.Name = "localisationTextBox";
-            this.localisationTextBox.Size = new System.Drawing.Size(100, 20);
-            this.localisationTextBox.TabIndex = 5;
-            // 
-            // dateCreationLabel
-            // 
-            dateCreationLabel.AutoSize = true;
-            dateCreationLabel.Location = new System.Drawing.Point(490, 0);
-            dateCreationLabel.Name = "dateCreationLabel";
-            dateCreationLabel.Size = new System.Drawing.Size(73, 13);
-            dateCreationLabel.TabIndex = 6;
-            dateCreationLabel.Text = "date Creation:";
-            // 
-            // dateCreationDateTimePicker
-            // 
-            this.dateCreationDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ouvrageBindingSource, "dateCreation", true));
-            this.dateCreationDateTimePicker.Location = new System.Drawing.Point(3, 29);
-            this.dateCreationDateTimePicker.Name = "dateCreationDateTimePicker";
-            this.dateCreationDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dateCreationDateTimePicker.TabIndex = 7;
-            // 
-            // sectionLabel
-            // 
-            sectionLabel.AutoSize = true;
-            sectionLabel.Location = new System.Drawing.Point(209, 26);
-            sectionLabel.Name = "sectionLabel";
-            sectionLabel.Size = new System.Drawing.Size(44, 13);
-            sectionLabel.TabIndex = 8;
-            sectionLabel.Text = "section:";
-            // 
-            // sectionTextBox
-            // 
-            this.sectionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "section", true));
-            this.sectionTextBox.Location = new System.Drawing.Point(259, 29);
-            this.sectionTextBox.Name = "sectionTextBox";
-            this.sectionTextBox.Size = new System.Drawing.Size(100, 20);
-            this.sectionTextBox.TabIndex = 9;
-            this.sectionTextBox.TextChanged += new System.EventHandler(this.sectionTextBox_TextChanged);
-            // 
-            // dateEmpruntLabel
-            // 
-            dateEmpruntLabel.AutoSize = true;
-            dateEmpruntLabel.Location = new System.Drawing.Point(365, 26);
-            dateEmpruntLabel.Name = "dateEmpruntLabel";
-            dateEmpruntLabel.Size = new System.Drawing.Size(73, 13);
-            dateEmpruntLabel.TabIndex = 10;
-            dateEmpruntLabel.Text = "date Emprunt:";
-            // 
-            // dateEmpruntDateTimePicker
-            // 
-            this.dateEmpruntDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ouvrageBindingSource, "dateEmprunt", true));
-            this.dateEmpruntDateTimePicker.Location = new System.Drawing.Point(3, 55);
-            this.dateEmpruntDateTimePicker.Name = "dateEmpruntDateTimePicker";
-            this.dateEmpruntDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dateEmpruntDateTimePicker.TabIndex = 11;
-            // 
-            // dureeEmpruntLabel
-            // 
-            dureeEmpruntLabel.AutoSize = true;
-            dureeEmpruntLabel.Location = new System.Drawing.Point(209, 52);
-            dureeEmpruntLabel.Name = "dureeEmpruntLabel";
-            dureeEmpruntLabel.Size = new System.Drawing.Size(79, 13);
-            dureeEmpruntLabel.TabIndex = 12;
-            dureeEmpruntLabel.Text = "duree Emprunt:";
-            // 
-            // dureeEmpruntTextBox
-            // 
-            this.dureeEmpruntTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "dureeEmprunt", true));
-            this.dureeEmpruntTextBox.Location = new System.Drawing.Point(294, 55);
-            this.dureeEmpruntTextBox.Name = "dureeEmpruntTextBox";
-            this.dureeEmpruntTextBox.Size = new System.Drawing.Size(100, 20);
-            this.dureeEmpruntTextBox.TabIndex = 13;
-            // 
-            // numTypeLabel
-            // 
-            numTypeLabel.AutoSize = true;
-            numTypeLabel.Location = new System.Drawing.Point(400, 52);
-            numTypeLabel.Name = "numTypeLabel";
-            numTypeLabel.Size = new System.Drawing.Size(57, 13);
-            numTypeLabel.TabIndex = 14;
-            numTypeLabel.Text = "num Type:";
-            // 
-            // numTypeTextBox
-            // 
-            this.numTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "numType", true));
-            this.numTypeTextBox.Location = new System.Drawing.Point(463, 55);
-            this.numTypeTextBox.Name = "numTypeTextBox";
-            this.numTypeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numTypeTextBox.TabIndex = 15;
-            // 
-            // numMembreLabel
-            // 
-            numMembreLabel.AutoSize = true;
-            numMembreLabel.Location = new System.Drawing.Point(3, 78);
-            numMembreLabel.Name = "numMembreLabel";
-            numMembreLabel.Size = new System.Drawing.Size(71, 13);
-            numMembreLabel.TabIndex = 16;
-            numMembreLabel.Text = "num Membre:";
-            // 
-            // numMembreTextBox
-            // 
-            this.numMembreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "numMembre", true));
-            this.numMembreTextBox.Location = new System.Drawing.Point(80, 81);
-            this.numMembreTextBox.Name = "numMembreTextBox";
-            this.numMembreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numMembreTextBox.TabIndex = 17;
-            // 
-            // nomEntrepriseLabel
-            // 
-            nomEntrepriseLabel.AutoSize = true;
-            nomEntrepriseLabel.Location = new System.Drawing.Point(186, 78);
-            nomEntrepriseLabel.Name = "nomEntrepriseLabel";
-            nomEntrepriseLabel.Size = new System.Drawing.Size(80, 13);
-            nomEntrepriseLabel.TabIndex = 18;
-            nomEntrepriseLabel.Text = "nom Entreprise:";
-            // 
-            // nomEntrepriseTextBox
-            // 
-            this.nomEntrepriseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "nomEntreprise", true));
-            this.nomEntrepriseTextBox.Location = new System.Drawing.Point(272, 81);
-            this.nomEntrepriseTextBox.Name = "nomEntrepriseTextBox";
-            this.nomEntrepriseTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomEntrepriseTextBox.TabIndex = 19;
-            // 
-            // numSuperLabel
-            // 
-            numSuperLabel.AutoSize = true;
-            numSuperLabel.Location = new System.Drawing.Point(378, 78);
-            numSuperLabel.Name = "numSuperLabel";
-            numSuperLabel.Size = new System.Drawing.Size(61, 13);
-            numSuperLabel.TabIndex = 20;
-            numSuperLabel.Text = "num Super:";
-            // 
-            // numSuperTextBox
-            // 
-            this.numSuperTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "numSuper", true));
-            this.numSuperTextBox.Location = new System.Drawing.Point(445, 81);
-            this.numSuperTextBox.Name = "numSuperTextBox";
-            this.numSuperTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numSuperTextBox.TabIndex = 21;
             // 
             // dataGridViewTextBoxColumn24
             // 
@@ -629,6 +440,26 @@
             // 
             this.biblioEPFCDataSet.DataSetName = "BiblioEPFCDataSet";
             this.biblioEPFCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // membreDataGridView
+            // 
+            this.membreDataGridView.AutoGenerateColumns = false;
+            this.membreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.membreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23});
+            this.membreDataGridView.DataSource = this.membreBindingSource;
+            this.membreDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.membreDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.membreDataGridView.Name = "membreDataGridView";
+            this.membreDataGridView.Size = new System.Drawing.Size(781, 501);
+            this.membreDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -683,6 +514,29 @@
             // 
             this.membreBindingSource.DataMember = "Membre";
             this.membreBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
+            // ouvrageDataGridView
+            // 
+            this.ouvrageDataGridView.AutoGenerateColumns = false;
+            this.ouvrageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ouvrageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15});
+            this.ouvrageDataGridView.DataSource = this.ouvrageBindingSource;
+            this.ouvrageDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ouvrageDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.ouvrageDataGridView.Name = "ouvrageDataGridView";
+            this.ouvrageDataGridView.Size = new System.Drawing.Size(781, 501);
+            this.ouvrageDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -756,6 +610,22 @@
             this.ouvrageBindingSource.DataMember = "Ouvrage";
             this.ouvrageBindingSource.DataSource = this.biblioEPFCDataSet;
             // 
+            // auteurSuperviseurDataGridView
+            // 
+            this.auteurSuperviseurDataGridView.AutoGenerateColumns = false;
+            this.auteurSuperviseurDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.auteurSuperviseurDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.auteurSuperviseurDataGridView.DataSource = this.auteurSuperviseurBindingSource;
+            this.auteurSuperviseurDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.auteurSuperviseurDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.auteurSuperviseurDataGridView.Name = "auteurSuperviseurDataGridView";
+            this.auteurSuperviseurDataGridView.Size = new System.Drawing.Size(781, 501);
+            this.auteurSuperviseurDataGridView.TabIndex = 0;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "idAuteurSuper";
@@ -786,11 +656,277 @@
             this.auteurSuperviseurBindingSource.DataMember = "AuteurSuperviseur";
             this.auteurSuperviseurBindingSource.DataSource = this.biblioEPFCDataSet;
             // 
+            // tabPageOuvrage
+            // 
+            this.tabPageOuvrage.Controls.Add(this.flowLayoutPanelOuvrage);
+            this.tabPageOuvrage.Location = new System.Drawing.Point(4, 22);
+            this.tabPageOuvrage.Name = "tabPageOuvrage";
+            this.tabPageOuvrage.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageOuvrage.Size = new System.Drawing.Size(787, 507);
+            this.tabPageOuvrage.TabIndex = 1;
+            this.tabPageOuvrage.Text = "tabPageOuvrage";
+            this.tabPageOuvrage.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelOuvrage
+            // 
+            this.flowLayoutPanelOuvrage.AutoScroll = true;
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel1);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel3);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel4);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel5);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel6);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel7);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel8);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel9);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel10);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.flowLayoutPanel11);
+            this.flowLayoutPanelOuvrage.Controls.Add(this.listBox1);
+            this.flowLayoutPanelOuvrage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelOuvrage.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanelOuvrage.Name = "flowLayoutPanelOuvrage";
+            this.flowLayoutPanelOuvrage.Size = new System.Drawing.Size(781, 501);
+            this.flowLayoutPanelOuvrage.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(idOuvrageLabel);
+            this.flowLayoutPanel1.Controls.Add(this.idOuvrageTextBox);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // idOuvrageTextBox
+            // 
+            this.idOuvrageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "idOuvrage", true));
+            this.idOuvrageTextBox.Location = new System.Drawing.Point(71, 3);
+            this.idOuvrageTextBox.Name = "idOuvrageTextBox";
+            this.idOuvrageTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idOuvrageTextBox.TabIndex = 1;
+            this.idOuvrageTextBox.TextChanged += new System.EventHandler(this.idOuvrageTextBox_TextChanged);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(titreLabel);
+            this.flowLayoutPanel2.Controls.Add(this.titreTextBox);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(209, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // titreTextBox
+            // 
+            this.titreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "titre", true));
+            this.titreTextBox.Location = new System.Drawing.Point(36, 3);
+            this.titreTextBox.Name = "titreTextBox";
+            this.titreTextBox.Size = new System.Drawing.Size(100, 20);
+            this.titreTextBox.TabIndex = 1;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(localisationLabel);
+            this.flowLayoutPanel3.Controls.Add(this.localisationTextBox);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(415, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel3.TabIndex = 2;
+            // 
+            // localisationTextBox
+            // 
+            this.localisationTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "localisation", true));
+            this.localisationTextBox.Location = new System.Drawing.Point(71, 3);
+            this.localisationTextBox.Name = "localisationTextBox";
+            this.localisationTextBox.Size = new System.Drawing.Size(100, 20);
+            this.localisationTextBox.TabIndex = 1;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(dateCreationLabel);
+            this.flowLayoutPanel4.Controls.Add(this.dateCreationDateTimePicker);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 109);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(223, 100);
+            this.flowLayoutPanel4.TabIndex = 3;
+            // 
+            // dateCreationDateTimePicker
+            // 
+            this.dateCreationDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ouvrageBindingSource, "dateCreation", true));
+            this.dateCreationDateTimePicker.Location = new System.Drawing.Point(3, 16);
+            this.dateCreationDateTimePicker.Name = "dateCreationDateTimePicker";
+            this.dateCreationDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateCreationDateTimePicker.TabIndex = 1;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(sectionLabel);
+            this.flowLayoutPanel5.Controls.Add(this.sectionTextBox);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(232, 109);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel5.TabIndex = 4;
+            // 
+            // sectionTextBox
+            // 
+            this.sectionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "section", true));
+            this.sectionTextBox.Location = new System.Drawing.Point(53, 3);
+            this.sectionTextBox.Name = "sectionTextBox";
+            this.sectionTextBox.Size = new System.Drawing.Size(100, 20);
+            this.sectionTextBox.TabIndex = 1;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(dateEmpruntLabel);
+            this.flowLayoutPanel6.Controls.Add(this.dateEmpruntDateTimePicker);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(438, 109);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(223, 100);
+            this.flowLayoutPanel6.TabIndex = 5;
+            // 
+            // dateEmpruntDateTimePicker
+            // 
+            this.dateEmpruntDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ouvrageBindingSource, "dateEmprunt", true));
+            this.dateEmpruntDateTimePicker.Location = new System.Drawing.Point(3, 16);
+            this.dateEmpruntDateTimePicker.Name = "dateEmpruntDateTimePicker";
+            this.dateEmpruntDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateEmpruntDateTimePicker.TabIndex = 1;
+            // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.Controls.Add(dureeEmpruntLabel);
+            this.flowLayoutPanel7.Controls.Add(this.dureeEmpruntTextBox);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 215);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(208, 100);
+            this.flowLayoutPanel7.TabIndex = 6;
+            // 
+            // dureeEmpruntTextBox
+            // 
+            this.dureeEmpruntTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "dureeEmprunt", true));
+            this.dureeEmpruntTextBox.Location = new System.Drawing.Point(88, 3);
+            this.dureeEmpruntTextBox.Name = "dureeEmpruntTextBox";
+            this.dureeEmpruntTextBox.Size = new System.Drawing.Size(100, 20);
+            this.dureeEmpruntTextBox.TabIndex = 1;
+            // 
+            // flowLayoutPanel8
+            // 
+            this.flowLayoutPanel8.Controls.Add(numTypeLabel);
+            this.flowLayoutPanel8.Controls.Add(this.numTypeTextBox);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(217, 215);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel8.TabIndex = 7;
+            // 
+            // numTypeTextBox
+            // 
+            this.numTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "numType", true));
+            this.numTypeTextBox.Location = new System.Drawing.Point(66, 3);
+            this.numTypeTextBox.Name = "numTypeTextBox";
+            this.numTypeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.numTypeTextBox.TabIndex = 1;
+            // 
+            // flowLayoutPanel9
+            // 
+            this.flowLayoutPanel9.Controls.Add(numMembreLabel);
+            this.flowLayoutPanel9.Controls.Add(this.numMembreTextBox);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(423, 215);
+            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel9.TabIndex = 8;
+            // 
+            // numMembreTextBox
+            // 
+            this.numMembreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "numMembre", true));
+            this.numMembreTextBox.Location = new System.Drawing.Point(80, 3);
+            this.numMembreTextBox.Name = "numMembreTextBox";
+            this.numMembreTextBox.Size = new System.Drawing.Size(100, 20);
+            this.numMembreTextBox.TabIndex = 1;
+            // 
+            // flowLayoutPanel10
+            // 
+            this.flowLayoutPanel10.Controls.Add(nomEntrepriseLabel);
+            this.flowLayoutPanel10.Controls.Add(this.nomEntrepriseTextBox);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(3, 321);
+            this.flowLayoutPanel10.Name = "flowLayoutPanel10";
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(209, 100);
+            this.flowLayoutPanel10.TabIndex = 9;
+            // 
+            // nomEntrepriseTextBox
+            // 
+            this.nomEntrepriseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "nomEntreprise", true));
+            this.nomEntrepriseTextBox.Location = new System.Drawing.Point(89, 3);
+            this.nomEntrepriseTextBox.Name = "nomEntrepriseTextBox";
+            this.nomEntrepriseTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nomEntrepriseTextBox.TabIndex = 1;
+            // 
+            // flowLayoutPanel11
+            // 
+            this.flowLayoutPanel11.Controls.Add(numSuperLabel);
+            this.flowLayoutPanel11.Controls.Add(this.numSuperTextBox);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(218, 321);
+            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel11.TabIndex = 10;
+            // 
+            // numSuperTextBox
+            // 
+            this.numSuperTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "numSuper", true));
+            this.numSuperTextBox.Location = new System.Drawing.Point(70, 3);
+            this.numSuperTextBox.Name = "numSuperTextBox";
+            this.numSuperTextBox.Size = new System.Drawing.Size(100, 20);
+            this.numSuperTextBox.TabIndex = 1;
+            // 
+            // auteurSuperviseurOuvrageBindingSource
+            // 
+            this.auteurSuperviseurOuvrageBindingSource.DataMember = "AuteurSuperviseurOuvrage";
+            this.auteurSuperviseurOuvrageBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
+            // auteurSuperviseurTableAdapter
+            // 
+            this.auteurSuperviseurTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AuteurSuperviseurTableAdapter = this.auteurSuperviseurTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ecrireTableAdapter = null;
+            this.tableAdapterManager.MembreTableAdapter = null;
+            this.tableAdapterManager.OuvrageTableAdapter = null;
+            this.tableAdapterManager.reserverTableAdapter = null;
+            this.tableAdapterManager.TypeTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // ouvrageTableAdapter
+            // 
+            this.ouvrageTableAdapter.ClearBeforeFill = true;
+            // 
+            // membreTableAdapter
+            // 
+            this.membreTableAdapter.ClearBeforeFill = true;
+            // 
+            // typeTableAdapter
+            // 
+            this.typeTableAdapter.ClearBeforeFill = true;
+            // 
+            // auteurSuperviseurOuvrageTableAdapter
+            // 
+            this.auteurSuperviseurOuvrageTableAdapter.ClearBeforeFill = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.DataSource = this.auteurSuperviseurOuvrageBindingSource;
+            this.listBox1.DisplayMember = "NomPrenom";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(424, 321);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 533);
+            this.ClientSize = new System.Drawing.Size(982, 533);
             this.Controls.Add(this.splitContainerGlobal);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -806,17 +942,39 @@
             this.tabController.ResumeLayout(false);
             this.tabPageRecherche.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.typeDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membreDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ouvrageDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurDataGridView)).EndInit();
-            this.tabPageOuvrage.ResumeLayout(false);
-            this.flowLayoutPanelOuvrage.ResumeLayout(false);
-            this.flowLayoutPanelOuvrage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membreDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvrageDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurBindingSource)).EndInit();
+            this.tabPageOuvrage.ResumeLayout(false);
+            this.flowLayoutPanelOuvrage.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
+            this.flowLayoutPanel8.ResumeLayout(false);
+            this.flowLayoutPanel8.PerformLayout();
+            this.flowLayoutPanel9.ResumeLayout(false);
+            this.flowLayoutPanel9.PerformLayout();
+            this.flowLayoutPanel10.ResumeLayout(false);
+            this.flowLayoutPanel10.PerformLayout();
+            this.flowLayoutPanel11.ResumeLayout(false);
+            this.flowLayoutPanel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurOuvrageBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -875,17 +1033,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.RadioButton radioButtonType;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOuvrage;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox idOuvrageTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TextBox titreTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.TextBox localisationTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.DateTimePicker dateCreationDateTimePicker;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.TextBox sectionTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.DateTimePicker dateEmpruntDateTimePicker;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.TextBox dureeEmpruntTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.TextBox numTypeTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
         private System.Windows.Forms.TextBox numMembreTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
         private System.Windows.Forms.TextBox nomEntrepriseTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
         private System.Windows.Forms.TextBox numSuperTextBox;
+        private BiblioEPFCDataSetTableAdapters.AuteurSuperviseurOuvrageTableAdapter auteurSuperviseurOuvrageTableAdapter;
+        private System.Windows.Forms.BindingSource auteurSuperviseurOuvrageBindingSource;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

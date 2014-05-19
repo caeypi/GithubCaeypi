@@ -26,8 +26,8 @@ namespace WindowsFormsApplication1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\EPFCSQLEXPRESS;AttachDbFilename=|DataDirectory|\\BiblioEPFC.mdf;Inte" +
-            "grated Security=True;Connect Timeout=30;User Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\EPFCSQLEXPRESS;AttachDbFilename=C:\\Users\\1407picaeymaex\\Downloads\\B" +
+            "iblioEPFC.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True")]
         public string BiblioEPFCConnectionString {
             get {
                 return ((string)(this["BiblioEPFCConnectionString"]));

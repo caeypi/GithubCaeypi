@@ -11,6 +11,9 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+
+        private int ouvrageCourant = 0 ;
+        
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace WindowsFormsApplication1
             this.membreTableAdapter.Fill(this.biblioEPFCDataSet.Membre);
             this.ouvrageTableAdapter.Fill(this.biblioEPFCDataSet.Ouvrage);
             this.auteurSuperviseurTableAdapter.Fill(this.biblioEPFCDataSet.AuteurSuperviseur);
+            this.auteurSuperviseurOuvrageTableAdapter.FillNomsAuteurs(this.biblioEPFCDataSet.AuteurSuperviseurOuvrage, ouvrageCourant);
         }
 
         private void textBoxRecherche_TextChanged(object sender, EventArgs e)
@@ -103,12 +107,13 @@ namespace WindowsFormsApplication1
             typeDataGridView.Visible = true;
         }
 
-        private void sectionTextBox_TextChanged(object sender, EventArgs e)
+        private void idOuvrageTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            ouvrageCourant = Convert.ToInt32(idOuvrageTextBox.Text);
+            MessageBox.Show(ouvrageCourant.ToString());
+            this.auteurSuperviseurOuvrageTableAdapter.FillNomsAuteurs(this.biblioEPFCDataSet.AuteurSuperviseurOuvrage, ouvrageCourant);
         }
 
-        
     }
 }
     
