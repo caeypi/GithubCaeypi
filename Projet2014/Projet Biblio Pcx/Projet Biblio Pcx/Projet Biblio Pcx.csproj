@@ -107,6 +107,9 @@
     <None Include="BiblioEPFCDataSet.xss">
       <DependentUpon>BiblioEPFCDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteursOuvrageTableAdapter.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteurSuperviseurTableAdapter.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvrageTableAdapter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

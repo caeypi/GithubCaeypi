@@ -31,7 +31,9 @@ namespace WindowsFormsApplication1
             this.membreTableAdapter.Fill(this.biblioEPFCDataSet.Membre);
             this.ouvrageTableAdapter.Fill(this.biblioEPFCDataSet.Ouvrage);
             this.auteurSuperviseurTableAdapter.Fill(this.biblioEPFCDataSet.AuteurSuperviseur);
-            this.auteurSuperviseurOuvrageTableAdapter.FillNomsAuteurs(this.biblioEPFCDataSet.AuteurSuperviseurOuvrage, ouvrageCourant);
+            this.auteursOuvrageTableAdapter.FillByIdOuvrage(this.biblioEPFCDataSet.AuteursOuvrage, ouvrageCourant);
+            this.typeOuvrageTableAdapter.Fill(this.biblioEPFCDataSet.TypeOuvrage);//this.typeOuvrageTableAdapter.FillByIdOuvrage(this.biblioEPFCDataSet.TypeOuvrage, ouvrageCourant);
+            
         }
 
         private void textBoxRecherche_TextChanged(object sender, EventArgs e)
@@ -110,8 +112,8 @@ namespace WindowsFormsApplication1
         private void idOuvrageTextBox_TextChanged(object sender, EventArgs e)
         {
             ouvrageCourant = Convert.ToInt32(idOuvrageTextBox.Text);
-            MessageBox.Show(ouvrageCourant.ToString());
-            this.auteurSuperviseurOuvrageTableAdapter.FillNomsAuteurs(this.biblioEPFCDataSet.AuteurSuperviseurOuvrage, ouvrageCourant);
+            this.auteursOuvrageTableAdapter.FillByIdOuvrage(this.biblioEPFCDataSet.AuteursOuvrage,ouvrageCourant);
+            this.typeOuvrageTableAdapter.FillByIdOuvrage(this.biblioEPFCDataSet.TypeOuvrage, ouvrageCourant);
         }
 
     }
