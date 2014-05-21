@@ -36,10 +36,9 @@
             System.Windows.Forms.Label sectionLabel;
             System.Windows.Forms.Label dateEmpruntLabel;
             System.Windows.Forms.Label dureeEmpruntLabel;
-            System.Windows.Forms.Label numTypeLabel;
-            System.Windows.Forms.Label numMembreLabel;
+            System.Windows.Forms.Label MembreLabel;
             System.Windows.Forms.Label nomEntrepriseLabel;
-            System.Windows.Forms.Label numSuperLabel;
+            System.Windows.Forms.Label SuperLabel;
             System.Windows.Forms.Label idAuteurSuperLabel;
             System.Windows.Forms.Label nomLabel;
             System.Windows.Forms.Label prenomLabel;
@@ -63,17 +62,11 @@
             this.radioButtonMembre = new System.Windows.Forms.RadioButton();
             this.radioButtonAuteurSuperviseur = new System.Windows.Forms.RadioButton();
             this.radioButtonOuvrage = new System.Windows.Forms.RadioButton();
-            this.auteurSuperviseurDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.auteurSuperviseurBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.biblioEPFCDataSet = new WindowsFormsApplication1.BiblioEPFCDataSet();
             this.typeDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.biblioEPFCDataSet = new WindowsFormsApplication1.BiblioEPFCDataSet();
             this.membreDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +76,12 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.auteurSuperviseurDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.auteurSuperviseurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabController = new System.Windows.Forms.TabControl();
             this.tabOuvrage = new System.Windows.Forms.TabPage();
             this.splitContainerOuvrage = new System.Windows.Forms.SplitContainer();
@@ -101,15 +100,22 @@
             this.dateEmpruntTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             this.dureeEmpruntTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
-            this.numTypeTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
-            this.numMembreTextBox = new System.Windows.Forms.TextBox();
+            this.MembreTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
             this.nomEntrepriseTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
-            this.numSuperTextBox = new System.Windows.Forms.TextBox();
+            this.SuperTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel27 = new System.Windows.Forms.FlowLayoutPanel();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.typeTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel28 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBoxAuteursOuvrage = new System.Windows.Forms.ListBox();
+            this.auteursOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabAuteurSuperviseur = new System.Windows.Forms.TabPage();
+            this.splitContainerAuteurSuperviseur = new System.Windows.Forms.SplitContainer();
+            this.flowLayoutPanelTabAuteurSuperviseur = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.idAuteurSuperTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
@@ -118,7 +124,12 @@
             this.prenomTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
             this.statutTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelOuvragesAuteur = new System.Windows.Forms.Label();
+            this.listBoxOuvragesAuteur = new System.Windows.Forms.ListBox();
+            this.ouvragesAuteurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabMembre = new System.Windows.Forms.TabPage();
+            this.splitContainerMembre = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanelTabMembre = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel16 = new System.Windows.Forms.FlowLayoutPanel();
             this.idMembreTextBox = new System.Windows.Forms.TextBox();
@@ -136,7 +147,17 @@
             this.adresseVilleTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel23 = new System.Windows.Forms.FlowLayoutPanel();
             this.telTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel29 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelOuvragesEmpruntés = new System.Windows.Forms.Label();
+            this.listBoxOuvragesEmpruntes = new System.Windows.Forms.ListBox();
+            this.empruntsMembreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.flowLayoutPanel30 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelOuvragesRéservés = new System.Windows.Forms.Label();
+            this.listBoxReservationsMembre = new System.Windows.Forms.ListBox();
+            this.reservationsMembreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.biblioEPFCDataSet1 = new WindowsFormsApplication1.BiblioEPFCDataSet();
             this.tabType = new System.Windows.Forms.TabPage();
+            this.splitContainerTabType = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanelTabType = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel24 = new System.Windows.Forms.FlowLayoutPanel();
             this.idTypeTextBox = new System.Windows.Forms.TextBox();
@@ -144,15 +165,23 @@
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel26 = new System.Windows.Forms.FlowLayoutPanel();
             this.sigleTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel31 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelOuvragesType = new System.Windows.Forms.Label();
+            this.listBoxOuvragesType = new System.Windows.Forms.ListBox();
             this.auteurSuperviseurTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteurSuperviseurTableAdapter();
             this.tableAdapterManager = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager();
             this.membreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.MembreTableAdapter();
             this.ouvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvrageTableAdapter();
             this.typeTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TypeTableAdapter();
-            this.splitContainerAuteurSuperviseur = new System.Windows.Forms.SplitContainer();
-            this.flowLayoutPanelTabAuteurSuperviseur = new System.Windows.Forms.FlowLayoutPanel();
-            this.splitContainerMembre = new System.Windows.Forms.SplitContainer();
-            this.splitContainerTabType = new System.Windows.Forms.SplitContainer();
+            this.typeOuvrageTableAdapter1 = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TypeOuvrageTableAdapter();
+            this.auteursOuvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteursOuvrageTableAdapter();
+            this.membreOuvrageTableAdapter1 = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.MembreOuvrageTableAdapter();
+            this.superviseurOuvrageTableAdapter1 = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.SuperviseurOuvrageTableAdapter();
+            this.ouvragesAuteurTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvragesAuteurTableAdapter();
+            this.empruntsMembreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.EmpruntsMembreTableAdapter();
+            this.reservationsMembreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.ReservationsMembreTableAdapter();
+            this.ouvragesTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ouvragesTypeTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvragesTypeTableAdapter();
             idOuvrageLabel = new System.Windows.Forms.Label();
             titreLabel = new System.Windows.Forms.Label();
             localisationLabel = new System.Windows.Forms.Label();
@@ -160,10 +189,9 @@
             sectionLabel = new System.Windows.Forms.Label();
             dateEmpruntLabel = new System.Windows.Forms.Label();
             dureeEmpruntLabel = new System.Windows.Forms.Label();
-            numTypeLabel = new System.Windows.Forms.Label();
-            numMembreLabel = new System.Windows.Forms.Label();
+            MembreLabel = new System.Windows.Forms.Label();
             nomEntrepriseLabel = new System.Windows.Forms.Label();
-            numSuperLabel = new System.Windows.Forms.Label();
+            SuperLabel = new System.Windows.Forms.Label();
             idAuteurSuperLabel = new System.Windows.Forms.Label();
             nomLabel = new System.Windows.Forms.Label();
             prenomLabel = new System.Windows.Forms.Label();
@@ -191,15 +219,15 @@
             this.splitContainerChpRecherche.Panel1.SuspendLayout();
             this.splitContainerChpRecherche.Panel2.SuspendLayout();
             this.splitContainerChpRecherche.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membreDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurBindingSource)).BeginInit();
             this.tabController.SuspendLayout();
             this.tabOuvrage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerOuvrage)).BeginInit();
@@ -213,16 +241,27 @@
             this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
-            this.flowLayoutPanel9.SuspendLayout();
             this.flowLayoutPanel10.SuspendLayout();
             this.flowLayoutPanel11.SuspendLayout();
             this.flowLayoutPanel12.SuspendLayout();
+            this.flowLayoutPanel27.SuspendLayout();
+            this.flowLayoutPanel28.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auteursOuvrageBindingSource)).BeginInit();
             this.tabAuteurSuperviseur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAuteurSuperviseur)).BeginInit();
+            this.splitContainerAuteurSuperviseur.Panel1.SuspendLayout();
+            this.splitContainerAuteurSuperviseur.SuspendLayout();
+            this.flowLayoutPanelTabAuteurSuperviseur.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel13.SuspendLayout();
             this.flowLayoutPanel14.SuspendLayout();
             this.flowLayoutPanel15.SuspendLayout();
+            this.flowLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvragesAuteurBindingSource)).BeginInit();
             this.tabMembre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMembre)).BeginInit();
+            this.splitContainerMembre.Panel1.SuspendLayout();
+            this.splitContainerMembre.SuspendLayout();
             this.flowLayoutPanelTabMembre.SuspendLayout();
             this.flowLayoutPanel16.SuspendLayout();
             this.flowLayoutPanel17.SuspendLayout();
@@ -232,21 +271,21 @@
             this.flowLayoutPanel21.SuspendLayout();
             this.flowLayoutPanel22.SuspendLayout();
             this.flowLayoutPanel23.SuspendLayout();
+            this.flowLayoutPanel29.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.empruntsMembreBindingSource)).BeginInit();
+            this.flowLayoutPanel30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationsMembreBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet1)).BeginInit();
             this.tabType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerTabType)).BeginInit();
+            this.splitContainerTabType.Panel1.SuspendLayout();
+            this.splitContainerTabType.SuspendLayout();
             this.flowLayoutPanelTabType.SuspendLayout();
             this.flowLayoutPanel24.SuspendLayout();
             this.flowLayoutPanel25.SuspendLayout();
             this.flowLayoutPanel26.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAuteurSuperviseur)).BeginInit();
-            this.splitContainerAuteurSuperviseur.Panel1.SuspendLayout();
-            this.splitContainerAuteurSuperviseur.SuspendLayout();
-            this.flowLayoutPanelTabAuteurSuperviseur.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMembre)).BeginInit();
-            this.splitContainerMembre.Panel1.SuspendLayout();
-            this.splitContainerMembre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerTabType)).BeginInit();
-            this.splitContainerTabType.Panel1.SuspendLayout();
-            this.splitContainerTabType.SuspendLayout();
+            this.flowLayoutPanel31.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvragesTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idOuvrageLabel
@@ -312,23 +351,14 @@
             dureeEmpruntLabel.TabIndex = 0;
             dureeEmpruntLabel.Text = "duree Emprunt:";
             // 
-            // numTypeLabel
+            // MembreLabel
             // 
-            numTypeLabel.AutoSize = true;
-            numTypeLabel.Location = new System.Drawing.Point(3, 0);
-            numTypeLabel.Name = "numTypeLabel";
-            numTypeLabel.Size = new System.Drawing.Size(57, 13);
-            numTypeLabel.TabIndex = 0;
-            numTypeLabel.Text = "num Type:";
-            // 
-            // numMembreLabel
-            // 
-            numMembreLabel.AutoSize = true;
-            numMembreLabel.Location = new System.Drawing.Point(3, 0);
-            numMembreLabel.Name = "numMembreLabel";
-            numMembreLabel.Size = new System.Drawing.Size(71, 13);
-            numMembreLabel.TabIndex = 0;
-            numMembreLabel.Text = "num Membre:";
+            MembreLabel.AutoSize = true;
+            MembreLabel.Location = new System.Drawing.Point(3, 0);
+            MembreLabel.Name = "MembreLabel";
+            MembreLabel.Size = new System.Drawing.Size(48, 13);
+            MembreLabel.TabIndex = 0;
+            MembreLabel.Text = "Membre:";
             // 
             // nomEntrepriseLabel
             // 
@@ -339,14 +369,14 @@
             nomEntrepriseLabel.TabIndex = 0;
             nomEntrepriseLabel.Text = "nom Entreprise:";
             // 
-            // numSuperLabel
+            // SuperLabel
             // 
-            numSuperLabel.AutoSize = true;
-            numSuperLabel.Location = new System.Drawing.Point(3, 0);
-            numSuperLabel.Name = "numSuperLabel";
-            numSuperLabel.Size = new System.Drawing.Size(61, 13);
-            numSuperLabel.TabIndex = 0;
-            numSuperLabel.Text = "num Super:";
+            SuperLabel.AutoSize = true;
+            SuperLabel.Location = new System.Drawing.Point(3, 0);
+            SuperLabel.Name = "SuperLabel";
+            SuperLabel.Size = new System.Drawing.Size(66, 13);
+            SuperLabel.TabIndex = 0;
+            SuperLabel.Text = "Superviseur:";
             // 
             // idAuteurSuperLabel
             // 
@@ -496,8 +526,8 @@
             // splitContainerForm.Panel2
             // 
             this.splitContainerForm.Panel2.Controls.Add(this.tabController);
-            this.splitContainerForm.Size = new System.Drawing.Size(1058, 816);
-            this.splitContainerForm.SplitterDistance = 352;
+            this.splitContainerForm.Size = new System.Drawing.Size(1163, 816);
+            this.splitContainerForm.SplitterDistance = 386;
             this.splitContainerForm.TabIndex = 0;
             // 
             // splitContainerColG
@@ -514,11 +544,11 @@
             // splitContainerColG.Panel2
             // 
             this.splitContainerColG.Panel2.AutoScroll = true;
-            this.splitContainerColG.Panel2.Controls.Add(this.auteurSuperviseurDataGridView);
             this.splitContainerColG.Panel2.Controls.Add(this.typeDataGridView);
             this.splitContainerColG.Panel2.Controls.Add(this.membreDataGridView);
             this.splitContainerColG.Panel2.Controls.Add(this.ouvrageDataGridView);
-            this.splitContainerColG.Size = new System.Drawing.Size(352, 816);
+            this.splitContainerColG.Panel2.Controls.Add(this.auteurSuperviseurDataGridView);
+            this.splitContainerColG.Size = new System.Drawing.Size(386, 816);
             this.splitContainerColG.SplitterDistance = 182;
             this.splitContainerColG.TabIndex = 0;
             // 
@@ -539,7 +569,7 @@
             this.splitContainerChpRecherche.Panel2.Controls.Add(this.radioButtonMembre);
             this.splitContainerChpRecherche.Panel2.Controls.Add(this.radioButtonAuteurSuperviseur);
             this.splitContainerChpRecherche.Panel2.Controls.Add(this.radioButtonOuvrage);
-            this.splitContainerChpRecherche.Size = new System.Drawing.Size(352, 182);
+            this.splitContainerChpRecherche.Size = new System.Drawing.Size(386, 182);
             this.splitContainerChpRecherche.SplitterDistance = 36;
             this.splitContainerChpRecherche.TabIndex = 0;
             // 
@@ -548,7 +578,7 @@
             this.textBoxRecherche.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.textBoxRecherche.Location = new System.Drawing.Point(0, 16);
             this.textBoxRecherche.Name = "textBoxRecherche";
-            this.textBoxRecherche.Size = new System.Drawing.Size(352, 20);
+            this.textBoxRecherche.Size = new System.Drawing.Size(386, 20);
             this.textBoxRecherche.TabIndex = 0;
             this.textBoxRecherche.TextChanged += new System.EventHandler(this.textBoxRecherche_TextChanged);
             // 
@@ -612,8 +642,143 @@
             this.radioButtonOuvrage.UseVisualStyleBackColor = true;
             this.radioButtonOuvrage.CheckedChanged += new System.EventHandler(this.radioButtonOuvrage_CheckedChanged);
             // 
+            // typeDataGridView
+            // 
+            this.typeDataGridView.AllowUserToAddRows = false;
+            this.typeDataGridView.AllowUserToDeleteRows = false;
+            this.typeDataGridView.AutoGenerateColumns = false;
+            this.typeDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.typeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.typeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25});
+            this.typeDataGridView.DataSource = this.typeBindingSource;
+            this.typeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.typeDataGridView.GridColor = System.Drawing.SystemColors.Control;
+            this.typeDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.typeDataGridView.Name = "typeDataGridView";
+            this.typeDataGridView.ReadOnly = true;
+            this.typeDataGridView.RowHeadersVisible = false;
+            this.typeDataGridView.Size = new System.Drawing.Size(386, 630);
+            this.typeDataGridView.TabIndex = 3;
+            this.typeDataGridView.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "idType";
+            this.dataGridViewTextBoxColumn24.HeaderText = "idType";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn25.HeaderText = "description";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            // 
+            // typeBindingSource
+            // 
+            this.typeBindingSource.DataMember = "Type";
+            this.typeBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
+            // biblioEPFCDataSet
+            // 
+            this.biblioEPFCDataSet.DataSetName = "BiblioEPFCDataSet";
+            this.biblioEPFCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // membreDataGridView
+            // 
+            this.membreDataGridView.AllowUserToAddRows = false;
+            this.membreDataGridView.AllowUserToDeleteRows = false;
+            this.membreDataGridView.AutoGenerateColumns = false;
+            this.membreDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.membreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.membreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18});
+            this.membreDataGridView.DataSource = this.membreBindingSource;
+            this.membreDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.membreDataGridView.GridColor = System.Drawing.SystemColors.Control;
+            this.membreDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.membreDataGridView.Name = "membreDataGridView";
+            this.membreDataGridView.ReadOnly = true;
+            this.membreDataGridView.RowHeadersVisible = false;
+            this.membreDataGridView.Size = new System.Drawing.Size(386, 630);
+            this.membreDataGridView.TabIndex = 2;
+            this.membreDataGridView.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "idMembre";
+            this.dataGridViewTextBoxColumn16.HeaderText = "idMembre";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "nom";
+            this.dataGridViewTextBoxColumn17.HeaderText = "nom";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "prenom";
+            this.dataGridViewTextBoxColumn18.HeaderText = "prenom";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // membreBindingSource
+            // 
+            this.membreBindingSource.DataMember = "Membre";
+            this.membreBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
+            // ouvrageDataGridView
+            // 
+            this.ouvrageDataGridView.AllowUserToAddRows = false;
+            this.ouvrageDataGridView.AllowUserToDeleteRows = false;
+            this.ouvrageDataGridView.AutoGenerateColumns = false;
+            this.ouvrageDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.ouvrageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ouvrageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.ouvrageDataGridView.DataSource = this.ouvrageBindingSource;
+            this.ouvrageDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ouvrageDataGridView.GridColor = System.Drawing.SystemColors.Control;
+            this.ouvrageDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.ouvrageDataGridView.Name = "ouvrageDataGridView";
+            this.ouvrageDataGridView.ReadOnly = true;
+            this.ouvrageDataGridView.RowHeadersVisible = false;
+            this.ouvrageDataGridView.Size = new System.Drawing.Size(386, 630);
+            this.ouvrageDataGridView.TabIndex = 1;
+            this.ouvrageDataGridView.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "idOuvrage";
+            this.dataGridViewTextBoxColumn5.HeaderText = "idOuvrage";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "titre";
+            this.dataGridViewTextBoxColumn6.HeaderText = "titre";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // ouvrageBindingSource
+            // 
+            this.ouvrageBindingSource.DataMember = "Ouvrage";
+            this.ouvrageBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
             // auteurSuperviseurDataGridView
             // 
+            this.auteurSuperviseurDataGridView.AllowUserToAddRows = false;
+            this.auteurSuperviseurDataGridView.AllowUserToDeleteRows = false;
             this.auteurSuperviseurDataGridView.AutoGenerateColumns = false;
             this.auteurSuperviseurDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.auteurSuperviseurDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -629,7 +794,7 @@
             this.auteurSuperviseurDataGridView.Name = "auteurSuperviseurDataGridView";
             this.auteurSuperviseurDataGridView.ReadOnly = true;
             this.auteurSuperviseurDataGridView.RowHeadersVisible = false;
-            this.auteurSuperviseurDataGridView.Size = new System.Drawing.Size(352, 630);
+            this.auteurSuperviseurDataGridView.Size = new System.Drawing.Size(386, 630);
             this.auteurSuperviseurDataGridView.TabIndex = 0;
             this.auteurSuperviseurDataGridView.Visible = false;
             // 
@@ -666,133 +831,6 @@
             this.auteurSuperviseurBindingSource.DataMember = "AuteurSuperviseur";
             this.auteurSuperviseurBindingSource.DataSource = this.biblioEPFCDataSet;
             // 
-            // biblioEPFCDataSet
-            // 
-            this.biblioEPFCDataSet.DataSetName = "BiblioEPFCDataSet";
-            this.biblioEPFCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // typeDataGridView
-            // 
-            this.typeDataGridView.AutoGenerateColumns = false;
-            this.typeDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.typeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.typeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25});
-            this.typeDataGridView.DataSource = this.typeBindingSource;
-            this.typeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.typeDataGridView.GridColor = System.Drawing.SystemColors.Control;
-            this.typeDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.typeDataGridView.Name = "typeDataGridView";
-            this.typeDataGridView.ReadOnly = true;
-            this.typeDataGridView.RowHeadersVisible = false;
-            this.typeDataGridView.Size = new System.Drawing.Size(352, 630);
-            this.typeDataGridView.TabIndex = 3;
-            this.typeDataGridView.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "idType";
-            this.dataGridViewTextBoxColumn24.HeaderText = "idType";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "description";
-            this.dataGridViewTextBoxColumn25.HeaderText = "description";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            // 
-            // typeBindingSource
-            // 
-            this.typeBindingSource.DataMember = "Type";
-            this.typeBindingSource.DataSource = this.biblioEPFCDataSet;
-            // 
-            // membreDataGridView
-            // 
-            this.membreDataGridView.AutoGenerateColumns = false;
-            this.membreDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.membreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.membreDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18});
-            this.membreDataGridView.DataSource = this.membreBindingSource;
-            this.membreDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.membreDataGridView.GridColor = System.Drawing.SystemColors.Control;
-            this.membreDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.membreDataGridView.Name = "membreDataGridView";
-            this.membreDataGridView.ReadOnly = true;
-            this.membreDataGridView.RowHeadersVisible = false;
-            this.membreDataGridView.Size = new System.Drawing.Size(352, 630);
-            this.membreDataGridView.TabIndex = 2;
-            this.membreDataGridView.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "idMembre";
-            this.dataGridViewTextBoxColumn16.HeaderText = "idMembre";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "nom";
-            this.dataGridViewTextBoxColumn17.HeaderText = "nom";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "prenom";
-            this.dataGridViewTextBoxColumn18.HeaderText = "prenom";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            // 
-            // membreBindingSource
-            // 
-            this.membreBindingSource.DataMember = "Membre";
-            this.membreBindingSource.DataSource = this.biblioEPFCDataSet;
-            // 
-            // ouvrageDataGridView
-            // 
-            this.ouvrageDataGridView.AutoGenerateColumns = false;
-            this.ouvrageDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.ouvrageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ouvrageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.ouvrageDataGridView.DataSource = this.ouvrageBindingSource;
-            this.ouvrageDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ouvrageDataGridView.GridColor = System.Drawing.SystemColors.Control;
-            this.ouvrageDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.ouvrageDataGridView.Name = "ouvrageDataGridView";
-            this.ouvrageDataGridView.ReadOnly = true;
-            this.ouvrageDataGridView.RowHeadersVisible = false;
-            this.ouvrageDataGridView.Size = new System.Drawing.Size(352, 630);
-            this.ouvrageDataGridView.TabIndex = 1;
-            this.ouvrageDataGridView.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "idOuvrage";
-            this.dataGridViewTextBoxColumn5.HeaderText = "idOuvrage";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "titre";
-            this.dataGridViewTextBoxColumn6.HeaderText = "titre";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // ouvrageBindingSource
-            // 
-            this.ouvrageBindingSource.DataMember = "Ouvrage";
-            this.ouvrageBindingSource.DataSource = this.biblioEPFCDataSet;
-            // 
             // tabController
             // 
             this.tabController.Controls.Add(this.tabOuvrage);
@@ -803,7 +841,7 @@
             this.tabController.Location = new System.Drawing.Point(0, 0);
             this.tabController.Name = "tabController";
             this.tabController.SelectedIndex = 0;
-            this.tabController.Size = new System.Drawing.Size(702, 816);
+            this.tabController.Size = new System.Drawing.Size(773, 816);
             this.tabController.TabIndex = 0;
             // 
             // tabOuvrage
@@ -812,7 +850,7 @@
             this.tabOuvrage.Location = new System.Drawing.Point(4, 22);
             this.tabOuvrage.Name = "tabOuvrage";
             this.tabOuvrage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOuvrage.Size = new System.Drawing.Size(694, 790);
+            this.tabOuvrage.Size = new System.Drawing.Size(765, 790);
             this.tabOuvrage.TabIndex = 0;
             this.tabOuvrage.Text = "Ouvrage";
             this.tabOuvrage.UseVisualStyleBackColor = true;
@@ -827,7 +865,7 @@
             // splitContainerOuvrage.Panel1
             // 
             this.splitContainerOuvrage.Panel1.Controls.Add(this.flowLayoutPanelTabOuvrage);
-            this.splitContainerOuvrage.Size = new System.Drawing.Size(688, 784);
+            this.splitContainerOuvrage.Size = new System.Drawing.Size(759, 784);
             this.splitContainerOuvrage.SplitterDistance = 705;
             this.splitContainerOuvrage.TabIndex = 0;
             // 
@@ -840,14 +878,15 @@
             this.flowLayoutPanelTabOuvrage.Controls.Add(this.flowLayoutPanel6);
             this.flowLayoutPanelTabOuvrage.Controls.Add(this.flowLayoutPanel7);
             this.flowLayoutPanelTabOuvrage.Controls.Add(this.flowLayoutPanel8);
-            this.flowLayoutPanelTabOuvrage.Controls.Add(this.flowLayoutPanel9);
             this.flowLayoutPanelTabOuvrage.Controls.Add(this.flowLayoutPanel10);
             this.flowLayoutPanelTabOuvrage.Controls.Add(this.flowLayoutPanel11);
             this.flowLayoutPanelTabOuvrage.Controls.Add(this.flowLayoutPanel12);
+            this.flowLayoutPanelTabOuvrage.Controls.Add(this.flowLayoutPanel27);
+            this.flowLayoutPanelTabOuvrage.Controls.Add(this.flowLayoutPanel28);
             this.flowLayoutPanelTabOuvrage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelTabOuvrage.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelTabOuvrage.Name = "flowLayoutPanelTabOuvrage";
-            this.flowLayoutPanelTabOuvrage.Size = new System.Drawing.Size(688, 705);
+            this.flowLayoutPanelTabOuvrage.Size = new System.Drawing.Size(759, 705);
             this.flowLayoutPanelTabOuvrage.TabIndex = 0;
             // 
             // flowLayoutPanel2
@@ -867,6 +906,7 @@
             this.idOuvrageTextBox.ReadOnly = true;
             this.idOuvrageTextBox.Size = new System.Drawing.Size(100, 20);
             this.idOuvrageTextBox.TabIndex = 1;
+            this.idOuvrageTextBox.TextChanged += new System.EventHandler(this.idOuvrageTextBox_TextChanged);
             // 
             // flowLayoutPanel3
             // 
@@ -976,47 +1016,28 @@
             this.dureeEmpruntTextBox.Size = new System.Drawing.Size(100, 20);
             this.dureeEmpruntTextBox.TabIndex = 1;
             // 
-            // flowLayoutPanel9
-            // 
-            this.flowLayoutPanel9.Controls.Add(numTypeLabel);
-            this.flowLayoutPanel9.Controls.Add(this.numTypeTextBox);
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(217, 215);
-            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel9.TabIndex = 7;
-            // 
-            // numTypeTextBox
-            // 
-            this.numTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "numType", true));
-            this.numTypeTextBox.Location = new System.Drawing.Point(66, 3);
-            this.numTypeTextBox.Name = "numTypeTextBox";
-            this.numTypeTextBox.ReadOnly = true;
-            this.numTypeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numTypeTextBox.TabIndex = 1;
-            // 
             // flowLayoutPanel10
             // 
-            this.flowLayoutPanel10.Controls.Add(numMembreLabel);
-            this.flowLayoutPanel10.Controls.Add(this.numMembreTextBox);
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(423, 215);
+            this.flowLayoutPanel10.Controls.Add(MembreLabel);
+            this.flowLayoutPanel10.Controls.Add(this.MembreTextBox);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(217, 215);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
             this.flowLayoutPanel10.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel10.TabIndex = 8;
             // 
-            // numMembreTextBox
+            // MembreTextBox
             // 
-            this.numMembreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "numMembre", true));
-            this.numMembreTextBox.Location = new System.Drawing.Point(80, 3);
-            this.numMembreTextBox.Name = "numMembreTextBox";
-            this.numMembreTextBox.ReadOnly = true;
-            this.numMembreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numMembreTextBox.TabIndex = 1;
+            this.MembreTextBox.Location = new System.Drawing.Point(57, 3);
+            this.MembreTextBox.Name = "MembreTextBox";
+            this.MembreTextBox.ReadOnly = true;
+            this.MembreTextBox.Size = new System.Drawing.Size(100, 20);
+            this.MembreTextBox.TabIndex = 1;
             // 
             // flowLayoutPanel11
             // 
             this.flowLayoutPanel11.Controls.Add(nomEntrepriseLabel);
             this.flowLayoutPanel11.Controls.Add(this.nomEntrepriseTextBox);
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(3, 321);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(423, 215);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
             this.flowLayoutPanel11.Size = new System.Drawing.Size(209, 100);
             this.flowLayoutPanel11.TabIndex = 9;
@@ -1032,21 +1053,80 @@
             // 
             // flowLayoutPanel12
             // 
-            this.flowLayoutPanel12.Controls.Add(numSuperLabel);
-            this.flowLayoutPanel12.Controls.Add(this.numSuperTextBox);
-            this.flowLayoutPanel12.Location = new System.Drawing.Point(218, 321);
+            this.flowLayoutPanel12.Controls.Add(SuperLabel);
+            this.flowLayoutPanel12.Controls.Add(this.SuperTextBox);
+            this.flowLayoutPanel12.Location = new System.Drawing.Point(3, 321);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel12.TabIndex = 10;
             // 
-            // numSuperTextBox
+            // SuperTextBox
             // 
-            this.numSuperTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ouvrageBindingSource, "numSuper", true));
-            this.numSuperTextBox.Location = new System.Drawing.Point(70, 3);
-            this.numSuperTextBox.Name = "numSuperTextBox";
-            this.numSuperTextBox.ReadOnly = true;
-            this.numSuperTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numSuperTextBox.TabIndex = 1;
+            this.SuperTextBox.Location = new System.Drawing.Point(75, 3);
+            this.SuperTextBox.Name = "SuperTextBox";
+            this.SuperTextBox.ReadOnly = true;
+            this.SuperTextBox.Size = new System.Drawing.Size(100, 20);
+            this.SuperTextBox.TabIndex = 1;
+            // 
+            // flowLayoutPanel27
+            // 
+            this.flowLayoutPanel27.Controls.Add(this.typeLabel);
+            this.flowLayoutPanel27.Controls.Add(this.typeTextBox);
+            this.flowLayoutPanel27.Location = new System.Drawing.Point(209, 321);
+            this.flowLayoutPanel27.Name = "flowLayoutPanel27";
+            this.flowLayoutPanel27.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel27.TabIndex = 11;
+            // 
+            // typeLabel
+            // 
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.Location = new System.Drawing.Point(3, 0);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(34, 13);
+            this.typeLabel.TabIndex = 0;
+            this.typeLabel.Text = "Type:";
+            // 
+            // typeTextBox
+            // 
+            this.typeTextBox.Location = new System.Drawing.Point(43, 3);
+            this.typeTextBox.Name = "typeTextBox";
+            this.typeTextBox.ReadOnly = true;
+            this.typeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.typeTextBox.TabIndex = 1;
+            // 
+            // flowLayoutPanel28
+            // 
+            this.flowLayoutPanel28.Controls.Add(this.label1);
+            this.flowLayoutPanel28.Controls.Add(this.listBoxAuteursOuvrage);
+            this.flowLayoutPanel28.Location = new System.Drawing.Point(415, 321);
+            this.flowLayoutPanel28.Name = "flowLayoutPanel28";
+            this.flowLayoutPanel28.Size = new System.Drawing.Size(200, 118);
+            this.flowLayoutPanel28.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Auteurs";
+            // 
+            // listBoxAuteursOuvrage
+            // 
+            this.listBoxAuteursOuvrage.DataSource = this.auteursOuvrageBindingSource;
+            this.listBoxAuteursOuvrage.DisplayMember = "NomPrenom";
+            this.listBoxAuteursOuvrage.FormattingEnabled = true;
+            this.listBoxAuteursOuvrage.Location = new System.Drawing.Point(52, 3);
+            this.listBoxAuteursOuvrage.Name = "listBoxAuteursOuvrage";
+            this.listBoxAuteursOuvrage.Size = new System.Drawing.Size(120, 95);
+            this.listBoxAuteursOuvrage.TabIndex = 1;
+            this.listBoxAuteursOuvrage.ValueMember = "idAuteurSuper";
+            // 
+            // auteursOuvrageBindingSource
+            // 
+            this.auteursOuvrageBindingSource.DataMember = "AuteursOuvrage";
+            this.auteursOuvrageBindingSource.DataSource = this.biblioEPFCDataSet;
             // 
             // tabAuteurSuperviseur
             // 
@@ -1054,10 +1134,37 @@
             this.tabAuteurSuperviseur.Location = new System.Drawing.Point(4, 22);
             this.tabAuteurSuperviseur.Name = "tabAuteurSuperviseur";
             this.tabAuteurSuperviseur.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAuteurSuperviseur.Size = new System.Drawing.Size(694, 790);
+            this.tabAuteurSuperviseur.Size = new System.Drawing.Size(765, 790);
             this.tabAuteurSuperviseur.TabIndex = 1;
             this.tabAuteurSuperviseur.Text = "Auteur/Superviseur";
             this.tabAuteurSuperviseur.UseVisualStyleBackColor = true;
+            // 
+            // splitContainerAuteurSuperviseur
+            // 
+            this.splitContainerAuteurSuperviseur.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerAuteurSuperviseur.Location = new System.Drawing.Point(3, 3);
+            this.splitContainerAuteurSuperviseur.Name = "splitContainerAuteurSuperviseur";
+            this.splitContainerAuteurSuperviseur.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainerAuteurSuperviseur.Panel1
+            // 
+            this.splitContainerAuteurSuperviseur.Panel1.Controls.Add(this.flowLayoutPanelTabAuteurSuperviseur);
+            this.splitContainerAuteurSuperviseur.Size = new System.Drawing.Size(759, 784);
+            this.splitContainerAuteurSuperviseur.SplitterDistance = 646;
+            this.splitContainerAuteurSuperviseur.TabIndex = 4;
+            // 
+            // flowLayoutPanelTabAuteurSuperviseur
+            // 
+            this.flowLayoutPanelTabAuteurSuperviseur.Controls.Add(this.flowLayoutPanel1);
+            this.flowLayoutPanelTabAuteurSuperviseur.Controls.Add(this.flowLayoutPanel13);
+            this.flowLayoutPanelTabAuteurSuperviseur.Controls.Add(this.flowLayoutPanel14);
+            this.flowLayoutPanelTabAuteurSuperviseur.Controls.Add(this.flowLayoutPanel15);
+            this.flowLayoutPanelTabAuteurSuperviseur.Controls.Add(this.flowLayoutPanel9);
+            this.flowLayoutPanelTabAuteurSuperviseur.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelTabAuteurSuperviseur.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelTabAuteurSuperviseur.Name = "flowLayoutPanelTabAuteurSuperviseur";
+            this.flowLayoutPanelTabAuteurSuperviseur.Size = new System.Drawing.Size(759, 646);
+            this.flowLayoutPanelTabAuteurSuperviseur.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
@@ -1076,6 +1183,7 @@
             this.idAuteurSuperTextBox.ReadOnly = true;
             this.idAuteurSuperTextBox.Size = new System.Drawing.Size(100, 20);
             this.idAuteurSuperTextBox.TabIndex = 1;
+            this.idAuteurSuperTextBox.TextChanged += new System.EventHandler(this.idAuteurSuperTextBox_TextChanged);
             // 
             // flowLayoutPanel13
             // 
@@ -1131,16 +1239,64 @@
             this.statutTextBox.Size = new System.Drawing.Size(100, 20);
             this.statutTextBox.TabIndex = 1;
             // 
+            // flowLayoutPanel9
+            // 
+            this.flowLayoutPanel9.Controls.Add(this.labelOuvragesAuteur);
+            this.flowLayoutPanel9.Controls.Add(this.listBoxOuvragesAuteur);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(209, 114);
+            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel9.TabIndex = 5;
+            // 
+            // labelOuvragesAuteur
+            // 
+            this.labelOuvragesAuteur.AutoSize = true;
+            this.labelOuvragesAuteur.Location = new System.Drawing.Point(3, 0);
+            this.labelOuvragesAuteur.Name = "labelOuvragesAuteur";
+            this.labelOuvragesAuteur.Size = new System.Drawing.Size(56, 13);
+            this.labelOuvragesAuteur.TabIndex = 0;
+            this.labelOuvragesAuteur.Text = "Ouvrages:";
+            // 
+            // listBoxOuvragesAuteur
+            // 
+            this.listBoxOuvragesAuteur.DataSource = this.ouvragesAuteurBindingSource;
+            this.listBoxOuvragesAuteur.DisplayMember = "titre";
+            this.listBoxOuvragesAuteur.FormattingEnabled = true;
+            this.listBoxOuvragesAuteur.Location = new System.Drawing.Point(65, 3);
+            this.listBoxOuvragesAuteur.Name = "listBoxOuvragesAuteur";
+            this.listBoxOuvragesAuteur.Size = new System.Drawing.Size(120, 95);
+            this.listBoxOuvragesAuteur.TabIndex = 4;
+            this.listBoxOuvragesAuteur.ValueMember = "idOuvrage";
+            // 
+            // ouvragesAuteurBindingSource
+            // 
+            this.ouvragesAuteurBindingSource.DataMember = "OuvragesAuteur";
+            this.ouvragesAuteurBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
             // tabMembre
             // 
             this.tabMembre.Controls.Add(this.splitContainerMembre);
             this.tabMembre.Location = new System.Drawing.Point(4, 22);
             this.tabMembre.Name = "tabMembre";
             this.tabMembre.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMembre.Size = new System.Drawing.Size(694, 790);
+            this.tabMembre.Size = new System.Drawing.Size(765, 790);
             this.tabMembre.TabIndex = 2;
             this.tabMembre.Text = "Membre";
             this.tabMembre.UseVisualStyleBackColor = true;
+            // 
+            // splitContainerMembre
+            // 
+            this.splitContainerMembre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerMembre.Location = new System.Drawing.Point(3, 3);
+            this.splitContainerMembre.Name = "splitContainerMembre";
+            this.splitContainerMembre.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainerMembre.Panel1
+            // 
+            this.splitContainerMembre.Panel1.Controls.Add(this.flowLayoutPanelTabMembre);
+            this.splitContainerMembre.Size = new System.Drawing.Size(759, 784);
+            this.splitContainerMembre.SplitterDistance = 685;
+            this.splitContainerMembre.TabIndex = 1;
             // 
             // flowLayoutPanelTabMembre
             // 
@@ -1152,10 +1308,12 @@
             this.flowLayoutPanelTabMembre.Controls.Add(this.flowLayoutPanel21);
             this.flowLayoutPanelTabMembre.Controls.Add(this.flowLayoutPanel22);
             this.flowLayoutPanelTabMembre.Controls.Add(this.flowLayoutPanel23);
+            this.flowLayoutPanelTabMembre.Controls.Add(this.flowLayoutPanel29);
+            this.flowLayoutPanelTabMembre.Controls.Add(this.flowLayoutPanel30);
             this.flowLayoutPanelTabMembre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelTabMembre.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelTabMembre.Name = "flowLayoutPanelTabMembre";
-            this.flowLayoutPanelTabMembre.Size = new System.Drawing.Size(688, 685);
+            this.flowLayoutPanelTabMembre.Size = new System.Drawing.Size(759, 685);
             this.flowLayoutPanelTabMembre.TabIndex = 0;
             // 
             // flowLayoutPanel16
@@ -1175,6 +1333,7 @@
             this.idMembreTextBox.ReadOnly = true;
             this.idMembreTextBox.Size = new System.Drawing.Size(100, 20);
             this.idMembreTextBox.TabIndex = 1;
+            this.idMembreTextBox.TextChanged += new System.EventHandler(this.idMembreTextBox_TextChanged);
             // 
             // flowLayoutPanel17
             // 
@@ -1290,7 +1449,7 @@
             this.flowLayoutPanel23.Controls.Add(this.telTextBox);
             this.flowLayoutPanel23.Location = new System.Drawing.Point(209, 215);
             this.flowLayoutPanel23.Name = "flowLayoutPanel23";
-            this.flowLayoutPanel23.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel23.Size = new System.Drawing.Size(201, 100);
             this.flowLayoutPanel23.TabIndex = 7;
             // 
             // telTextBox
@@ -1302,26 +1461,114 @@
             this.telTextBox.Size = new System.Drawing.Size(100, 20);
             this.telTextBox.TabIndex = 1;
             // 
+            // flowLayoutPanel29
+            // 
+            this.flowLayoutPanel29.Controls.Add(this.labelOuvragesEmpruntés);
+            this.flowLayoutPanel29.Controls.Add(this.listBoxOuvragesEmpruntes);
+            this.flowLayoutPanel29.Location = new System.Drawing.Point(416, 215);
+            this.flowLayoutPanel29.Name = "flowLayoutPanel29";
+            this.flowLayoutPanel29.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel29.TabIndex = 8;
+            // 
+            // labelOuvragesEmpruntés
+            // 
+            this.labelOuvragesEmpruntés.AutoSize = true;
+            this.labelOuvragesEmpruntés.Location = new System.Drawing.Point(3, 0);
+            this.labelOuvragesEmpruntés.Name = "labelOuvragesEmpruntés";
+            this.labelOuvragesEmpruntés.Size = new System.Drawing.Size(53, 13);
+            this.labelOuvragesEmpruntés.TabIndex = 0;
+            this.labelOuvragesEmpruntés.Text = "emprunts:";
+            // 
+            // listBoxOuvragesEmpruntes
+            // 
+            this.listBoxOuvragesEmpruntes.DataSource = this.empruntsMembreBindingSource;
+            this.listBoxOuvragesEmpruntes.DisplayMember = "titre";
+            this.listBoxOuvragesEmpruntes.FormattingEnabled = true;
+            this.listBoxOuvragesEmpruntes.Location = new System.Drawing.Point(62, 3);
+            this.listBoxOuvragesEmpruntes.Name = "listBoxOuvragesEmpruntes";
+            this.listBoxOuvragesEmpruntes.Size = new System.Drawing.Size(120, 95);
+            this.listBoxOuvragesEmpruntes.TabIndex = 1;
+            this.listBoxOuvragesEmpruntes.ValueMember = "idOuvrage";
+            // 
+            // empruntsMembreBindingSource
+            // 
+            this.empruntsMembreBindingSource.DataMember = "EmpruntsMembre";
+            this.empruntsMembreBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
+            // flowLayoutPanel30
+            // 
+            this.flowLayoutPanel30.Controls.Add(this.labelOuvragesRéservés);
+            this.flowLayoutPanel30.Controls.Add(this.listBoxReservationsMembre);
+            this.flowLayoutPanel30.Location = new System.Drawing.Point(3, 321);
+            this.flowLayoutPanel30.Name = "flowLayoutPanel30";
+            this.flowLayoutPanel30.Size = new System.Drawing.Size(230, 100);
+            this.flowLayoutPanel30.TabIndex = 9;
+            // 
+            // labelOuvragesRéservés
+            // 
+            this.labelOuvragesRéservés.AutoSize = true;
+            this.labelOuvragesRéservés.Location = new System.Drawing.Point(3, 0);
+            this.labelOuvragesRéservés.Name = "labelOuvragesRéservés";
+            this.labelOuvragesRéservés.Size = new System.Drawing.Size(72, 13);
+            this.labelOuvragesRéservés.TabIndex = 0;
+            this.labelOuvragesRéservés.Text = "Réservations:";
+            // 
+            // listBoxReservationsMembre
+            // 
+            this.listBoxReservationsMembre.DataSource = this.reservationsMembreBindingSource;
+            this.listBoxReservationsMembre.DisplayMember = "titre";
+            this.listBoxReservationsMembre.FormattingEnabled = true;
+            this.listBoxReservationsMembre.Location = new System.Drawing.Point(81, 3);
+            this.listBoxReservationsMembre.Name = "listBoxReservationsMembre";
+            this.listBoxReservationsMembre.Size = new System.Drawing.Size(120, 95);
+            this.listBoxReservationsMembre.TabIndex = 1;
+            this.listBoxReservationsMembre.ValueMember = "idOuvrage";
+            // 
+            // reservationsMembreBindingSource
+            // 
+            this.reservationsMembreBindingSource.DataMember = "ReservationsMembre";
+            this.reservationsMembreBindingSource.DataSource = this.biblioEPFCDataSet1;
+            // 
+            // biblioEPFCDataSet1
+            // 
+            this.biblioEPFCDataSet1.DataSetName = "BiblioEPFCDataSet";
+            this.biblioEPFCDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tabType
             // 
             this.tabType.Controls.Add(this.splitContainerTabType);
             this.tabType.Location = new System.Drawing.Point(4, 22);
             this.tabType.Name = "tabType";
             this.tabType.Padding = new System.Windows.Forms.Padding(3);
-            this.tabType.Size = new System.Drawing.Size(694, 790);
+            this.tabType.Size = new System.Drawing.Size(765, 790);
             this.tabType.TabIndex = 3;
             this.tabType.Text = "Type";
             this.tabType.UseVisualStyleBackColor = true;
+            // 
+            // splitContainerTabType
+            // 
+            this.splitContainerTabType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerTabType.Location = new System.Drawing.Point(3, 3);
+            this.splitContainerTabType.Name = "splitContainerTabType";
+            this.splitContainerTabType.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainerTabType.Panel1
+            // 
+            this.splitContainerTabType.Panel1.Controls.Add(this.flowLayoutPanelTabType);
+            this.splitContainerTabType.Size = new System.Drawing.Size(759, 784);
+            this.splitContainerTabType.SplitterDistance = 668;
+            this.splitContainerTabType.TabIndex = 1;
             // 
             // flowLayoutPanelTabType
             // 
             this.flowLayoutPanelTabType.Controls.Add(this.flowLayoutPanel24);
             this.flowLayoutPanelTabType.Controls.Add(this.flowLayoutPanel25);
             this.flowLayoutPanelTabType.Controls.Add(this.flowLayoutPanel26);
+            this.flowLayoutPanelTabType.Controls.Add(this.flowLayoutPanel31);
             this.flowLayoutPanelTabType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelTabType.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelTabType.Name = "flowLayoutPanelTabType";
-            this.flowLayoutPanelTabType.Size = new System.Drawing.Size(688, 668);
+            this.flowLayoutPanelTabType.Size = new System.Drawing.Size(759, 668);
             this.flowLayoutPanelTabType.TabIndex = 0;
             // 
             // flowLayoutPanel24
@@ -1341,6 +1588,7 @@
             this.idTypeTextBox.ReadOnly = true;
             this.idTypeTextBox.Size = new System.Drawing.Size(100, 20);
             this.idTypeTextBox.TabIndex = 1;
+            this.idTypeTextBox.TextChanged += new System.EventHandler(this.idTypeTextBox_TextChanged);
             // 
             // flowLayoutPanel25
             // 
@@ -1378,6 +1626,35 @@
             this.sigleTextBox.Size = new System.Drawing.Size(100, 20);
             this.sigleTextBox.TabIndex = 1;
             // 
+            // flowLayoutPanel31
+            // 
+            this.flowLayoutPanel31.Controls.Add(this.labelOuvragesType);
+            this.flowLayoutPanel31.Controls.Add(this.listBoxOuvragesType);
+            this.flowLayoutPanel31.Location = new System.Drawing.Point(3, 109);
+            this.flowLayoutPanel31.Name = "flowLayoutPanel31";
+            this.flowLayoutPanel31.Size = new System.Drawing.Size(291, 537);
+            this.flowLayoutPanel31.TabIndex = 4;
+            // 
+            // labelOuvragesType
+            // 
+            this.labelOuvragesType.AutoSize = true;
+            this.labelOuvragesType.Location = new System.Drawing.Point(3, 0);
+            this.labelOuvragesType.Name = "labelOuvragesType";
+            this.labelOuvragesType.Size = new System.Drawing.Size(56, 13);
+            this.labelOuvragesType.TabIndex = 0;
+            this.labelOuvragesType.Text = "Ouvrages:";
+            // 
+            // listBoxOuvragesType
+            // 
+            this.listBoxOuvragesType.DataSource = this.ouvragesTypeBindingSource;
+            this.listBoxOuvragesType.DisplayMember = "titre";
+            this.listBoxOuvragesType.FormattingEnabled = true;
+            this.listBoxOuvragesType.Location = new System.Drawing.Point(3, 16);
+            this.listBoxOuvragesType.Name = "listBoxOuvragesType";
+            this.listBoxOuvragesType.Size = new System.Drawing.Size(257, 537);
+            this.listBoxOuvragesType.TabIndex = 3;
+            this.listBoxOuvragesType.ValueMember = "idOuvrage";
+            // 
             // auteurSuperviseurTableAdapter
             // 
             this.auteurSuperviseurTableAdapter.ClearBeforeFill = true;
@@ -1405,66 +1682,49 @@
             // 
             this.typeTableAdapter.ClearBeforeFill = true;
             // 
-            // splitContainerAuteurSuperviseur
+            // typeOuvrageTableAdapter1
             // 
-            this.splitContainerAuteurSuperviseur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerAuteurSuperviseur.Location = new System.Drawing.Point(3, 3);
-            this.splitContainerAuteurSuperviseur.Name = "splitContainerAuteurSuperviseur";
-            this.splitContainerAuteurSuperviseur.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.typeOuvrageTableAdapter1.ClearBeforeFill = true;
             // 
-            // splitContainerAuteurSuperviseur.Panel1
+            // auteursOuvrageTableAdapter
             // 
-            this.splitContainerAuteurSuperviseur.Panel1.Controls.Add(this.flowLayoutPanelTabAuteurSuperviseur);
-            this.splitContainerAuteurSuperviseur.Size = new System.Drawing.Size(688, 784);
-            this.splitContainerAuteurSuperviseur.SplitterDistance = 646;
-            this.splitContainerAuteurSuperviseur.TabIndex = 4;
+            this.auteursOuvrageTableAdapter.ClearBeforeFill = true;
             // 
-            // flowLayoutPanelTabAuteurSuperviseur
+            // membreOuvrageTableAdapter1
             // 
-            this.flowLayoutPanelTabAuteurSuperviseur.Controls.Add(this.flowLayoutPanel1);
-            this.flowLayoutPanelTabAuteurSuperviseur.Controls.Add(this.flowLayoutPanel13);
-            this.flowLayoutPanelTabAuteurSuperviseur.Controls.Add(this.flowLayoutPanel14);
-            this.flowLayoutPanelTabAuteurSuperviseur.Controls.Add(this.flowLayoutPanel15);
-            this.flowLayoutPanelTabAuteurSuperviseur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelTabAuteurSuperviseur.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelTabAuteurSuperviseur.Name = "flowLayoutPanelTabAuteurSuperviseur";
-            this.flowLayoutPanelTabAuteurSuperviseur.Size = new System.Drawing.Size(688, 646);
-            this.flowLayoutPanelTabAuteurSuperviseur.TabIndex = 0;
+            this.membreOuvrageTableAdapter1.ClearBeforeFill = true;
             // 
-            // splitContainerMembre
+            // superviseurOuvrageTableAdapter1
             // 
-            this.splitContainerMembre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerMembre.Location = new System.Drawing.Point(3, 3);
-            this.splitContainerMembre.Name = "splitContainerMembre";
-            this.splitContainerMembre.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.superviseurOuvrageTableAdapter1.ClearBeforeFill = true;
             // 
-            // splitContainerMembre.Panel1
+            // ouvragesAuteurTableAdapter
             // 
-            this.splitContainerMembre.Panel1.Controls.Add(this.flowLayoutPanelTabMembre);
-            this.splitContainerMembre.Size = new System.Drawing.Size(688, 784);
-            this.splitContainerMembre.SplitterDistance = 685;
-            this.splitContainerMembre.TabIndex = 1;
+            this.ouvragesAuteurTableAdapter.ClearBeforeFill = true;
             // 
-            // splitContainerTabType
+            // empruntsMembreTableAdapter
             // 
-            this.splitContainerTabType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerTabType.Location = new System.Drawing.Point(3, 3);
-            this.splitContainerTabType.Name = "splitContainerTabType";
-            this.splitContainerTabType.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.empruntsMembreTableAdapter.ClearBeforeFill = true;
             // 
-            // splitContainerTabType.Panel1
+            // reservationsMembreTableAdapter
             // 
-            this.splitContainerTabType.Panel1.Controls.Add(this.flowLayoutPanelTabType);
-            this.splitContainerTabType.Size = new System.Drawing.Size(688, 784);
-            this.splitContainerTabType.SplitterDistance = 668;
-            this.splitContainerTabType.TabIndex = 1;
+            this.reservationsMembreTableAdapter.ClearBeforeFill = true;
+            // 
+            // ouvragesTypeBindingSource
+            // 
+            this.ouvragesTypeBindingSource.DataMember = "OuvragesType";
+            this.ouvragesTypeBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
+            // ouvragesTypeTableAdapter
+            // 
+            this.ouvragesTypeTableAdapter.ClearBeforeFill = true;
             // 
             // FormBiblioPcx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1058, 816);
+            this.ClientSize = new System.Drawing.Size(1163, 816);
             this.Controls.Add(this.splitContainerForm);
             this.Name = "FormBiblioPcx";
             this.Text = "Recherche";
@@ -1483,15 +1743,15 @@
             this.splitContainerChpRecherche.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerChpRecherche)).EndInit();
             this.splitContainerChpRecherche.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membreDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurBindingSource)).EndInit();
             this.tabController.ResumeLayout(false);
             this.tabOuvrage.ResumeLayout(false);
             this.splitContainerOuvrage.Panel1.ResumeLayout(false);
@@ -1512,15 +1772,22 @@
             this.flowLayoutPanel7.PerformLayout();
             this.flowLayoutPanel8.ResumeLayout(false);
             this.flowLayoutPanel8.PerformLayout();
-            this.flowLayoutPanel9.ResumeLayout(false);
-            this.flowLayoutPanel9.PerformLayout();
             this.flowLayoutPanel10.ResumeLayout(false);
             this.flowLayoutPanel10.PerformLayout();
             this.flowLayoutPanel11.ResumeLayout(false);
             this.flowLayoutPanel11.PerformLayout();
             this.flowLayoutPanel12.ResumeLayout(false);
             this.flowLayoutPanel12.PerformLayout();
+            this.flowLayoutPanel27.ResumeLayout(false);
+            this.flowLayoutPanel27.PerformLayout();
+            this.flowLayoutPanel28.ResumeLayout(false);
+            this.flowLayoutPanel28.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auteursOuvrageBindingSource)).EndInit();
             this.tabAuteurSuperviseur.ResumeLayout(false);
+            this.splitContainerAuteurSuperviseur.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAuteurSuperviseur)).EndInit();
+            this.splitContainerAuteurSuperviseur.ResumeLayout(false);
+            this.flowLayoutPanelTabAuteurSuperviseur.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel13.ResumeLayout(false);
@@ -1529,7 +1796,13 @@
             this.flowLayoutPanel14.PerformLayout();
             this.flowLayoutPanel15.ResumeLayout(false);
             this.flowLayoutPanel15.PerformLayout();
+            this.flowLayoutPanel9.ResumeLayout(false);
+            this.flowLayoutPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvragesAuteurBindingSource)).EndInit();
             this.tabMembre.ResumeLayout(false);
+            this.splitContainerMembre.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMembre)).EndInit();
+            this.splitContainerMembre.ResumeLayout(false);
             this.flowLayoutPanelTabMembre.ResumeLayout(false);
             this.flowLayoutPanel16.ResumeLayout(false);
             this.flowLayoutPanel16.PerformLayout();
@@ -1547,7 +1820,17 @@
             this.flowLayoutPanel22.PerformLayout();
             this.flowLayoutPanel23.ResumeLayout(false);
             this.flowLayoutPanel23.PerformLayout();
+            this.flowLayoutPanel29.ResumeLayout(false);
+            this.flowLayoutPanel29.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.empruntsMembreBindingSource)).EndInit();
+            this.flowLayoutPanel30.ResumeLayout(false);
+            this.flowLayoutPanel30.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationsMembreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet1)).EndInit();
             this.tabType.ResumeLayout(false);
+            this.splitContainerTabType.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerTabType)).EndInit();
+            this.splitContainerTabType.ResumeLayout(false);
             this.flowLayoutPanelTabType.ResumeLayout(false);
             this.flowLayoutPanel24.ResumeLayout(false);
             this.flowLayoutPanel24.PerformLayout();
@@ -1555,16 +1838,9 @@
             this.flowLayoutPanel25.PerformLayout();
             this.flowLayoutPanel26.ResumeLayout(false);
             this.flowLayoutPanel26.PerformLayout();
-            this.splitContainerAuteurSuperviseur.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAuteurSuperviseur)).EndInit();
-            this.splitContainerAuteurSuperviseur.ResumeLayout(false);
-            this.flowLayoutPanelTabAuteurSuperviseur.ResumeLayout(false);
-            this.splitContainerMembre.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMembre)).EndInit();
-            this.splitContainerMembre.ResumeLayout(false);
-            this.splitContainerTabType.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerTabType)).EndInit();
-            this.splitContainerTabType.ResumeLayout(false);
+            this.flowLayoutPanel31.ResumeLayout(false);
+            this.flowLayoutPanel31.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvragesTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1625,14 +1901,12 @@
         private System.Windows.Forms.TextBox dateEmpruntTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.TextBox dureeEmpruntTextBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
-        private System.Windows.Forms.TextBox numTypeTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
-        private System.Windows.Forms.TextBox numMembreTextBox;
+        private System.Windows.Forms.TextBox MembreTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
         private System.Windows.Forms.TextBox nomEntrepriseTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
-        private System.Windows.Forms.TextBox numSuperTextBox;
+        private System.Windows.Forms.TextBox SuperTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox idAuteurSuperTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel13;
@@ -1669,6 +1943,38 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTabAuteurSuperviseur;
         private System.Windows.Forms.SplitContainer splitContainerMembre;
         private System.Windows.Forms.SplitContainer splitContainerTabType;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel27;
+        private System.Windows.Forms.Label typeLabel;
+        private System.Windows.Forms.TextBox typeTextBox;
+        private BiblioEPFCDataSetTableAdapters.TypeOuvrageTableAdapter typeOuvrageTableAdapter1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel28;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBoxAuteursOuvrage;
+        private System.Windows.Forms.BindingSource auteursOuvrageBindingSource;
+        private BiblioEPFCDataSetTableAdapters.AuteursOuvrageTableAdapter auteursOuvrageTableAdapter;
+        private BiblioEPFCDataSetTableAdapters.MembreOuvrageTableAdapter membreOuvrageTableAdapter1;
+        private BiblioEPFCDataSetTableAdapters.SuperviseurOuvrageTableAdapter superviseurOuvrageTableAdapter1;
+        private System.Windows.Forms.ListBox listBoxOuvragesAuteur;
+        private System.Windows.Forms.BindingSource ouvragesAuteurBindingSource;
+        private BiblioEPFCDataSetTableAdapters.OuvragesAuteurTableAdapter ouvragesAuteurTableAdapter;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
+        private System.Windows.Forms.Label labelOuvragesAuteur;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel29;
+        private System.Windows.Forms.Label labelOuvragesEmpruntés;
+        private System.Windows.Forms.ListBox listBoxOuvragesEmpruntes;
+        private System.Windows.Forms.BindingSource empruntsMembreBindingSource;
+        private BiblioEPFCDataSetTableAdapters.EmpruntsMembreTableAdapter empruntsMembreTableAdapter;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel30;
+        private System.Windows.Forms.Label labelOuvragesRéservés;
+        private System.Windows.Forms.ListBox listBoxReservationsMembre;
+        private System.Windows.Forms.BindingSource reservationsMembreBindingSource;
+        private BiblioEPFCDataSet biblioEPFCDataSet1;
+        private BiblioEPFCDataSetTableAdapters.ReservationsMembreTableAdapter reservationsMembreTableAdapter;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel31;
+        private System.Windows.Forms.Label labelOuvragesType;
+        private System.Windows.Forms.ListBox listBoxOuvragesType;
+        private System.Windows.Forms.BindingSource ouvragesTypeBindingSource;
+        private BiblioEPFCDataSetTableAdapters.OuvragesTypeTableAdapter ouvragesTypeTableAdapter;
     }
 }
 

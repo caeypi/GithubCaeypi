@@ -102,5 +102,72 @@ namespace WindowsFormsApplication1
             membreDataGridView.Visible = false;
             typeDataGridView.Visible = true;
         }
+
+        private void idOuvrageTextBox_TextChanged(object sender, EventArgs e)
+        {
+            typeTextBox.Text = "";
+            MembreTextBox.Text = "";
+            MembreTextBox.Text = "";
+            listBoxAuteursOuvrage.Hide();
+            if (idOuvrageTextBox.Text != "")
+            {
+                int idOuvrage = Convert.ToInt32(idOuvrageTextBox.Text);
+                // affiche le type d'ouvrage en français
+                DataTable description = this.typeOuvrageTableAdapter1.GetDescriptionByOuvrage(idOuvrage);
+                if (description.Rows.Count != 0)
+                    typeTextBox.Text = description.Rows[0].ItemArray[0].ToString();
+                // affiche le nom et prenom du membre qui a emprunter l'ouvrage
+                DataTable membre = this.membreOuvrageTableAdapter1.GetNomPrenomMembreByIDOuvrage(idOuvrage);
+                if (membre.Rows.Count != 0)
+                    MembreTextBox.Text = membre.Rows[0].ItemArray[0].ToString();
+                // affiche le nom et prenom du superviseur de l'ouvrage
+                DataTable superviseur = this.superviseurOuvrageTableAdapter1.GetSuperviseurByIDOuvrage(idOuvrage);
+                if (superviseur.Rows.Count != 0)
+                    SuperTextBox.Text = superviseur.Rows[0].ItemArray[0].ToString();
+                // affiche les nom et prénoms des auteurs de l'ouvrage
+                listBoxAuteursOuvrage.Show();
+                this.auteursOuvrageTableAdapter.FillAuteursByOuvrage(this.biblioEPFCDataSet.AuteursOuvrage, idOuvrage);
+            }
+        }
+
+        private void idAuteurSuperTextBox_TextChanged(object sender, EventArgs e)
+        {
+            listBoxOuvragesAuteur.Hide();
+            if (idAuteurSuperTextBox.Text != "")
+            {
+                int idAuteurSuper = Convert.ToInt32(idAuteurSuperTextBox.Text);
+                //affiche les titres des ouvrages écrits par l'auteur
+                listBoxOuvragesAuteur.Show();
+                this.ouvragesAuteurTableAdapter.FillOuvragesByNumAuteur(this.biblioEPFCDataSet.OuvragesAuteur, idAuteurSuper);
+            }
+        }
+
+        private void idMembreTextBox_TextChanged(object sender, EventArgs e)
+        {
+            listBoxOuvragesEmpruntes.Hide();
+            listBoxReservationsMembre.Hide();
+            if (idMembreTextBox.Text != "")
+            {
+                int idMembre = Convert.ToInt32(idMembreTextBox.Text);
+                //affiche les titres des ouvrages empruntés par le membre
+                listBoxOuvragesEmpruntes.Show() ;
+                this.empruntsMembreTableAdapter.FillEmpruntsByIDMembre(this.biblioEPFCDataSet.EmpruntsMembre, idMembre);
+                // affiche les titres des ouvrages réservés par le membre
+                listBoxReservationsMembre.Show();
+                this.reservationsMembreTableAdapter.FillReservationsMembreByIDMembre(this.biblioEPFCDataSet.ReservationsMembre, idMembre);
+            }
+        }
+
+        private void idTypeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            listBoxOuvragesType.Hide();
+            if (idTypeTextBox.Text != "")
+            {
+                int idType = Convert.ToInt32(idTypeTextBox.Text);
+                // affiche les ouvrages du type
+                listBoxOuvragesType.Show();
+                this.ouvragesTypeTableAdapter.FillOuvragesByType(this.biblioEPFCDataSet.OuvragesType, idType);
+            }
+        }
     }
 }
