@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1
         private void FormAjoutOuvrage_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet1.SuperviseurAjoutOuvrage'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
-            this.superviseurAjoutOuvrageTableAdapter.Fill(this.biblioEPFCDataSet1.SuperviseurAjoutOuvrage);
+            this.superviseurAjoutOuvrageTableAdapter.Fill(this.biblioEPFCDataSet.SuperviseurAjoutOuvrage);
             // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet.TypeAjoutOuvrage'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
             this.typeAjoutOuvrageTableAdapter.Fill(this.biblioEPFCDataSet.TypeAjoutOuvrage);
             // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet.EntrepriseOuvrage'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
@@ -38,23 +38,22 @@ namespace WindowsFormsApplication1
             this.localisationOuvrageTableAdapter.Fill(this.biblioEPFCDataSet.LocalisationOuvrage);
             // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet.Ouvrage'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
             this.ouvrageTableAdapter.Fill(this.biblioEPFCDataSet.Ouvrage);
+            comboBoxLocalisation.Text = "";
+            comboBoxSection.Text = "";
+            comboBoxEntreprise.Text = "";
+            comboBoxType.Text = "";
+            comboBoxSuperviseur.Text = "";
 
         }
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
-
-            if (comboBoxLocalisation.Items.Contains(comboBoxLocalisation.Text))
+            if (comboBoxLocalisation.FindStringExact(comboBoxLocalisation.Text) != -1)
             {
                 comboBoxLocalisation.DroppedDown = true;
                 comboBoxLocalisation.DroppedDown = false;
             }
-            MessageBox.Show("" + comboBoxLocalisation.SelectedValue);
         }
 
-        private void comboBoxLocalisation_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

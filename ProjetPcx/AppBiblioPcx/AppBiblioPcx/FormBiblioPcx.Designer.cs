@@ -113,6 +113,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxAuteursOuvrage = new System.Windows.Forms.ListBox();
             this.auteursOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonAjoutOuvrage = new System.Windows.Forms.Button();
             this.tabAuteurSuperviseur = new System.Windows.Forms.TabPage();
             this.splitContainerAuteurSuperviseur = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanelTabAuteurSuperviseur = new System.Windows.Forms.FlowLayoutPanel();
@@ -155,7 +156,6 @@
             this.labelOuvragesRéservés = new System.Windows.Forms.Label();
             this.listBoxReservationsMembre = new System.Windows.Forms.ListBox();
             this.reservationsMembreBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.biblioEPFCDataSet1 = new WindowsFormsApplication1.BiblioEPFCDataSet();
             this.tabType = new System.Windows.Forms.TabPage();
             this.splitContainerTabType = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanelTabType = new System.Windows.Forms.FlowLayoutPanel();
@@ -182,7 +182,6 @@
             this.empruntsMembreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.EmpruntsMembreTableAdapter();
             this.reservationsMembreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.ReservationsMembreTableAdapter();
             this.ouvragesTypeTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvragesTypeTableAdapter();
-            this.buttonAjoutOuvrage = new System.Windows.Forms.Button();
             idOuvrageLabel = new System.Windows.Forms.Label();
             titreLabel = new System.Windows.Forms.Label();
             localisationLabel = new System.Windows.Forms.Label();
@@ -277,7 +276,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.empruntsMembreBindingSource)).BeginInit();
             this.flowLayoutPanel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationsMembreBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet1)).BeginInit();
             this.tabType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerTabType)).BeginInit();
             this.splitContainerTabType.Panel1.SuspendLayout();
@@ -1134,6 +1132,16 @@
             this.auteursOuvrageBindingSource.DataMember = "AuteursOuvrage";
             this.auteursOuvrageBindingSource.DataSource = this.biblioEPFCDataSet;
             // 
+            // buttonAjoutOuvrage
+            // 
+            this.buttonAjoutOuvrage.Location = new System.Drawing.Point(115, 28);
+            this.buttonAjoutOuvrage.Name = "buttonAjoutOuvrage";
+            this.buttonAjoutOuvrage.Size = new System.Drawing.Size(131, 23);
+            this.buttonAjoutOuvrage.TabIndex = 0;
+            this.buttonAjoutOuvrage.Text = "Ajouter Ouvrage";
+            this.buttonAjoutOuvrage.UseVisualStyleBackColor = true;
+            this.buttonAjoutOuvrage.Click += new System.EventHandler(this.buttonAjoutOuvrage_Click);
+            // 
             // tabAuteurSuperviseur
             // 
             this.tabAuteurSuperviseur.Controls.Add(this.splitContainerAuteurSuperviseur);
@@ -1530,16 +1538,6 @@
             this.listBoxReservationsMembre.TabIndex = 1;
             this.listBoxReservationsMembre.ValueMember = "idOuvrage";
             // 
-            // reservationsMembreBindingSource
-            // 
-            this.reservationsMembreBindingSource.DataMember = "ReservationsMembre";
-            this.reservationsMembreBindingSource.DataSource = this.biblioEPFCDataSet1;
-            // 
-            // biblioEPFCDataSet1
-            // 
-            this.biblioEPFCDataSet1.DataSetName = "BiblioEPFCDataSet";
-            this.biblioEPFCDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tabType
             // 
             this.tabType.Controls.Add(this.splitContainerTabType);
@@ -1678,6 +1676,7 @@
             this.tableAdapterManager.MembreTableAdapter = this.membreTableAdapter;
             this.tableAdapterManager.OuvrageTableAdapter = this.ouvrageTableAdapter;
             this.tableAdapterManager.reserverTableAdapter = null;
+            this.tableAdapterManager.SuperviseurAjoutOuvrageTableAdapter = null;
             this.tableAdapterManager.TypeTableAdapter = this.typeTableAdapter;
             this.tableAdapterManager.UpdateOrder = WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
@@ -1724,16 +1723,6 @@
             // ouvragesTypeTableAdapter
             // 
             this.ouvragesTypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // buttonAjoutOuvrage
-            // 
-            this.buttonAjoutOuvrage.Location = new System.Drawing.Point(115, 28);
-            this.buttonAjoutOuvrage.Name = "buttonAjoutOuvrage";
-            this.buttonAjoutOuvrage.Size = new System.Drawing.Size(131, 23);
-            this.buttonAjoutOuvrage.TabIndex = 0;
-            this.buttonAjoutOuvrage.Text = "Ajouter Ouvrage";
-            this.buttonAjoutOuvrage.UseVisualStyleBackColor = true;
-            this.buttonAjoutOuvrage.Click += new System.EventHandler(this.buttonAjoutOuvrage_Click);
             // 
             // FormBiblioPcx
             // 
@@ -1843,7 +1832,6 @@
             this.flowLayoutPanel30.ResumeLayout(false);
             this.flowLayoutPanel30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationsMembreBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet1)).EndInit();
             this.tabType.ResumeLayout(false);
             this.splitContainerTabType.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerTabType)).EndInit();
@@ -1985,7 +1973,6 @@
         private System.Windows.Forms.Label labelOuvragesRéservés;
         private System.Windows.Forms.ListBox listBoxReservationsMembre;
         private System.Windows.Forms.BindingSource reservationsMembreBindingSource;
-        private BiblioEPFCDataSet biblioEPFCDataSet1;
         private BiblioEPFCDataSetTableAdapters.ReservationsMembreTableAdapter reservationsMembreTableAdapter;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel31;
         private System.Windows.Forms.Label labelOuvragesType;

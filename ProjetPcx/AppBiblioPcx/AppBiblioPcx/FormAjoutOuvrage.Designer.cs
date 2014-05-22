@@ -34,6 +34,9 @@
             System.Windows.Forms.Label dateCreationLabel;
             System.Windows.Forms.Label sectionLabel;
             System.Windows.Forms.Label nomEntrepriseLabel;
+            this.comboBoxSuperviseur = new System.Windows.Forms.ComboBox();
+            this.superviseurAjoutOuvrageBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.biblioEPFCDataSet = new WindowsFormsApplication1.BiblioEPFCDataSet();
             this.splitContainerAjoutOuvrage = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,7 +44,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.comboBoxLocalisation = new System.Windows.Forms.ComboBox();
             this.localisationOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.biblioEPFCDataSet = new WindowsFormsApplication1.BiblioEPFCDataSet();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
@@ -56,13 +58,11 @@
             this.typeAjoutOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelSuper = new System.Windows.Forms.Label();
-            this.comboBoxSuperviseur = new System.Windows.Forms.ComboBox();
-            this.superviseurAjoutOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.biblioEPFCDataSet1 = new WindowsFormsApplication1.BiblioEPFCDataSet();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelAuteur = new System.Windows.Forms.Label();
             this.checkedListBoxAuteurs = new System.Windows.Forms.CheckedListBox();
             this.buttonAjouter = new System.Windows.Forms.Button();
+            this.superviseurAjoutOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ouvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvrageTableAdapter();
             this.tableAdapterManager = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager();
@@ -76,6 +76,8 @@
             dateCreationLabel = new System.Windows.Forms.Label();
             sectionLabel = new System.Windows.Forms.Label();
             nomEntrepriseLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAjoutOuvrage)).BeginInit();
             this.splitContainerAjoutOuvrage.Panel1.SuspendLayout();
             this.splitContainerAjoutOuvrage.Panel2.SuspendLayout();
@@ -84,7 +86,6 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.localisationOuvrageBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sectionOuvrageBindingSource)).BeginInit();
@@ -93,9 +94,8 @@
             this.flowLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeAjoutOuvrageBindingSource)).BeginInit();
             this.flowLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet1)).BeginInit();
             this.flowLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,6 +143,28 @@
             nomEntrepriseLabel.Size = new System.Drawing.Size(80, 13);
             nomEntrepriseLabel.TabIndex = 0;
             nomEntrepriseLabel.Text = "nom Entreprise:";
+            // 
+            // comboBoxSuperviseur
+            // 
+            this.comboBoxSuperviseur.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxSuperviseur.DataSource = this.superviseurAjoutOuvrageBindingSource1;
+            this.comboBoxSuperviseur.DisplayMember = "NomPrenom";
+            this.comboBoxSuperviseur.FormattingEnabled = true;
+            this.comboBoxSuperviseur.Location = new System.Drawing.Point(75, 3);
+            this.comboBoxSuperviseur.Name = "comboBoxSuperviseur";
+            this.comboBoxSuperviseur.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSuperviseur.TabIndex = 1;
+            this.comboBoxSuperviseur.ValueMember = "idAuteurSuper";
+            // 
+            // superviseurAjoutOuvrageBindingSource1
+            // 
+            this.superviseurAjoutOuvrageBindingSource1.DataMember = "SuperviseurAjoutOuvrage";
+            this.superviseurAjoutOuvrageBindingSource1.DataSource = this.biblioEPFCDataSet;
+            // 
+            // biblioEPFCDataSet
+            // 
+            this.biblioEPFCDataSet.DataSetName = "BiblioEPFCDataSet";
+            this.biblioEPFCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // splitContainerAjoutOuvrage
             // 
@@ -221,17 +243,11 @@
             this.comboBoxLocalisation.Size = new System.Drawing.Size(121, 21);
             this.comboBoxLocalisation.TabIndex = 1;
             this.comboBoxLocalisation.ValueMember = "localisation";
-            this.comboBoxLocalisation.SelectedIndexChanged += new System.EventHandler(this.comboBoxLocalisation_SelectedIndexChanged);
             // 
             // localisationOuvrageBindingSource
             // 
             this.localisationOuvrageBindingSource.DataMember = "LocalisationOuvrage";
             this.localisationOuvrageBindingSource.DataSource = this.biblioEPFCDataSet;
-            // 
-            // biblioEPFCDataSet
-            // 
-            this.biblioEPFCDataSet.DataSetName = "BiblioEPFCDataSet";
-            this.biblioEPFCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // flowLayoutPanel3
             // 
@@ -351,27 +367,6 @@
             this.labelSuper.TabIndex = 0;
             this.labelSuper.Text = "Superviseur:";
             // 
-            // comboBoxSuperviseur
-            // 
-            this.comboBoxSuperviseur.DataSource = this.superviseurAjoutOuvrageBindingSource;
-            this.comboBoxSuperviseur.DisplayMember = "NomPrenom";
-            this.comboBoxSuperviseur.FormattingEnabled = true;
-            this.comboBoxSuperviseur.Location = new System.Drawing.Point(75, 3);
-            this.comboBoxSuperviseur.Name = "comboBoxSuperviseur";
-            this.comboBoxSuperviseur.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSuperviseur.TabIndex = 1;
-            this.comboBoxSuperviseur.ValueMember = "idAuteurSuper";
-            // 
-            // superviseurAjoutOuvrageBindingSource
-            // 
-            this.superviseurAjoutOuvrageBindingSource.DataMember = "SuperviseurAjoutOuvrage";
-            this.superviseurAjoutOuvrageBindingSource.DataSource = this.biblioEPFCDataSet1;
-            // 
-            // biblioEPFCDataSet1
-            // 
-            this.biblioEPFCDataSet1.DataSetName = "BiblioEPFCDataSet";
-            this.biblioEPFCDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // flowLayoutPanel8
             // 
             this.flowLayoutPanel8.Controls.Add(this.labelAuteur);
@@ -458,6 +453,8 @@
             this.Name = "FormAjoutOuvrage";
             this.Text = "Ajout Ouvrage";
             this.Load += new System.EventHandler(this.FormAjoutOuvrage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).EndInit();
             this.splitContainerAjoutOuvrage.Panel1.ResumeLayout(false);
             this.splitContainerAjoutOuvrage.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAjoutOuvrage)).EndInit();
@@ -468,7 +465,6 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.localisationOuvrageBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
@@ -482,10 +478,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeAjoutOuvrageBindingSource)).EndInit();
             this.flowLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet1)).EndInit();
             this.flowLayoutPanel8.ResumeLayout(false);
             this.flowLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -514,7 +509,6 @@
         private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.Label labelSuper;
-        private System.Windows.Forms.ComboBox comboBoxSuperviseur;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.Label labelAuteur;
         private System.Windows.Forms.CheckedListBox checkedListBoxAuteurs;
@@ -527,8 +521,9 @@
         private BiblioEPFCDataSetTableAdapters.EntrepriseOuvrageTableAdapter entrepriseOuvrageTableAdapter;
         private System.Windows.Forms.BindingSource typeAjoutOuvrageBindingSource;
         private BiblioEPFCDataSetTableAdapters.TypeAjoutOuvrageTableAdapter typeAjoutOuvrageTableAdapter;
-        private BiblioEPFCDataSet biblioEPFCDataSet1;
         private System.Windows.Forms.BindingSource superviseurAjoutOuvrageBindingSource;
         private BiblioEPFCDataSetTableAdapters.SuperviseurAjoutOuvrageTableAdapter superviseurAjoutOuvrageTableAdapter;
+        private System.Windows.Forms.BindingSource superviseurAjoutOuvrageBindingSource1;
+        private System.Windows.Forms.ComboBox comboBoxSuperviseur;
     }
 }
