@@ -168,6 +168,7 @@
             this.flowLayoutPanel31 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelOuvragesType = new System.Windows.Forms.Label();
             this.listBoxOuvragesType = new System.Windows.Forms.ListBox();
+            this.ouvragesTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.auteurSuperviseurTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteurSuperviseurTableAdapter();
             this.tableAdapterManager = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager();
             this.membreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.MembreTableAdapter();
@@ -180,8 +181,8 @@
             this.ouvragesAuteurTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvragesAuteurTableAdapter();
             this.empruntsMembreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.EmpruntsMembreTableAdapter();
             this.reservationsMembreTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.ReservationsMembreTableAdapter();
-            this.ouvragesTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ouvragesTypeTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvragesTypeTableAdapter();
+            this.buttonAjoutOuvrage = new System.Windows.Forms.Button();
             idOuvrageLabel = new System.Windows.Forms.Label();
             titreLabel = new System.Windows.Forms.Label();
             localisationLabel = new System.Windows.Forms.Label();
@@ -232,6 +233,7 @@
             this.tabOuvrage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerOuvrage)).BeginInit();
             this.splitContainerOuvrage.Panel1.SuspendLayout();
+            this.splitContainerOuvrage.Panel2.SuspendLayout();
             this.splitContainerOuvrage.SuspendLayout();
             this.flowLayoutPanelTabOuvrage.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -865,6 +867,10 @@
             // splitContainerOuvrage.Panel1
             // 
             this.splitContainerOuvrage.Panel1.Controls.Add(this.flowLayoutPanelTabOuvrage);
+            // 
+            // splitContainerOuvrage.Panel2
+            // 
+            this.splitContainerOuvrage.Panel2.Controls.Add(this.buttonAjoutOuvrage);
             this.splitContainerOuvrage.Size = new System.Drawing.Size(759, 784);
             this.splitContainerOuvrage.SplitterDistance = 705;
             this.splitContainerOuvrage.TabIndex = 0;
@@ -1655,6 +1661,11 @@
             this.listBoxOuvragesType.TabIndex = 3;
             this.listBoxOuvragesType.ValueMember = "idOuvrage";
             // 
+            // ouvragesTypeBindingSource
+            // 
+            this.ouvragesTypeBindingSource.DataMember = "OuvragesType";
+            this.ouvragesTypeBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
             // auteurSuperviseurTableAdapter
             // 
             this.auteurSuperviseurTableAdapter.ClearBeforeFill = true;
@@ -1710,14 +1721,19 @@
             // 
             this.reservationsMembreTableAdapter.ClearBeforeFill = true;
             // 
-            // ouvragesTypeBindingSource
-            // 
-            this.ouvragesTypeBindingSource.DataMember = "OuvragesType";
-            this.ouvragesTypeBindingSource.DataSource = this.biblioEPFCDataSet;
-            // 
             // ouvragesTypeTableAdapter
             // 
             this.ouvragesTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // buttonAjoutOuvrage
+            // 
+            this.buttonAjoutOuvrage.Location = new System.Drawing.Point(115, 28);
+            this.buttonAjoutOuvrage.Name = "buttonAjoutOuvrage";
+            this.buttonAjoutOuvrage.Size = new System.Drawing.Size(131, 23);
+            this.buttonAjoutOuvrage.TabIndex = 0;
+            this.buttonAjoutOuvrage.Text = "Ajouter Ouvrage";
+            this.buttonAjoutOuvrage.UseVisualStyleBackColor = true;
+            this.buttonAjoutOuvrage.Click += new System.EventHandler(this.buttonAjoutOuvrage_Click);
             // 
             // FormBiblioPcx
             // 
@@ -1755,6 +1771,7 @@
             this.tabController.ResumeLayout(false);
             this.tabOuvrage.ResumeLayout(false);
             this.splitContainerOuvrage.Panel1.ResumeLayout(false);
+            this.splitContainerOuvrage.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerOuvrage)).EndInit();
             this.splitContainerOuvrage.ResumeLayout(false);
             this.flowLayoutPanelTabOuvrage.ResumeLayout(false);
@@ -1975,6 +1992,7 @@
         private System.Windows.Forms.ListBox listBoxOuvragesType;
         private System.Windows.Forms.BindingSource ouvragesTypeBindingSource;
         private BiblioEPFCDataSetTableAdapters.OuvragesTypeTableAdapter ouvragesTypeTableAdapter;
+        private System.Windows.Forms.Button buttonAjoutOuvrage;
     }
 }
 

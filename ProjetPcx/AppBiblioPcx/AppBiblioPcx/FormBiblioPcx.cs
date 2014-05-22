@@ -169,5 +169,13 @@ namespace WindowsFormsApplication1
                 this.ouvragesTypeTableAdapter.FillOuvragesByType(this.biblioEPFCDataSet.OuvragesType, idType);
             }
         }
+
+        private void buttonAjoutOuvrage_Click(object sender, EventArgs e)
+        {
+            FormAjoutOuvrage myForm = new FormAjoutOuvrage();
+            this.Hide();
+            myForm.ShowDialog();
+            this.Close();
+        }
     }
 }

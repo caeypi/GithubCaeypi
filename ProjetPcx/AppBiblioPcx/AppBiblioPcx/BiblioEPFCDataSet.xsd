@@ -597,6 +597,101 @@ WHERE        (Type.idType = @idType)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LocalisationOuvrageTableAdapter" GeneratorDataComponentClassName="LocalisationOuvrageTableAdapter" Name="LocalisationOuvrage" UserDataComponentName="LocalisationOuvrageTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioEPFCConnectionString (Settings)" DbObjectName="dbo.Ouvrage" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT localisation
+FROM            Ouvrage</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="localisation" DataSetColumn="localisation" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SectionOuvrageTableAdapter" GeneratorDataComponentClassName="SectionOuvrageTableAdapter" Name="SectionOuvrage" UserDataComponentName="SectionOuvrageTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioEPFCConnectionString (Settings)" DbObjectName="dbo.Ouvrage" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT section
+FROM            Ouvrage</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="section" DataSetColumn="section" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EntrepriseOuvrageTableAdapter" GeneratorDataComponentClassName="EntrepriseOuvrageTableAdapter" Name="EntrepriseOuvrage" UserDataComponentName="EntrepriseOuvrageTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioEPFCConnectionString (Settings)" DbObjectName="dbo.Ouvrage" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT nomEntreprise
+FROM            Ouvrage</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nomEntreprise" DataSetColumn="nomEntreprise" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TypeAjoutOuvrageTableAdapter" GeneratorDataComponentClassName="TypeAjoutOuvrageTableAdapter" Name="TypeAjoutOuvrage" UserDataComponentName="TypeAjoutOuvrageTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioEPFCConnectionString (Settings)" DbObjectName="dbo.Type" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT description, idType
+FROM            Type</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="idType" DataSetColumn="idType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SuperviseurAjoutOuvrageTableAdapter" GeneratorDataComponentClassName="SuperviseurAjoutOuvrageTableAdapter" Name="SuperviseurAjoutOuvrage" UserDataComponentName="SuperviseurAjoutOuvrageTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioEPFCConnectionString (Settings)" DbObjectName="dbo.AuteurSuperviseur" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [AuteurSuperviseur] WHERE (([idAuteurSuper] = @Original_idAuteurSuper))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idAuteurSuper" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idAuteurSuper" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idAuteurSuper, nom + ' ' + prenom AS NomPrenom
+FROM            AuteurSuperviseur</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idAuteurSuper" DataSetColumn="idAuteurSuper" />
+              <Mapping SourceColumn="NomPrenom" DataSetColumn="NomPrenom" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -605,7 +700,7 @@ WHERE        (Type.idType = @idType)</CommandText>
   <xs:element name="BiblioEPFCDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BiblioEPFCDataSet" msprop:Generator_UserDSName="BiblioEPFCDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="AuteurSuperviseur" msprop:Generator_TableClassName="AuteurSuperviseurDataTable" msprop:Generator_TableVarName="tableAuteurSuperviseur" msprop:Generator_TablePropName="AuteurSuperviseur" msprop:Generator_RowDeletingName="AuteurSuperviseurRowDeleting" msprop:Generator_RowChangingName="AuteurSuperviseurRowChanging" msprop:Generator_RowEvHandlerName="AuteurSuperviseurRowChangeEventHandler" msprop:Generator_RowDeletedName="AuteurSuperviseurRowDeleted" msprop:Generator_UserTableName="AuteurSuperviseur" msprop:Generator_RowChangedName="AuteurSuperviseurRowChanged" msprop:Generator_RowEvArgName="AuteurSuperviseurRowChangeEvent" msprop:Generator_RowClassName="AuteurSuperviseurRow">
+        <xs:element name="AuteurSuperviseur" msprop:Generator_TableClassName="AuteurSuperviseurDataTable" msprop:Generator_TableVarName="tableAuteurSuperviseur" msprop:Generator_RowChangedName="AuteurSuperviseurRowChanged" msprop:Generator_TablePropName="AuteurSuperviseur" msprop:Generator_RowDeletingName="AuteurSuperviseurRowDeleting" msprop:Generator_RowChangingName="AuteurSuperviseurRowChanging" msprop:Generator_RowEvHandlerName="AuteurSuperviseurRowChangeEventHandler" msprop:Generator_RowDeletedName="AuteurSuperviseurRowDeleted" msprop:Generator_RowClassName="AuteurSuperviseurRow" msprop:Generator_UserTableName="AuteurSuperviseur" msprop:Generator_RowEvArgName="AuteurSuperviseurRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idAuteurSuper" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidAuteurSuper" msprop:Generator_ColumnPropNameInRow="idAuteurSuper" msprop:Generator_ColumnPropNameInTable="idAuteurSuperColumn" msprop:Generator_UserColumnName="idAuteurSuper" type="xs:int" />
@@ -633,7 +728,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ecrire" msprop:Generator_TableClassName="ecrireDataTable" msprop:Generator_TableVarName="tableecrire" msprop:Generator_TablePropName="ecrire" msprop:Generator_RowDeletingName="ecrireRowDeleting" msprop:Generator_RowChangingName="ecrireRowChanging" msprop:Generator_RowEvHandlerName="ecrireRowChangeEventHandler" msprop:Generator_RowDeletedName="ecrireRowDeleted" msprop:Generator_UserTableName="ecrire" msprop:Generator_RowChangedName="ecrireRowChanged" msprop:Generator_RowEvArgName="ecrireRowChangeEvent" msprop:Generator_RowClassName="ecrireRow">
+        <xs:element name="ecrire" msprop:Generator_TableClassName="ecrireDataTable" msprop:Generator_TableVarName="tableecrire" msprop:Generator_RowChangedName="ecrireRowChanged" msprop:Generator_TablePropName="ecrire" msprop:Generator_RowDeletingName="ecrireRowDeleting" msprop:Generator_RowChangingName="ecrireRowChanging" msprop:Generator_RowEvHandlerName="ecrireRowChangeEventHandler" msprop:Generator_RowDeletedName="ecrireRowDeleted" msprop:Generator_RowClassName="ecrireRow" msprop:Generator_UserTableName="ecrire" msprop:Generator_RowEvArgName="ecrireRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="numAuteur" msprop:Generator_ColumnVarNameInTable="columnnumAuteur" msprop:Generator_ColumnPropNameInRow="numAuteur" msprop:Generator_ColumnPropNameInTable="numAuteurColumn" msprop:Generator_UserColumnName="numAuteur" type="xs:int" />
@@ -641,7 +736,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Membre" msprop:Generator_TableClassName="MembreDataTable" msprop:Generator_TableVarName="tableMembre" msprop:Generator_TablePropName="Membre" msprop:Generator_RowDeletingName="MembreRowDeleting" msprop:Generator_RowChangingName="MembreRowChanging" msprop:Generator_RowEvHandlerName="MembreRowChangeEventHandler" msprop:Generator_RowDeletedName="MembreRowDeleted" msprop:Generator_UserTableName="Membre" msprop:Generator_RowChangedName="MembreRowChanged" msprop:Generator_RowEvArgName="MembreRowChangeEvent" msprop:Generator_RowClassName="MembreRow">
+        <xs:element name="Membre" msprop:Generator_TableClassName="MembreDataTable" msprop:Generator_TableVarName="tableMembre" msprop:Generator_RowChangedName="MembreRowChanged" msprop:Generator_TablePropName="Membre" msprop:Generator_RowDeletingName="MembreRowDeleting" msprop:Generator_RowChangingName="MembreRowChanging" msprop:Generator_RowEvHandlerName="MembreRowChangeEventHandler" msprop:Generator_RowDeletedName="MembreRowDeleted" msprop:Generator_RowClassName="MembreRow" msprop:Generator_UserTableName="Membre" msprop:Generator_RowEvArgName="MembreRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idMembre" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidMembre" msprop:Generator_ColumnPropNameInRow="idMembre" msprop:Generator_ColumnPropNameInTable="idMembreColumn" msprop:Generator_UserColumnName="idMembre" type="xs:int" />
@@ -685,7 +780,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Ouvrage" msprop:Generator_TableClassName="OuvrageDataTable" msprop:Generator_TableVarName="tableOuvrage" msprop:Generator_TablePropName="Ouvrage" msprop:Generator_RowDeletingName="OuvrageRowDeleting" msprop:Generator_RowChangingName="OuvrageRowChanging" msprop:Generator_RowEvHandlerName="OuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="OuvrageRowDeleted" msprop:Generator_UserTableName="Ouvrage" msprop:Generator_RowChangedName="OuvrageRowChanged" msprop:Generator_RowEvArgName="OuvrageRowChangeEvent" msprop:Generator_RowClassName="OuvrageRow">
+        <xs:element name="Ouvrage" msprop:Generator_TableClassName="OuvrageDataTable" msprop:Generator_TableVarName="tableOuvrage" msprop:Generator_RowChangedName="OuvrageRowChanged" msprop:Generator_TablePropName="Ouvrage" msprop:Generator_RowDeletingName="OuvrageRowDeleting" msprop:Generator_RowChangingName="OuvrageRowChanging" msprop:Generator_RowEvHandlerName="OuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="OuvrageRowDeleted" msprop:Generator_RowClassName="OuvrageRow" msprop:Generator_UserTableName="Ouvrage" msprop:Generator_RowEvArgName="OuvrageRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idOuvrage" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidOuvrage" msprop:Generator_ColumnPropNameInRow="idOuvrage" msprop:Generator_ColumnPropNameInTable="idOuvrageColumn" msprop:Generator_UserColumnName="idOuvrage" type="xs:int" />
@@ -726,7 +821,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="reserver" msprop:Generator_TableClassName="reserverDataTable" msprop:Generator_TableVarName="tablereserver" msprop:Generator_TablePropName="reserver" msprop:Generator_RowDeletingName="reserverRowDeleting" msprop:Generator_RowChangingName="reserverRowChanging" msprop:Generator_RowEvHandlerName="reserverRowChangeEventHandler" msprop:Generator_RowDeletedName="reserverRowDeleted" msprop:Generator_UserTableName="reserver" msprop:Generator_RowChangedName="reserverRowChanged" msprop:Generator_RowEvArgName="reserverRowChangeEvent" msprop:Generator_RowClassName="reserverRow">
+        <xs:element name="reserver" msprop:Generator_TableClassName="reserverDataTable" msprop:Generator_TableVarName="tablereserver" msprop:Generator_RowChangedName="reserverRowChanged" msprop:Generator_TablePropName="reserver" msprop:Generator_RowDeletingName="reserverRowDeleting" msprop:Generator_RowChangingName="reserverRowChanging" msprop:Generator_RowEvHandlerName="reserverRowChangeEventHandler" msprop:Generator_RowDeletedName="reserverRowDeleted" msprop:Generator_RowClassName="reserverRow" msprop:Generator_UserTableName="reserver" msprop:Generator_RowEvArgName="reserverRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="numMembre" msprop:Generator_ColumnVarNameInTable="columnnumMembre" msprop:Generator_ColumnPropNameInRow="numMembre" msprop:Generator_ColumnPropNameInTable="numMembreColumn" msprop:Generator_UserColumnName="numMembre" type="xs:int" />
@@ -736,7 +831,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Type" msprop:Generator_TableClassName="TypeDataTable" msprop:Generator_TableVarName="tableType" msprop:Generator_TablePropName="Type" msprop:Generator_RowDeletingName="TypeRowDeleting" msprop:Generator_RowChangingName="TypeRowChanging" msprop:Generator_RowEvHandlerName="TypeRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeRowDeleted" msprop:Generator_UserTableName="Type" msprop:Generator_RowChangedName="TypeRowChanged" msprop:Generator_RowEvArgName="TypeRowChangeEvent" msprop:Generator_RowClassName="TypeRow">
+        <xs:element name="Type" msprop:Generator_TableClassName="TypeDataTable" msprop:Generator_TableVarName="tableType" msprop:Generator_RowChangedName="TypeRowChanged" msprop:Generator_TablePropName="Type" msprop:Generator_RowDeletingName="TypeRowDeleting" msprop:Generator_RowChangingName="TypeRowChanging" msprop:Generator_RowEvHandlerName="TypeRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeRowDeleted" msprop:Generator_RowClassName="TypeRow" msprop:Generator_UserTableName="Type" msprop:Generator_RowEvArgName="TypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idType" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidType" msprop:Generator_ColumnPropNameInRow="idType" msprop:Generator_ColumnPropNameInTable="idTypeColumn" msprop:Generator_UserColumnName="idType" type="xs:int" />
@@ -757,7 +852,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TypeOuvrage" msprop:Generator_TableClassName="TypeOuvrageDataTable" msprop:Generator_TableVarName="tableTypeOuvrage" msprop:Generator_RowChangedName="TypeOuvrageRowChanged" msprop:Generator_TablePropName="TypeOuvrage" msprop:Generator_RowDeletingName="TypeOuvrageRowDeleting" msprop:Generator_RowChangingName="TypeOuvrageRowChanging" msprop:Generator_RowEvHandlerName="TypeOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeOuvrageRowDeleted" msprop:Generator_RowClassName="TypeOuvrageRow" msprop:Generator_UserTableName="TypeOuvrage" msprop:Generator_RowEvArgName="TypeOuvrageRowChangeEvent">
+        <xs:element name="TypeOuvrage" msprop:Generator_TableClassName="TypeOuvrageDataTable" msprop:Generator_TableVarName="tableTypeOuvrage" msprop:Generator_TablePropName="TypeOuvrage" msprop:Generator_RowDeletingName="TypeOuvrageRowDeleting" msprop:Generator_RowChangingName="TypeOuvrageRowChanging" msprop:Generator_RowEvHandlerName="TypeOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeOuvrageRowDeleted" msprop:Generator_UserTableName="TypeOuvrage" msprop:Generator_RowChangedName="TypeOuvrageRowChanged" msprop:Generator_RowEvArgName="TypeOuvrageRowChangeEvent" msprop:Generator_RowClassName="TypeOuvrageRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description">
@@ -770,7 +865,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AuteursOuvrage" msprop:Generator_TableClassName="AuteursOuvrageDataTable" msprop:Generator_TableVarName="tableAuteursOuvrage" msprop:Generator_RowChangedName="AuteursOuvrageRowChanged" msprop:Generator_TablePropName="AuteursOuvrage" msprop:Generator_RowDeletingName="AuteursOuvrageRowDeleting" msprop:Generator_RowChangingName="AuteursOuvrageRowChanging" msprop:Generator_RowEvHandlerName="AuteursOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="AuteursOuvrageRowDeleted" msprop:Generator_RowClassName="AuteursOuvrageRow" msprop:Generator_UserTableName="AuteursOuvrage" msprop:Generator_RowEvArgName="AuteursOuvrageRowChangeEvent">
+        <xs:element name="AuteursOuvrage" msprop:Generator_TableClassName="AuteursOuvrageDataTable" msprop:Generator_TableVarName="tableAuteursOuvrage" msprop:Generator_TablePropName="AuteursOuvrage" msprop:Generator_RowDeletingName="AuteursOuvrageRowDeleting" msprop:Generator_RowChangingName="AuteursOuvrageRowChanging" msprop:Generator_RowEvHandlerName="AuteursOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="AuteursOuvrageRowDeleted" msprop:Generator_UserTableName="AuteursOuvrage" msprop:Generator_RowChangedName="AuteursOuvrageRowChanged" msprop:Generator_RowEvArgName="AuteursOuvrageRowChangeEvent" msprop:Generator_RowClassName="AuteursOuvrageRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NomPrenom" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNomPrenom" msprop:Generator_ColumnPropNameInRow="NomPrenom" msprop:Generator_ColumnPropNameInTable="NomPrenomColumn" msprop:Generator_UserColumnName="NomPrenom" minOccurs="0">
@@ -784,7 +879,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MembreOuvrage" msprop:Generator_TableClassName="MembreOuvrageDataTable" msprop:Generator_TableVarName="tableMembreOuvrage" msprop:Generator_TablePropName="MembreOuvrage" msprop:Generator_RowDeletingName="MembreOuvrageRowDeleting" msprop:Generator_RowChangingName="MembreOuvrageRowChanging" msprop:Generator_RowEvHandlerName="MembreOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="MembreOuvrageRowDeleted" msprop:Generator_UserTableName="MembreOuvrage" msprop:Generator_RowChangedName="MembreOuvrageRowChanged" msprop:Generator_RowEvArgName="MembreOuvrageRowChangeEvent" msprop:Generator_RowClassName="MembreOuvrageRow">
+        <xs:element name="MembreOuvrage" msprop:Generator_TableClassName="MembreOuvrageDataTable" msprop:Generator_TableVarName="tableMembreOuvrage" msprop:Generator_RowChangedName="MembreOuvrageRowChanged" msprop:Generator_TablePropName="MembreOuvrage" msprop:Generator_RowDeletingName="MembreOuvrageRowDeleting" msprop:Generator_RowChangingName="MembreOuvrageRowChanging" msprop:Generator_RowEvHandlerName="MembreOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="MembreOuvrageRowDeleted" msprop:Generator_RowClassName="MembreOuvrageRow" msprop:Generator_UserTableName="MembreOuvrage" msprop:Generator_RowEvArgName="MembreOuvrageRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NomPrenom" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNomPrenom" msprop:Generator_ColumnPropNameInRow="NomPrenom" msprop:Generator_ColumnPropNameInTable="NomPrenomColumn" msprop:Generator_UserColumnName="NomPrenom" minOccurs="0">
@@ -797,7 +892,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SuperviseurOuvrage" msprop:Generator_TableClassName="SuperviseurOuvrageDataTable" msprop:Generator_TableVarName="tableSuperviseurOuvrage" msprop:Generator_TablePropName="SuperviseurOuvrage" msprop:Generator_RowDeletingName="SuperviseurOuvrageRowDeleting" msprop:Generator_RowChangingName="SuperviseurOuvrageRowChanging" msprop:Generator_RowEvHandlerName="SuperviseurOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="SuperviseurOuvrageRowDeleted" msprop:Generator_UserTableName="SuperviseurOuvrage" msprop:Generator_RowChangedName="SuperviseurOuvrageRowChanged" msprop:Generator_RowEvArgName="SuperviseurOuvrageRowChangeEvent" msprop:Generator_RowClassName="SuperviseurOuvrageRow">
+        <xs:element name="SuperviseurOuvrage" msprop:Generator_TableClassName="SuperviseurOuvrageDataTable" msprop:Generator_TableVarName="tableSuperviseurOuvrage" msprop:Generator_RowChangedName="SuperviseurOuvrageRowChanged" msprop:Generator_TablePropName="SuperviseurOuvrage" msprop:Generator_RowDeletingName="SuperviseurOuvrageRowDeleting" msprop:Generator_RowChangingName="SuperviseurOuvrageRowChanging" msprop:Generator_RowEvHandlerName="SuperviseurOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="SuperviseurOuvrageRowDeleted" msprop:Generator_RowClassName="SuperviseurOuvrageRow" msprop:Generator_UserTableName="SuperviseurOuvrage" msprop:Generator_RowEvArgName="SuperviseurOuvrageRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NomPrenom" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNomPrenom" msprop:Generator_ColumnPropNameInRow="NomPrenom" msprop:Generator_ColumnPropNameInTable="NomPrenomColumn" msprop:Generator_UserColumnName="NomPrenom" minOccurs="0">
@@ -810,7 +905,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OuvragesAuteur" msprop:Generator_TableClassName="OuvragesAuteurDataTable" msprop:Generator_TableVarName="tableOuvragesAuteur" msprop:Generator_TablePropName="OuvragesAuteur" msprop:Generator_RowDeletingName="OuvragesAuteurRowDeleting" msprop:Generator_RowChangingName="OuvragesAuteurRowChanging" msprop:Generator_RowEvHandlerName="OuvragesAuteurRowChangeEventHandler" msprop:Generator_RowDeletedName="OuvragesAuteurRowDeleted" msprop:Generator_UserTableName="OuvragesAuteur" msprop:Generator_RowChangedName="OuvragesAuteurRowChanged" msprop:Generator_RowEvArgName="OuvragesAuteurRowChangeEvent" msprop:Generator_RowClassName="OuvragesAuteurRow">
+        <xs:element name="OuvragesAuteur" msprop:Generator_TableClassName="OuvragesAuteurDataTable" msprop:Generator_TableVarName="tableOuvragesAuteur" msprop:Generator_RowChangedName="OuvragesAuteurRowChanged" msprop:Generator_TablePropName="OuvragesAuteur" msprop:Generator_RowDeletingName="OuvragesAuteurRowDeleting" msprop:Generator_RowChangingName="OuvragesAuteurRowChanging" msprop:Generator_RowEvHandlerName="OuvragesAuteurRowChangeEventHandler" msprop:Generator_RowDeletedName="OuvragesAuteurRowDeleted" msprop:Generator_RowClassName="OuvragesAuteurRow" msprop:Generator_UserTableName="OuvragesAuteur" msprop:Generator_RowEvArgName="OuvragesAuteurRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="titre" msprop:Generator_ColumnVarNameInTable="columntitre" msprop:Generator_ColumnPropNameInRow="titre" msprop:Generator_ColumnPropNameInTable="titreColumn" msprop:Generator_UserColumnName="titre">
@@ -824,7 +919,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="EmpruntsMembre" msprop:Generator_TableClassName="EmpruntsMembreDataTable" msprop:Generator_TableVarName="tableEmpruntsMembre" msprop:Generator_TablePropName="EmpruntsMembre" msprop:Generator_RowDeletingName="EmpruntsMembreRowDeleting" msprop:Generator_RowChangingName="EmpruntsMembreRowChanging" msprop:Generator_RowEvHandlerName="EmpruntsMembreRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpruntsMembreRowDeleted" msprop:Generator_UserTableName="EmpruntsMembre" msprop:Generator_RowChangedName="EmpruntsMembreRowChanged" msprop:Generator_RowEvArgName="EmpruntsMembreRowChangeEvent" msprop:Generator_RowClassName="EmpruntsMembreRow">
+        <xs:element name="EmpruntsMembre" msprop:Generator_TableClassName="EmpruntsMembreDataTable" msprop:Generator_TableVarName="tableEmpruntsMembre" msprop:Generator_RowChangedName="EmpruntsMembreRowChanged" msprop:Generator_TablePropName="EmpruntsMembre" msprop:Generator_RowDeletingName="EmpruntsMembreRowDeleting" msprop:Generator_RowChangingName="EmpruntsMembreRowChanging" msprop:Generator_RowEvHandlerName="EmpruntsMembreRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpruntsMembreRowDeleted" msprop:Generator_RowClassName="EmpruntsMembreRow" msprop:Generator_UserTableName="EmpruntsMembre" msprop:Generator_RowEvArgName="EmpruntsMembreRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="titre" msprop:Generator_ColumnVarNameInTable="columntitre" msprop:Generator_ColumnPropNameInRow="titre" msprop:Generator_ColumnPropNameInTable="titreColumn" msprop:Generator_UserColumnName="titre">
@@ -838,7 +933,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ReservationsMembre" msprop:Generator_TableClassName="ReservationsMembreDataTable" msprop:Generator_TableVarName="tableReservationsMembre" msprop:Generator_TablePropName="ReservationsMembre" msprop:Generator_RowDeletingName="ReservationsMembreRowDeleting" msprop:Generator_RowChangingName="ReservationsMembreRowChanging" msprop:Generator_RowEvHandlerName="ReservationsMembreRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservationsMembreRowDeleted" msprop:Generator_UserTableName="ReservationsMembre" msprop:Generator_RowChangedName="ReservationsMembreRowChanged" msprop:Generator_RowEvArgName="ReservationsMembreRowChangeEvent" msprop:Generator_RowClassName="ReservationsMembreRow">
+        <xs:element name="ReservationsMembre" msprop:Generator_TableClassName="ReservationsMembreDataTable" msprop:Generator_TableVarName="tableReservationsMembre" msprop:Generator_RowChangedName="ReservationsMembreRowChanged" msprop:Generator_TablePropName="ReservationsMembre" msprop:Generator_RowDeletingName="ReservationsMembreRowDeleting" msprop:Generator_RowChangingName="ReservationsMembreRowChanging" msprop:Generator_RowEvHandlerName="ReservationsMembreRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservationsMembreRowDeleted" msprop:Generator_RowClassName="ReservationsMembreRow" msprop:Generator_UserTableName="ReservationsMembre" msprop:Generator_RowEvArgName="ReservationsMembreRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="titre" msprop:Generator_ColumnVarNameInTable="columntitre" msprop:Generator_ColumnPropNameInRow="titre" msprop:Generator_ColumnPropNameInTable="titreColumn" msprop:Generator_UserColumnName="titre">
@@ -852,7 +947,7 @@ WHERE        (Type.idType = @idType)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OuvragesType" msprop:Generator_TableClassName="OuvragesTypeDataTable" msprop:Generator_TableVarName="tableOuvragesType" msprop:Generator_TablePropName="OuvragesType" msprop:Generator_RowDeletingName="OuvragesTypeRowDeleting" msprop:Generator_RowChangingName="OuvragesTypeRowChanging" msprop:Generator_RowEvHandlerName="OuvragesTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="OuvragesTypeRowDeleted" msprop:Generator_UserTableName="OuvragesType" msprop:Generator_RowChangedName="OuvragesTypeRowChanged" msprop:Generator_RowEvArgName="OuvragesTypeRowChangeEvent" msprop:Generator_RowClassName="OuvragesTypeRow">
+        <xs:element name="OuvragesType" msprop:Generator_TableClassName="OuvragesTypeDataTable" msprop:Generator_TableVarName="tableOuvragesType" msprop:Generator_RowChangedName="OuvragesTypeRowChanged" msprop:Generator_TablePropName="OuvragesType" msprop:Generator_RowDeletingName="OuvragesTypeRowDeleting" msprop:Generator_RowChangingName="OuvragesTypeRowChanging" msprop:Generator_RowEvHandlerName="OuvragesTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="OuvragesTypeRowDeleted" msprop:Generator_RowClassName="OuvragesTypeRow" msprop:Generator_UserTableName="OuvragesType" msprop:Generator_RowEvArgName="OuvragesTypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idOuvrage" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidOuvrage" msprop:Generator_ColumnPropNameInRow="idOuvrage" msprop:Generator_ColumnPropNameInTable="idOuvrageColumn" msprop:Generator_UserColumnName="idOuvrage" type="xs:int" />
@@ -860,6 +955,73 @@ WHERE        (Type.idType = @idType)</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LocalisationOuvrage" msprop:Generator_TableClassName="LocalisationOuvrageDataTable" msprop:Generator_TableVarName="tableLocalisationOuvrage" msprop:Generator_TablePropName="LocalisationOuvrage" msprop:Generator_RowDeletingName="LocalisationOuvrageRowDeleting" msprop:Generator_RowChangingName="LocalisationOuvrageRowChanging" msprop:Generator_RowEvHandlerName="LocalisationOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="LocalisationOuvrageRowDeleted" msprop:Generator_UserTableName="LocalisationOuvrage" msprop:Generator_RowChangedName="LocalisationOuvrageRowChanged" msprop:Generator_RowEvArgName="LocalisationOuvrageRowChangeEvent" msprop:Generator_RowClassName="LocalisationOuvrageRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="localisation" msprop:Generator_ColumnVarNameInTable="columnlocalisation" msprop:Generator_ColumnPropNameInRow="localisation" msprop:Generator_ColumnPropNameInTable="localisationColumn" msprop:Generator_UserColumnName="localisation">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SectionOuvrage" msprop:Generator_TableClassName="SectionOuvrageDataTable" msprop:Generator_TableVarName="tableSectionOuvrage" msprop:Generator_TablePropName="SectionOuvrage" msprop:Generator_RowDeletingName="SectionOuvrageRowDeleting" msprop:Generator_RowChangingName="SectionOuvrageRowChanging" msprop:Generator_RowEvHandlerName="SectionOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="SectionOuvrageRowDeleted" msprop:Generator_UserTableName="SectionOuvrage" msprop:Generator_RowChangedName="SectionOuvrageRowChanged" msprop:Generator_RowEvArgName="SectionOuvrageRowChangeEvent" msprop:Generator_RowClassName="SectionOuvrageRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="section" msprop:Generator_ColumnVarNameInTable="columnsection" msprop:Generator_ColumnPropNameInRow="section" msprop:Generator_ColumnPropNameInTable="sectionColumn" msprop:Generator_UserColumnName="section">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EntrepriseOuvrage" msprop:Generator_TableClassName="EntrepriseOuvrageDataTable" msprop:Generator_TableVarName="tableEntrepriseOuvrage" msprop:Generator_TablePropName="EntrepriseOuvrage" msprop:Generator_RowDeletingName="EntrepriseOuvrageRowDeleting" msprop:Generator_RowChangingName="EntrepriseOuvrageRowChanging" msprop:Generator_RowEvHandlerName="EntrepriseOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="EntrepriseOuvrageRowDeleted" msprop:Generator_UserTableName="EntrepriseOuvrage" msprop:Generator_RowChangedName="EntrepriseOuvrageRowChanged" msprop:Generator_RowEvArgName="EntrepriseOuvrageRowChangeEvent" msprop:Generator_RowClassName="EntrepriseOuvrageRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nomEntreprise" msprop:Generator_ColumnVarNameInTable="columnnomEntreprise" msprop:Generator_ColumnPropNameInRow="nomEntreprise" msprop:Generator_ColumnPropNameInTable="nomEntrepriseColumn" msprop:Generator_UserColumnName="nomEntreprise" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TypeAjoutOuvrage" msprop:Generator_TableClassName="TypeAjoutOuvrageDataTable" msprop:Generator_TableVarName="tableTypeAjoutOuvrage" msprop:Generator_TablePropName="TypeAjoutOuvrage" msprop:Generator_RowDeletingName="TypeAjoutOuvrageRowDeleting" msprop:Generator_RowChangingName="TypeAjoutOuvrageRowChanging" msprop:Generator_RowEvHandlerName="TypeAjoutOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeAjoutOuvrageRowDeleted" msprop:Generator_UserTableName="TypeAjoutOuvrage" msprop:Generator_RowChangedName="TypeAjoutOuvrageRowChanged" msprop:Generator_RowEvArgName="TypeAjoutOuvrageRowChangeEvent" msprop:Generator_RowClassName="TypeAjoutOuvrageRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idType" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidType" msprop:Generator_ColumnPropNameInRow="idType" msprop:Generator_ColumnPropNameInTable="idTypeColumn" msprop:Generator_UserColumnName="idType" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SuperviseurAjoutOuvrage" msprop:Generator_TableClassName="SuperviseurAjoutOuvrageDataTable" msprop:Generator_TableVarName="tableSuperviseurAjoutOuvrage" msprop:Generator_TablePropName="SuperviseurAjoutOuvrage" msprop:Generator_RowDeletingName="SuperviseurAjoutOuvrageRowDeleting" msprop:Generator_RowChangingName="SuperviseurAjoutOuvrageRowChanging" msprop:Generator_RowEvHandlerName="SuperviseurAjoutOuvrageRowChangeEventHandler" msprop:Generator_RowDeletedName="SuperviseurAjoutOuvrageRowDeleted" msprop:Generator_UserTableName="SuperviseurAjoutOuvrage" msprop:Generator_RowChangedName="SuperviseurAjoutOuvrageRowChanged" msprop:Generator_RowEvArgName="SuperviseurAjoutOuvrageRowChangeEvent" msprop:Generator_RowClassName="SuperviseurAjoutOuvrageRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idAuteurSuper" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidAuteurSuper" msprop:Generator_ColumnPropNameInRow="idAuteurSuper" msprop:Generator_ColumnPropNameInTable="idAuteurSuperColumn" msprop:Generator_UserColumnName="idAuteurSuper" type="xs:int" />
+              <xs:element name="NomPrenom" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNomPrenom" msprop:Generator_ColumnPropNameInRow="NomPrenom" msprop:Generator_ColumnPropNameInTable="NomPrenomColumn" msprop:Generator_UserColumnName="NomPrenom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -914,26 +1076,37 @@ WHERE        (Type.idType = @idType)</CommandText>
       <xs:selector xpath=".//mstns:OuvragesType" />
       <xs:field xpath="mstns:idOuvrage" />
     </xs:unique>
+    <xs:unique name="TypeAjoutOuvrage_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TypeAjoutOuvrage" />
+      <xs:field xpath="mstns:idType" />
+    </xs:unique>
+    <xs:unique name="SuperviseurAjoutOuvrage_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SuperviseurAjoutOuvrage" />
+      <xs:field xpath="mstns:idAuteurSuper" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_ecrire_AuteurSuperviseur" msdata:parent="AuteurSuperviseur" msdata:child="ecrire" msdata:parentkey="idAuteurSuper" msdata:childkey="numAuteur" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_AuteurSuperviseur" msprop:Generator_ParentPropName="AuteurSuperviseurRow" msprop:Generator_RelationVarName="relationFK_ecrire_AuteurSuperviseur" msprop:Generator_UserParentTable="AuteurSuperviseur" />
-      <msdata:Relationship name="FK_ecrire_Ouvrage" msdata:parent="Ouvrage" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage" msprop:Generator_UserParentTable="Ouvrage" msprop:Generator_ParentPropName="OuvrageRow" />
-      <msdata:Relationship name="FK_Ouvrage_AuteurSuperviseur" msdata:parent="AuteurSuperviseur" msdata:child="Ouvrage" msdata:parentkey="idAuteurSuper" msdata:childkey="numSuper" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_AuteurSuperviseur" msprop:Generator_ParentPropName="AuteurSuperviseurRow" msprop:Generator_RelationVarName="relationFK_Ouvrage_AuteurSuperviseur" msprop:Generator_UserParentTable="AuteurSuperviseur" />
-      <msdata:Relationship name="FK_Ouvrage_Membre" msdata:parent="Membre" msdata:child="Ouvrage" msdata:parentkey="idMembre" msdata:childkey="numMembre" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_Membre" msprop:Generator_ParentPropName="MembreRow" msprop:Generator_RelationVarName="relationFK_Ouvrage_Membre" msprop:Generator_UserParentTable="Membre" />
-      <msdata:Relationship name="FK_Ouvrage_Type" msdata:parent="Type" msdata:child="Ouvrage" msdata:parentkey="idType" msdata:childkey="numType" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_Type" msprop:Generator_RelationVarName="relationFK_Ouvrage_Type" msprop:Generator_UserParentTable="Type" msprop:Generator_ParentPropName="TypeRow" />
-      <msdata:Relationship name="FK_reserver_Membre" msdata:parent="Membre" msdata:child="reserver" msdata:parentkey="idMembre" msdata:childkey="numMembre" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Membre" msprop:Generator_ParentPropName="MembreRow" msprop:Generator_RelationVarName="relationFK_reserver_Membre" msprop:Generator_UserParentTable="Membre" />
-      <msdata:Relationship name="FK_reserver_Ouvrage" msdata:parent="Ouvrage" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage" msprop:Generator_ParentPropName="OuvrageRow" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage" msprop:Generator_UserParentTable="Ouvrage" />
-      <msdata:Relationship name="FK_ecrire_AuteurSuperviseur1" msdata:parent="AuteursOuvrage" msdata:child="ecrire" msdata:parentkey="idAuteurSuper" msdata:childkey="numAuteur" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_AuteurSuperviseur1" msprop:Generator_ParentPropName="AuteursOuvrageRow" msprop:Generator_RelationVarName="relationFK_ecrire_AuteurSuperviseur1" msprop:Generator_UserParentTable="AuteursOuvrage" />
-      <msdata:Relationship name="FK_Ouvrage_AuteurSuperviseur1" msdata:parent="AuteursOuvrage" msdata:child="Ouvrage" msdata:parentkey="idAuteurSuper" msdata:childkey="numSuper" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_AuteurSuperviseur1" msprop:Generator_ParentPropName="AuteursOuvrageRow" msprop:Generator_RelationVarName="relationFK_Ouvrage_AuteurSuperviseur1" msprop:Generator_UserParentTable="AuteursOuvrage" />
-      <msdata:Relationship name="FK_ecrire_Ouvrage1" msdata:parent="OuvragesAuteur" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage1" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage1" msprop:Generator_UserParentTable="OuvragesAuteur" msprop:Generator_ParentPropName="OuvragesAuteurRow" />
-      <msdata:Relationship name="FK_reserver_Ouvrage1" msdata:parent="OuvragesAuteur" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage1" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage1" msprop:Generator_UserParentTable="OuvragesAuteur" msprop:Generator_ParentPropName="OuvragesAuteurRow" />
-      <msdata:Relationship name="FK_ecrire_Ouvrage2" msdata:parent="EmpruntsMembre" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage2" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage2" msprop:Generator_UserParentTable="EmpruntsMembre" msprop:Generator_ParentPropName="EmpruntsMembreRow" />
-      <msdata:Relationship name="FK_reserver_Ouvrage2" msdata:parent="EmpruntsMembre" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage2" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage2" msprop:Generator_UserParentTable="EmpruntsMembre" msprop:Generator_ParentPropName="EmpruntsMembreRow" />
-      <msdata:Relationship name="FK_ecrire_Ouvrage3" msdata:parent="ReservationsMembre" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage3" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage3" msprop:Generator_UserParentTable="ReservationsMembre" msprop:Generator_ParentPropName="ReservationsMembreRow" />
-      <msdata:Relationship name="FK_reserver_Ouvrage3" msdata:parent="ReservationsMembre" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage3" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage3" msprop:Generator_UserParentTable="ReservationsMembre" msprop:Generator_ParentPropName="ReservationsMembreRow" />
-      <msdata:Relationship name="FK_ecrire_Ouvrage4" msdata:parent="OuvragesType" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage4" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage4" msprop:Generator_UserParentTable="OuvragesType" msprop:Generator_ParentPropName="OuvragesTypeRow" />
-      <msdata:Relationship name="FK_reserver_Ouvrage4" msdata:parent="OuvragesType" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage4" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage4" msprop:Generator_UserParentTable="OuvragesType" msprop:Generator_ParentPropName="OuvragesTypeRow" />
+      <msdata:Relationship name="FK_ecrire_AuteurSuperviseur" msdata:parent="AuteurSuperviseur" msdata:child="ecrire" msdata:parentkey="idAuteurSuper" msdata:childkey="numAuteur" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_AuteurSuperviseur" msprop:Generator_RelationVarName="relationFK_ecrire_AuteurSuperviseur" msprop:Generator_UserParentTable="AuteurSuperviseur" msprop:Generator_ParentPropName="AuteurSuperviseurRow" />
+      <msdata:Relationship name="FK_ecrire_Ouvrage" msdata:parent="Ouvrage" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage" msprop:Generator_ParentPropName="OuvrageRow" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage" msprop:Generator_UserParentTable="Ouvrage" />
+      <msdata:Relationship name="FK_Ouvrage_AuteurSuperviseur" msdata:parent="AuteurSuperviseur" msdata:child="Ouvrage" msdata:parentkey="idAuteurSuper" msdata:childkey="numSuper" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_AuteurSuperviseur" msprop:Generator_RelationVarName="relationFK_Ouvrage_AuteurSuperviseur" msprop:Generator_UserParentTable="AuteurSuperviseur" msprop:Generator_ParentPropName="AuteurSuperviseurRow" />
+      <msdata:Relationship name="FK_Ouvrage_Membre" msdata:parent="Membre" msdata:child="Ouvrage" msdata:parentkey="idMembre" msdata:childkey="numMembre" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_Membre" msprop:Generator_RelationVarName="relationFK_Ouvrage_Membre" msprop:Generator_UserParentTable="Membre" msprop:Generator_ParentPropName="MembreRow" />
+      <msdata:Relationship name="FK_Ouvrage_Type" msdata:parent="Type" msdata:child="Ouvrage" msdata:parentkey="idType" msdata:childkey="numType" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_Type" msprop:Generator_ParentPropName="TypeRow" msprop:Generator_RelationVarName="relationFK_Ouvrage_Type" msprop:Generator_UserParentTable="Type" />
+      <msdata:Relationship name="FK_reserver_Membre" msdata:parent="Membre" msdata:child="reserver" msdata:parentkey="idMembre" msdata:childkey="numMembre" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Membre" msprop:Generator_RelationVarName="relationFK_reserver_Membre" msprop:Generator_UserParentTable="Membre" msprop:Generator_ParentPropName="MembreRow" />
+      <msdata:Relationship name="FK_reserver_Ouvrage" msdata:parent="Ouvrage" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage" msprop:Generator_UserParentTable="Ouvrage" msprop:Generator_ParentPropName="OuvrageRow" />
+      <msdata:Relationship name="FK_ecrire_AuteurSuperviseur1" msdata:parent="AuteursOuvrage" msdata:child="ecrire" msdata:parentkey="idAuteurSuper" msdata:childkey="numAuteur" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_AuteurSuperviseur1" msprop:Generator_RelationVarName="relationFK_ecrire_AuteurSuperviseur1" msprop:Generator_UserParentTable="AuteursOuvrage" msprop:Generator_ParentPropName="AuteursOuvrageRow" />
+      <msdata:Relationship name="FK_Ouvrage_AuteurSuperviseur1" msdata:parent="AuteursOuvrage" msdata:child="Ouvrage" msdata:parentkey="idAuteurSuper" msdata:childkey="numSuper" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_AuteurSuperviseur1" msprop:Generator_RelationVarName="relationFK_Ouvrage_AuteurSuperviseur1" msprop:Generator_UserParentTable="AuteursOuvrage" msprop:Generator_ParentPropName="AuteursOuvrageRow" />
+      <msdata:Relationship name="FK_ecrire_Ouvrage1" msdata:parent="OuvragesAuteur" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage1" msprop:Generator_ParentPropName="OuvragesAuteurRow" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage1" msprop:Generator_UserParentTable="OuvragesAuteur" />
+      <msdata:Relationship name="FK_reserver_Ouvrage1" msdata:parent="OuvragesAuteur" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage1" msprop:Generator_ParentPropName="OuvragesAuteurRow" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage1" msprop:Generator_UserParentTable="OuvragesAuteur" />
+      <msdata:Relationship name="FK_ecrire_Ouvrage2" msdata:parent="EmpruntsMembre" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage2" msprop:Generator_ParentPropName="EmpruntsMembreRow" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage2" msprop:Generator_UserParentTable="EmpruntsMembre" />
+      <msdata:Relationship name="FK_reserver_Ouvrage2" msdata:parent="EmpruntsMembre" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage2" msprop:Generator_ParentPropName="EmpruntsMembreRow" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage2" msprop:Generator_UserParentTable="EmpruntsMembre" />
+      <msdata:Relationship name="FK_ecrire_Ouvrage3" msdata:parent="ReservationsMembre" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage3" msprop:Generator_ParentPropName="ReservationsMembreRow" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage3" msprop:Generator_UserParentTable="ReservationsMembre" />
+      <msdata:Relationship name="FK_reserver_Ouvrage3" msdata:parent="ReservationsMembre" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage3" msprop:Generator_ParentPropName="ReservationsMembreRow" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage3" msprop:Generator_UserParentTable="ReservationsMembre" />
+      <msdata:Relationship name="FK_ecrire_Ouvrage4" msdata:parent="OuvragesType" msdata:child="ecrire" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_Ouvrage4" msprop:Generator_ParentPropName="OuvragesTypeRow" msprop:Generator_RelationVarName="relationFK_ecrire_Ouvrage4" msprop:Generator_UserParentTable="OuvragesType" />
+      <msdata:Relationship name="FK_reserver_Ouvrage4" msdata:parent="OuvragesType" msdata:child="reserver" msdata:parentkey="idOuvrage" msdata:childkey="numOuvrage" msprop:Generator_UserChildTable="reserver" msprop:Generator_ChildPropName="GetreserverRows" msprop:Generator_UserRelationName="FK_reserver_Ouvrage4" msprop:Generator_ParentPropName="OuvragesTypeRow" msprop:Generator_RelationVarName="relationFK_reserver_Ouvrage4" msprop:Generator_UserParentTable="OuvragesType" />
+      <msdata:Relationship name="FK_Ouvrage_Type1" msdata:parent="TypeAjoutOuvrage" msdata:child="Ouvrage" msdata:parentkey="idType" msdata:childkey="numType" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_Type1" msprop:Generator_RelationVarName="relationFK_Ouvrage_Type1" msprop:Generator_UserParentTable="TypeAjoutOuvrage" msprop:Generator_ParentPropName="TypeAjoutOuvrageRow" />
+      <msdata:Relationship name="FK_ecrire_AuteurSuperviseur2" msdata:parent="SuperviseurAjoutOuvrage" msdata:child="ecrire" msdata:parentkey="idAuteurSuper" msdata:childkey="numAuteur" msprop:Generator_UserChildTable="ecrire" msprop:Generator_ChildPropName="GetecrireRows" msprop:Generator_UserRelationName="FK_ecrire_AuteurSuperviseur2" msprop:Generator_RelationVarName="relationFK_ecrire_AuteurSuperviseur2" msprop:Generator_UserParentTable="SuperviseurAjoutOuvrage" msprop:Generator_ParentPropName="SuperviseurAjoutOuvrageRow" />
+      <msdata:Relationship name="FK_Ouvrage_AuteurSuperviseur2" msdata:parent="SuperviseurAjoutOuvrage" msdata:child="Ouvrage" msdata:parentkey="idAuteurSuper" msdata:childkey="numSuper" msprop:Generator_UserChildTable="Ouvrage" msprop:Generator_ChildPropName="GetOuvrageRows" msprop:Generator_UserRelationName="FK_Ouvrage_AuteurSuperviseur2" msprop:Generator_RelationVarName="relationFK_Ouvrage_AuteurSuperviseur2" msprop:Generator_UserParentTable="SuperviseurAjoutOuvrage" msprop:Generator_ParentPropName="SuperviseurAjoutOuvrageRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

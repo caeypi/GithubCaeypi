@@ -66,6 +66,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BiblioEPFCDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormAjoutOuvrage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjoutOuvrage.Designer.cs">
+      <DependentUpon>FormAjoutOuvrage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBiblioPcx.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAjoutOuvrage.resx">
+      <DependentUpon>FormAjoutOuvrage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBiblioPcx.resx">
       <DependentUpon>FormBiblioPcx.cs</DependentUpon>
     </EmbeddedResource>
