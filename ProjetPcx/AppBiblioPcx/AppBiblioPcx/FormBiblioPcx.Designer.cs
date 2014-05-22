@@ -843,6 +843,7 @@
             this.tabController.SelectedIndex = 0;
             this.tabController.Size = new System.Drawing.Size(773, 816);
             this.tabController.TabIndex = 0;
+            this.tabController.SelectedIndexChanged += new System.EventHandler(this.tabController_SelectedIndexChanged);
             // 
             // tabOuvrage
             // 
@@ -1123,6 +1124,7 @@
             this.listBoxAuteursOuvrage.FormattingEnabled = true;
             this.listBoxAuteursOuvrage.Location = new System.Drawing.Point(52, 3);
             this.listBoxAuteursOuvrage.Name = "listBoxAuteursOuvrage";
+            this.listBoxAuteursOuvrage.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxAuteursOuvrage.Size = new System.Drawing.Size(120, 95);
             this.listBoxAuteursOuvrage.TabIndex = 1;
             this.listBoxAuteursOuvrage.ValueMember = "idAuteurSuper";

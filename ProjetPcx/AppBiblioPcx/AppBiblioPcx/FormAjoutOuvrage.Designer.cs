@@ -60,7 +60,8 @@
             this.labelSuper = new System.Windows.Forms.Label();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelAuteur = new System.Windows.Forms.Label();
-            this.checkedListBoxAuteurs = new System.Windows.Forms.CheckedListBox();
+            this.listBoxAuteurs = new System.Windows.Forms.ListBox();
+            this.auteurSuperviseurAllBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.superviseurAjoutOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -71,6 +72,7 @@
             this.entrepriseOuvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.EntrepriseOuvrageTableAdapter();
             this.typeAjoutOuvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TypeAjoutOuvrageTableAdapter();
             this.superviseurAjoutOuvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.SuperviseurAjoutOuvrageTableAdapter();
+            this.auteurSuperviseurAllTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteurSuperviseurAllTableAdapter();
             titreLabel = new System.Windows.Forms.Label();
             localisationLabel = new System.Windows.Forms.Label();
             dateCreationLabel = new System.Windows.Forms.Label();
@@ -95,6 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.typeAjoutOuvrageBindingSource)).BeginInit();
             this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurAllBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -146,9 +149,9 @@
             // 
             // comboBoxSuperviseur
             // 
-            this.comboBoxSuperviseur.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxSuperviseur.DataSource = this.superviseurAjoutOuvrageBindingSource1;
             this.comboBoxSuperviseur.DisplayMember = "NomPrenom";
+            this.comboBoxSuperviseur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSuperviseur.FormattingEnabled = true;
             this.comboBoxSuperviseur.Location = new System.Drawing.Point(75, 3);
             this.comboBoxSuperviseur.Name = "comboBoxSuperviseur";
@@ -179,8 +182,9 @@
             // 
             // splitContainerAjoutOuvrage.Panel2
             // 
+            this.splitContainerAjoutOuvrage.Panel2.AutoScroll = true;
             this.splitContainerAjoutOuvrage.Panel2.Controls.Add(this.buttonAjouter);
-            this.splitContainerAjoutOuvrage.Size = new System.Drawing.Size(715, 573);
+            this.splitContainerAjoutOuvrage.Size = new System.Drawing.Size(572, 573);
             this.splitContainerAjoutOuvrage.SplitterDistance = 467;
             this.splitContainerAjoutOuvrage.TabIndex = 0;
             // 
@@ -205,7 +209,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(715, 467);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(572, 467);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -228,7 +232,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(localisationLabel);
             this.flowLayoutPanel2.Controls.Add(this.comboBoxLocalisation);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(360, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(289, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel2.TabIndex = 3;
@@ -269,7 +273,7 @@
             // 
             this.flowLayoutPanel4.Controls.Add(sectionLabel);
             this.flowLayoutPanel4.Controls.Add(this.comboBoxSection);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(360, 119);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(289, 119);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel4.TabIndex = 5;
@@ -319,7 +323,7 @@
             // 
             this.flowLayoutPanel6.Controls.Add(this.labelType);
             this.flowLayoutPanel6.Controls.Add(this.comboBoxType);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(360, 235);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(289, 235);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel6.TabIndex = 7;
@@ -337,6 +341,7 @@
             // 
             this.comboBoxType.DataSource = this.typeAjoutOuvrageBindingSource;
             this.comboBoxType.DisplayMember = "description";
+            this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Location = new System.Drawing.Point(43, 3);
             this.comboBoxType.Name = "comboBoxType";
@@ -370,8 +375,8 @@
             // flowLayoutPanel8
             // 
             this.flowLayoutPanel8.Controls.Add(this.labelAuteur);
-            this.flowLayoutPanel8.Controls.Add(this.checkedListBoxAuteurs);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(360, 351);
+            this.flowLayoutPanel8.Controls.Add(this.listBoxAuteurs);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(289, 351);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel8.TabIndex = 9;
@@ -385,13 +390,22 @@
             this.labelAuteur.TabIndex = 0;
             this.labelAuteur.Text = "Auteur(s):";
             // 
-            // checkedListBoxAuteurs
+            // listBoxAuteurs
             // 
-            this.checkedListBoxAuteurs.FormattingEnabled = true;
-            this.checkedListBoxAuteurs.Location = new System.Drawing.Point(61, 3);
-            this.checkedListBoxAuteurs.Name = "checkedListBoxAuteurs";
-            this.checkedListBoxAuteurs.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBoxAuteurs.TabIndex = 1;
+            this.listBoxAuteurs.DataSource = this.auteurSuperviseurAllBindingSource;
+            this.listBoxAuteurs.DisplayMember = "prenomNom";
+            this.listBoxAuteurs.FormattingEnabled = true;
+            this.listBoxAuteurs.Location = new System.Drawing.Point(61, 3);
+            this.listBoxAuteurs.Name = "listBoxAuteurs";
+            this.listBoxAuteurs.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBoxAuteurs.Size = new System.Drawing.Size(120, 95);
+            this.listBoxAuteurs.TabIndex = 1;
+            this.listBoxAuteurs.ValueMember = "idAuteurSuper";
+            // 
+            // auteurSuperviseurAllBindingSource
+            // 
+            this.auteurSuperviseurAllBindingSource.DataMember = "AuteurSuperviseurAll";
+            this.auteurSuperviseurAllBindingSource.DataSource = this.biblioEPFCDataSet;
             // 
             // buttonAjouter
             // 
@@ -414,6 +428,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AuteurSuperviseurAllTableAdapter = null;
             this.tableAdapterManager.AuteurSuperviseurTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ecrireTableAdapter = null;
@@ -444,11 +459,15 @@
             // 
             this.superviseurAjoutOuvrageTableAdapter.ClearBeforeFill = true;
             // 
+            // auteurSuperviseurAllTableAdapter
+            // 
+            this.auteurSuperviseurAllTableAdapter.ClearBeforeFill = true;
+            // 
             // FormAjoutOuvrage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 573);
+            this.ClientSize = new System.Drawing.Size(572, 573);
             this.Controls.Add(this.splitContainerAjoutOuvrage);
             this.Name = "FormAjoutOuvrage";
             this.Text = "Ajout Ouvrage";
@@ -480,6 +499,7 @@
             this.flowLayoutPanel7.PerformLayout();
             this.flowLayoutPanel8.ResumeLayout(false);
             this.flowLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurAllBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -511,7 +531,6 @@
         private System.Windows.Forms.Label labelSuper;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.Label labelAuteur;
-        private System.Windows.Forms.CheckedListBox checkedListBoxAuteurs;
         private System.Windows.Forms.Button buttonAjouter;
         private System.Windows.Forms.BindingSource localisationOuvrageBindingSource;
         private BiblioEPFCDataSetTableAdapters.LocalisationOuvrageTableAdapter localisationOuvrageTableAdapter;
@@ -525,5 +544,8 @@
         private BiblioEPFCDataSetTableAdapters.SuperviseurAjoutOuvrageTableAdapter superviseurAjoutOuvrageTableAdapter;
         private System.Windows.Forms.BindingSource superviseurAjoutOuvrageBindingSource1;
         private System.Windows.Forms.ComboBox comboBoxSuperviseur;
+        private System.Windows.Forms.ListBox listBoxAuteurs;
+        private System.Windows.Forms.BindingSource auteurSuperviseurAllBindingSource;
+        private BiblioEPFCDataSetTableAdapters.AuteurSuperviseurAllTableAdapter auteurSuperviseurAllTableAdapter;
     }
 }

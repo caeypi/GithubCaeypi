@@ -26,7 +26,42 @@ namespace WindowsFormsApplication1
             this.ouvrageTableAdapter.Fill(this.biblioEPFCDataSet.Ouvrage);
             // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet.AuteurSuperviseur'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
             this.auteurSuperviseurTableAdapter.Fill(this.biblioEPFCDataSet.AuteurSuperviseur);
+            //emptyBoxes();
+        }
 
+        private void emptyBoxes()
+        {
+            textBoxRecherche.Text = "";
+            idOuvrageTextBox.Text = "";
+            titreTextBox.Text = "";
+            localisationTextBox.Text = "";
+            dateCreationTextBox.Text = "";
+            sectionTextBox.Text = "";
+            dateEmpruntTextBox.Text = "";
+            dureeEmpruntTextBox.Text = "";
+            MembreTextBox.Text = "";
+            nomEntrepriseTextBox.Text = "";
+            SuperTextBox.Text = "";
+            typeTextBox.Text = "";
+            //listBoxAuteursOuvrage.Text = "";
+            idAuteurSuperTextBox.Text = "";
+            nomTextBox.Text = "";
+            prenomTextBox.Text = "";
+            statutTextBox.Text = "";
+            //listBoxOuvragesAuteur.Text = "";
+            
+            idMembreTextBox.Text = "";
+            nomTextBox1.Text = "";
+            prenomTextBox1.Text = "";
+            adresseRueTextBox.Text = "";
+            adresseNumTextBox.Text = "";
+            adresseCPTextBox.Text = "";
+            adresseVilleTextBox.Text = "";
+            telTextBox.Text = "";
+
+            idTypeTextBox.Text = "";
+            descriptionTextBox.Text = "";
+            sigleTextBox.Text = "";
         }
 
         private void textBoxRecherche_TextChanged(object sender, EventArgs e)
@@ -69,6 +104,7 @@ namespace WindowsFormsApplication1
 
         private void radioButtonOuvrage_CheckedChanged(object sender, EventArgs e)
         {
+            //emptyBoxes(); 
             tabController.SelectedTab = tabOuvrage;
             ouvrageDataGridView.Visible = true;
             auteurSuperviseurDataGridView.Visible = false;
@@ -78,6 +114,7 @@ namespace WindowsFormsApplication1
 
         private void radioButtonAuteurSuperviseur_CheckedChanged(object sender, EventArgs e)
         {
+            //emptyBoxes(); 
             tabController.SelectedTab = tabAuteurSuperviseur;
             ouvrageDataGridView.Visible = false;
             auteurSuperviseurDataGridView.Visible = true;
@@ -87,6 +124,7 @@ namespace WindowsFormsApplication1
 
         private void radioButtonMembre_CheckedChanged(object sender, EventArgs e)
         {
+            //emptyBoxes(); 
             tabController.SelectedTab = tabMembre;
             ouvrageDataGridView.Visible = false;
             auteurSuperviseurDataGridView.Visible = false;
@@ -96,6 +134,7 @@ namespace WindowsFormsApplication1
 
         private void radioButtonType_CheckedChanged(object sender, EventArgs e)
         {
+            //emptyBoxes(); 
             tabController.SelectedTab = tabType;
             ouvrageDataGridView.Visible = false;
             auteurSuperviseurDataGridView.Visible = false;
@@ -105,9 +144,9 @@ namespace WindowsFormsApplication1
 
         private void idOuvrageTextBox_TextChanged(object sender, EventArgs e)
         {
-            typeTextBox.Text = "";
+            /*typeTextBox.Text = "";
             MembreTextBox.Text = "";
-            MembreTextBox.Text = "";
+            MembreTextBox.Text = "";*/
             listBoxAuteursOuvrage.Hide();
             if (idOuvrageTextBox.Text != "")
             {
@@ -177,5 +216,11 @@ namespace WindowsFormsApplication1
             myForm.ShowDialog();
             this.Close();
         }
+
+        private void tabController_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //emptyBoxes();
+        }
+
     }
 }
