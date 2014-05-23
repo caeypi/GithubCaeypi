@@ -49,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppBiblioPcx, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <ExecutableExtension>.exe</ExecutableExtension>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -78,6 +81,12 @@
     <Compile Include="FormBiblioPcx.Designer.cs">
       <DependentUpon>FormBiblioPcx.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEmprunt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmprunt.Designer.cs">
+      <DependentUpon>FormEmprunt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAjoutOuvrage.resx">
@@ -85,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBiblioPcx.resx">
       <DependentUpon>FormBiblioPcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmprunt.resx">
+      <DependentUpon>FormEmprunt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

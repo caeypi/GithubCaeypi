@@ -18,6 +18,8 @@ namespace WindowsFormsApplication1
 
         private void FormBiblioPcx_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet.reserver'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
+            this.reserverTableAdapter.Fill(this.biblioEPFCDataSet.reserver);
             // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet.Type'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
             this.typeTableAdapter.Fill(this.biblioEPFCDataSet.Type);
             // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet.Membre'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
@@ -27,6 +29,7 @@ namespace WindowsFormsApplication1
             // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet.AuteurSuperviseur'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
             this.auteurSuperviseurTableAdapter.Fill(this.biblioEPFCDataSet.AuteurSuperviseur);
             //emptyBoxes();
+            checkEmprunt();
         }
 
         private void emptyBoxes()
@@ -62,6 +65,15 @@ namespace WindowsFormsApplication1
             idTypeTextBox.Text = "";
             descriptionTextBox.Text = "";
             sigleTextBox.Text = "";
+        }
+
+        private void checkEmprunt()
+        {
+            if (MembreTextBox.Text == "")
+                buttonEmprunter.Enabled = true;
+            else
+                buttonEmprunter.Enabled = false;
+
         }
 
         private void textBoxRecherche_TextChanged(object sender, EventArgs e)
@@ -221,6 +233,46 @@ namespace WindowsFormsApplication1
         {
             //emptyBoxes();
         }
+
+        private void MembreTextBox_TextChanged(object sender, EventArgs e)
+        {
+            checkEmprunt();
+        }
+
+        private void buttonEmprunter_Click(object sender, EventArgs e)
+        {
+            if (isANumber())
+            {
+                int idOuvrage = Convert.ToInt32(idOuvrageTextBox.Text);
+                int idMembre = Convert.ToInt32(textBoxDemandeEmprunt.Text);
+                if (reserverTableAdapter.ScalarQueryOuvrageReserve(idOuvrage) == 0) // ouvrage pas réservé
+                    fenetreEmprunt(idOuvrage,idMembre);
+                else if (reserverTableAdapter.ScalarQueryOuvrageReserveParMembre(idOuvrage, idMembre) != 0) // ouvrage réservé par le membre qui veut l'emprunter
+                    fenetreEmprunt(idOuvrage,idMembre);
+                else
+                    MessageBox.Show("Ouvrage Réservé par un autre membre");
+            }
+        }
+
+        private bool isANumber()
+        {
+            string Str = textBoxDemandeEmprunt.Text;
+            int Num;
+            bool isNum = int.TryParse(Str, out Num);
+            if (!isNum)
+                MessageBox.Show("Invalid number");
+            return isNum;
+        }
+
+
+        private void fenetreEmprunt(int idO, int idM)
+        {
+            FormEmprunt myForm = new FormEmprunt(idO,idM);
+            this.Hide();
+            myForm.ShowDialog();
+            this.Close();
+        }
+
 
     }
 }
