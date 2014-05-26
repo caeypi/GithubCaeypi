@@ -73,7 +73,6 @@ namespace WindowsFormsApplication1
                 buttonEmprunter.Enabled = true;
             else
                 buttonEmprunter.Enabled = false;
-
         }
 
         private void textBoxRecherche_TextChanged(object sender, EventArgs e)
@@ -178,6 +177,10 @@ namespace WindowsFormsApplication1
                 // affiche les nom et prénoms des auteurs de l'ouvrage
                 listBoxAuteursOuvrage.Show();
                 this.auteursOuvrageTableAdapter.FillAuteursByOuvrage(this.biblioEPFCDataSet.AuteursOuvrage, idOuvrage);
+                if (reserverTableAdapter.ScalarQueryOuvrageReserve(idOuvrage) != 0) // si ouvrage réservé
+                    textBoxReserve.Text = "Oui";
+                else
+                    textBoxReserve.Text = "Non";
             }
         }
 
@@ -241,11 +244,13 @@ namespace WindowsFormsApplication1
 
         private void buttonEmprunter_Click(object sender, EventArgs e)
         {
-            if (isANumber())
+            //comboBoxIdMembre.DroppedDown = true;
+            //comboBoxIdMembre.DroppedDown = false; 
+            if (isANumber(comboBoxIdMembre.Text))
             {
                 int idOuvrage = Convert.ToInt32(idOuvrageTextBox.Text);
-                int idMembre = Convert.ToInt32(textBoxDemandeEmprunt.Text);
-                if (reserverTableAdapter.ScalarQueryOuvrageReserve(idOuvrage) == 0) // ouvrage pas réservé
+                int idMembre = Convert.ToInt32(comboBoxIdMembre.Text);
+                if (textBoxReserve.Text == "Non") // ouvrage pas réservé
                     fenetreEmprunt(idOuvrage,idMembre);
                 else if (reserverTableAdapter.ScalarQueryOuvrageReserveParMembre(idOuvrage, idMembre) != 0) // ouvrage réservé par le membre qui veut l'emprunter
                     fenetreEmprunt(idOuvrage,idMembre);
@@ -254,11 +259,10 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private bool isANumber()
+        private bool isANumber(String str)
         {
-            string Str = textBoxDemandeEmprunt.Text;
             int Num;
-            bool isNum = int.TryParse(Str, out Num);
+            bool isNum = int.TryParse(str, out Num);
             if (!isNum)
                 MessageBox.Show("Invalid number");
             return isNum;
@@ -271,6 +275,34 @@ namespace WindowsFormsApplication1
             this.Hide();
             myForm.ShowDialog();
             this.Close();
+        }
+
+        private void textBoxReserve_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxReserve.Text == "Oui")
+                buttonReserver.Enabled = false;
+            else
+                buttonReserver.Enabled = true;
+        }
+
+        private void buttonReserver_Click(object sender, EventArgs e)
+        {
+            // TODO: updateReserver(idOuvrage,idMembre),rajoute la ligne pour l'ouvrage courant
+            if (MembreTextBox.Text == "") // si ouvrage pas emprunté
+                ;// TODO: updateReserver(idOuvrage,dateTime.Today.add(14))
+
+        }
+
+        private void updateReservations()
+        {
+            // TODO: updateReserver(dateTime.Today), si une date de réservation set supérieure la date du jour, la ligne est supprimée
+        }
+
+        private void buttonRetourOuvrage_Click(object sender, EventArgs e)
+        {
+            // TODO: updateOuvrage; numMembre, dateEmprunt,dureeEmprunt sont mis à ""
+            if (textBoxReserve.Text == "Oui") ;
+                // TODO: updateReserver(idOuvrage,dateTime.Today.add(14)), la date de fin de réservation est actualisée à  la date du jour+14 jours
         }
 
 

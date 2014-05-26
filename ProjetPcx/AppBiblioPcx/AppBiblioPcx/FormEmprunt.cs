@@ -36,6 +36,12 @@ namespace WindowsFormsApplication1
             this.ouvrageTableAdapter.FillByIdOuvrage(this.biblioEPFCDataSet.Ouvrage,idOuvrage);
             dateEmpruntTextBox.Text = DateTime.Today.ToString("dd-MM -yyyy");
             dureeEmpruntTextBox.Text = "14 jours";
+            textBoxIdMembre.Text = idMembre.ToString();
+        }
+
+        private void buttonConfirmer_Click(object sender, EventArgs e)
+        {
+            // updateOuvrage(dateTime.Today,dureeEmprunt,idMembre), les 3 cases de l'ouvrage sont mise à jour avec les valeurs envoyées
         }
     }
 }

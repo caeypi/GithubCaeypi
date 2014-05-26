@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
             comboBoxEntreprise.Text = "";
             comboBoxType.Text = "";
             comboBoxSuperviseur.Text = "";
-            //DataTable auteurs = auteurSuperviseurTableAdapter1
+            
             
         }
 
@@ -58,6 +58,20 @@ namespace WindowsFormsApplication1
                 comboBoxLocalisation.DroppedDown = true;
                 comboBoxLocalisation.DroppedDown = false;
             }
+            // TODO: updateOuvrage(...), l'ouvrage est ajouté à Ouvrage
+        }
+
+        private void checkBoxSuper_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBoxSuperviseur.Enabled = !comboBoxSuperviseur.Enabled;
+        }
+
+        private void textBoxTitre_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxTitre.Text != "")
+                buttonAjouter.Enabled = true;
+            else
+                buttonAjouter.Enabled = false;
         }
 
     }

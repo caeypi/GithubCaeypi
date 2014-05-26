@@ -47,12 +47,17 @@
             this.dureeEmpruntTextBox = new System.Windows.Forms.TextBox();
             this.ouvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvrageTableAdapter();
             this.tableAdapterManager = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelIdMembre = new System.Windows.Forms.Label();
+            this.textBoxIdMembre = new System.Windows.Forms.TextBox();
+            this.buttonConfirmer = new System.Windows.Forms.Button();
             idOuvrageLabel = new System.Windows.Forms.Label();
             titreLabel = new System.Windows.Forms.Label();
             dureeEmpruntLabel = new System.Windows.Forms.Label();
             dateEmpruntLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.flowLayoutPanelEmprunt.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -61,6 +66,7 @@
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // idOuvrageLabel
@@ -109,6 +115,10 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanelEmprunt);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.buttonConfirmer);
             this.splitContainer1.Size = new System.Drawing.Size(256, 293);
             this.splitContainer1.SplitterDistance = 239;
             this.splitContainer1.TabIndex = 0;
@@ -119,6 +129,7 @@
             this.flowLayoutPanelEmprunt.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanelEmprunt.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanelEmprunt.Controls.Add(this.flowLayoutPanel4);
+            this.flowLayoutPanelEmprunt.Controls.Add(this.flowLayoutPanel5);
             this.flowLayoutPanelEmprunt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelEmprunt.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelEmprunt.Name = "flowLayoutPanelEmprunt";
@@ -228,6 +239,43 @@
             this.tableAdapterManager.TypeTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.textBoxIdMembre);
+            this.flowLayoutPanel5.Controls.Add(this.labelIdMembre);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 154);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(204, 30);
+            this.flowLayoutPanel5.TabIndex = 4;
+            // 
+            // labelIdMembre
+            // 
+            this.labelIdMembre.AutoSize = true;
+            this.labelIdMembre.Location = new System.Drawing.Point(38, 0);
+            this.labelIdMembre.Name = "labelIdMembre";
+            this.labelIdMembre.Size = new System.Drawing.Size(57, 13);
+            this.labelIdMembre.TabIndex = 0;
+            this.labelIdMembre.Text = "IdMembre:";
+            // 
+            // textBoxIdMembre
+            // 
+            this.textBoxIdMembre.Location = new System.Drawing.Point(101, 3);
+            this.textBoxIdMembre.Name = "textBoxIdMembre";
+            this.textBoxIdMembre.ReadOnly = true;
+            this.textBoxIdMembre.Size = new System.Drawing.Size(100, 20);
+            this.textBoxIdMembre.TabIndex = 1;
+            // 
+            // buttonConfirmer
+            // 
+            this.buttonConfirmer.Location = new System.Drawing.Point(85, 15);
+            this.buttonConfirmer.Name = "buttonConfirmer";
+            this.buttonConfirmer.Size = new System.Drawing.Size(75, 23);
+            this.buttonConfirmer.TabIndex = 0;
+            this.buttonConfirmer.Text = "Confirmer";
+            this.buttonConfirmer.UseVisualStyleBackColor = true;
+            this.buttonConfirmer.Click += new System.EventHandler(this.buttonConfirmer_Click);
+            // 
             // FormEmprunt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +286,7 @@
             this.Text = "Emprunt";
             this.Load += new System.EventHandler(this.FormEmprunt_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.flowLayoutPanelEmprunt.ResumeLayout(false);
@@ -251,6 +300,8 @@
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -271,6 +322,10 @@
         private System.Windows.Forms.TextBox titreTextBox;
         private System.Windows.Forms.TextBox dureeEmpruntTextBox;
         private System.Windows.Forms.TextBox dateEmpruntTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.TextBox textBoxIdMembre;
+        private System.Windows.Forms.Label labelIdMembre;
+        private System.Windows.Forms.Button buttonConfirmer;
 
     }
 }
