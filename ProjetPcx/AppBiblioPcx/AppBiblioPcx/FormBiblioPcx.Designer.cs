@@ -595,9 +595,9 @@
             // 
             // radioButtonType
             // 
-            this.radioButtonType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonType.AutoSize = true;
             this.radioButtonType.Location = new System.Drawing.Point(12, 72);
             this.radioButtonType.Name = "radioButtonType";
@@ -610,9 +610,9 @@
             // 
             // radioButtonMembre
             // 
-            this.radioButtonMembre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonMembre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonMembre.AutoSize = true;
             this.radioButtonMembre.Location = new System.Drawing.Point(12, 49);
             this.radioButtonMembre.Name = "radioButtonMembre";
@@ -625,9 +625,9 @@
             // 
             // radioButtonAuteurSuperviseur
             // 
-            this.radioButtonAuteurSuperviseur.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonAuteurSuperviseur.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonAuteurSuperviseur.AutoSize = true;
             this.radioButtonAuteurSuperviseur.Location = new System.Drawing.Point(12, 26);
             this.radioButtonAuteurSuperviseur.Name = "radioButtonAuteurSuperviseur";
@@ -640,9 +640,9 @@
             // 
             // radioButtonOuvrage
             // 
-            this.radioButtonOuvrage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonOuvrage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonOuvrage.AutoSize = true;
             this.radioButtonOuvrage.Location = new System.Drawing.Point(12, 3);
             this.radioButtonOuvrage.Name = "radioButtonOuvrage";
@@ -854,7 +854,6 @@
             this.tabController.SelectedIndex = 0;
             this.tabController.Size = new System.Drawing.Size(470, 583);
             this.tabController.TabIndex = 0;
-            this.tabController.SelectedIndexChanged += new System.EventHandler(this.tabController_SelectedIndexChanged);
             // 
             // tabOuvrage
             // 
@@ -970,6 +969,7 @@
             this.typeTextBox.ReadOnly = true;
             this.typeTextBox.Size = new System.Drawing.Size(100, 20);
             this.typeTextBox.TabIndex = 1;
+            this.typeTextBox.DoubleClick += new System.EventHandler(this.typeTextBox_DoubleClick);
             // 
             // typeLabel
             // 
@@ -1079,6 +1079,7 @@
             this.MembreTextBox.Size = new System.Drawing.Size(100, 20);
             this.MembreTextBox.TabIndex = 1;
             this.MembreTextBox.TextChanged += new System.EventHandler(this.MembreTextBox_TextChanged);
+            this.MembreTextBox.DoubleClick += new System.EventHandler(this.MembreTextBox_DoubleClick);
             // 
             // flowLayoutPanel8
             // 
@@ -1138,6 +1139,7 @@
             this.SuperTextBox.ReadOnly = true;
             this.SuperTextBox.Size = new System.Drawing.Size(100, 20);
             this.SuperTextBox.TabIndex = 1;
+            this.SuperTextBox.DoubleClick += new System.EventHandler(this.SuperTextBox_DoubleClick);
             // 
             // flowLayoutPanel32
             // 
@@ -1187,11 +1189,11 @@
             this.listBoxAuteursOuvrage.FormattingEnabled = true;
             this.listBoxAuteursOuvrage.Location = new System.Drawing.Point(71, 3);
             this.listBoxAuteursOuvrage.Name = "listBoxAuteursOuvrage";
-            this.listBoxAuteursOuvrage.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxAuteursOuvrage.Size = new System.Drawing.Size(120, 173);
             this.listBoxAuteursOuvrage.Sorted = true;
             this.listBoxAuteursOuvrage.TabIndex = 1;
             this.listBoxAuteursOuvrage.ValueMember = "idAuteurSuper";
+            this.listBoxAuteursOuvrage.DoubleClick += new System.EventHandler(this.listBoxAuteursOuvrage_DoubleClick);
             // 
             // auteursOuvrageBindingSource
             // 
@@ -1396,6 +1398,7 @@
             this.listBoxOuvragesAuteur.Sorted = true;
             this.listBoxOuvragesAuteur.TabIndex = 4;
             this.listBoxOuvragesAuteur.ValueMember = "idOuvrage";
+            this.listBoxOuvragesAuteur.DoubleClick += new System.EventHandler(this.listBoxOuvragesAuteur_DoubleClick);
             // 
             // ouvragesAuteurBindingSource
             // 
@@ -1629,6 +1632,7 @@
             this.listBoxOuvragesEmpruntes.Sorted = true;
             this.listBoxOuvragesEmpruntes.TabIndex = 1;
             this.listBoxOuvragesEmpruntes.ValueMember = "idOuvrage";
+            this.listBoxOuvragesEmpruntes.DoubleClick += new System.EventHandler(this.listBoxOuvragesEmpruntes_DoubleClick);
             // 
             // empruntsMembreBindingSource
             // 
@@ -1665,6 +1669,7 @@
             this.listBoxReservationsMembre.Sorted = true;
             this.listBoxReservationsMembre.TabIndex = 1;
             this.listBoxReservationsMembre.ValueMember = "idOuvrage";
+            this.listBoxReservationsMembre.DoubleClick += new System.EventHandler(this.listBoxReservationsMembre_DoubleClick);
             // 
             // labelOuvragesRéservés
             // 
@@ -1799,6 +1804,7 @@
             this.listBoxOuvragesType.Sorted = true;
             this.listBoxOuvragesType.TabIndex = 3;
             this.listBoxOuvragesType.ValueMember = "idOuvrage";
+            this.listBoxOuvragesType.DoubleClick += new System.EventHandler(this.listBoxOuvragesType_DoubleClick);
             // 
             // ouvragesTypeBindingSource
             // 

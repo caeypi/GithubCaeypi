@@ -82,5 +82,13 @@ namespace WindowsFormsApplication1
                 buttonAjouter.Enabled = false;
         }
 
+        private void buttonRetour_Click(object sender, EventArgs e)
+        {
+            FormBiblioPcx myForm = new FormBiblioPcx();
+            this.Hide();
+            myForm.ShowDialog();
+            this.Close();
+        }
+
     }
 }

@@ -63,8 +63,8 @@
             this.listBoxAuteurs = new System.Windows.Forms.ListBox();
             this.auteurSuperviseurAllBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelAuteur = new System.Windows.Forms.Label();
-            this.ecrireBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAjouter = new System.Windows.Forms.Button();
+            this.ecrireBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.superviseurAjoutOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ouvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvrageTableAdapter();
@@ -76,6 +76,7 @@
             this.superviseurAjoutOuvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.SuperviseurAjoutOuvrageTableAdapter();
             this.auteurSuperviseurAllTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteurSuperviseurAllTableAdapter();
             this.ecrireTableAdapter1 = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.ecrireTableAdapter();
+            this.buttonRetour = new System.Windows.Forms.Button();
             titreLabel = new System.Windows.Forms.Label();
             localisationLabel = new System.Windows.Forms.Label();
             dateCreationLabel = new System.Windows.Forms.Label();
@@ -194,6 +195,7 @@
             // splitContainerAjoutOuvrage.Panel2
             // 
             this.splitContainerAjoutOuvrage.Panel2.AutoScroll = true;
+            this.splitContainerAjoutOuvrage.Panel2.Controls.Add(this.buttonRetour);
             this.splitContainerAjoutOuvrage.Panel2.Controls.Add(this.buttonAjouter);
             this.splitContainerAjoutOuvrage.Size = new System.Drawing.Size(513, 335);
             this.splitContainerAjoutOuvrage.SplitterDistance = 272;
@@ -442,21 +444,21 @@
             this.labelAuteur.TabIndex = 0;
             this.labelAuteur.Text = "Auteur(s):";
             // 
-            // ecrireBindingSource
-            // 
-            this.ecrireBindingSource.DataMember = "ecrire";
-            this.ecrireBindingSource.DataSource = this.biblioEPFCDataSet;
-            // 
             // buttonAjouter
             // 
             this.buttonAjouter.Enabled = false;
-            this.buttonAjouter.Location = new System.Drawing.Point(172, 22);
+            this.buttonAjouter.Location = new System.Drawing.Point(120, 24);
             this.buttonAjouter.Name = "buttonAjouter";
             this.buttonAjouter.Size = new System.Drawing.Size(104, 23);
             this.buttonAjouter.TabIndex = 0;
             this.buttonAjouter.Text = "Ajouter Ouvrage";
             this.buttonAjouter.UseVisualStyleBackColor = true;
             this.buttonAjouter.Click += new System.EventHandler(this.buttonAjouter_Click);
+            // 
+            // ecrireBindingSource
+            // 
+            this.ecrireBindingSource.DataMember = "ecrire";
+            this.ecrireBindingSource.DataSource = this.biblioEPFCDataSet;
             // 
             // ouvrageBindingSource
             // 
@@ -507,6 +509,16 @@
             // ecrireTableAdapter1
             // 
             this.ecrireTableAdapter1.ClearBeforeFill = true;
+            // 
+            // buttonRetour
+            // 
+            this.buttonRetour.Location = new System.Drawing.Point(282, 23);
+            this.buttonRetour.Name = "buttonRetour";
+            this.buttonRetour.Size = new System.Drawing.Size(75, 23);
+            this.buttonRetour.TabIndex = 1;
+            this.buttonRetour.Text = "Retour";
+            this.buttonRetour.UseVisualStyleBackColor = true;
+            this.buttonRetour.Click += new System.EventHandler(this.buttonRetour_Click);
             // 
             // FormAjoutOuvrage
             // 
@@ -596,5 +608,6 @@
         private System.Windows.Forms.CheckBox checkBoxSuper;
         private BiblioEPFCDataSetTableAdapters.ecrireTableAdapter ecrireTableAdapter1;
         private System.Windows.Forms.BindingSource ecrireBindingSource;
+        private System.Windows.Forms.Button buttonRetour;
     }
 }

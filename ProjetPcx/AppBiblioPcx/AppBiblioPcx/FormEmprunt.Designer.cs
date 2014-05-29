@@ -37,8 +37,6 @@
             this.flowLayoutPanelEmprunt = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.idOuvrageTextBox = new System.Windows.Forms.TextBox();
-            this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.biblioEPFCDataSet = new WindowsFormsApplication1.BiblioEPFCDataSet();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.titreTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -51,6 +49,9 @@
             this.buttonConfirmer = new System.Windows.Forms.Button();
             this.ouvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvrageTableAdapter();
             this.tableAdapterManager = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager();
+            this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.biblioEPFCDataSet = new WindowsFormsApplication1.BiblioEPFCDataSet();
+            this.buttonRetour = new System.Windows.Forms.Button();
             idOuvrageLabel = new System.Windows.Forms.Label();
             titreLabel = new System.Windows.Forms.Label();
             dureeEmpruntLabel = new System.Windows.Forms.Label();
@@ -61,12 +62,12 @@
             this.splitContainer1.SuspendLayout();
             this.flowLayoutPanelEmprunt.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // idOuvrageLabel
@@ -118,7 +119,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.buttonConfirmer);
+            this.splitContainer1.Panel2.Controls.Add(this.buttonRetour);
             this.splitContainer1.Size = new System.Drawing.Size(256, 293);
             this.splitContainer1.SplitterDistance = 239;
             this.splitContainer1.TabIndex = 0;
@@ -154,16 +155,6 @@
             this.idOuvrageTextBox.ReadOnly = true;
             this.idOuvrageTextBox.Size = new System.Drawing.Size(100, 20);
             this.idOuvrageTextBox.TabIndex = 1;
-            // 
-            // ouvrageBindingSource
-            // 
-            this.ouvrageBindingSource.DataMember = "Ouvrage";
-            this.ouvrageBindingSource.DataSource = this.biblioEPFCDataSet;
-            // 
-            // biblioEPFCDataSet
-            // 
-            this.biblioEPFCDataSet.DataSetName = "BiblioEPFCDataSet";
-            this.biblioEPFCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // flowLayoutPanel2
             // 
@@ -237,6 +228,7 @@
             this.textBoxIdMembre.Location = new System.Drawing.Point(101, 3);
             this.textBoxIdMembre.Name = "textBoxIdMembre";
             this.textBoxIdMembre.ReadOnly = true;
+            this.textBoxIdMembre.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxIdMembre.Size = new System.Drawing.Size(100, 20);
             this.textBoxIdMembre.TabIndex = 1;
             // 
@@ -252,7 +244,7 @@
             // 
             // buttonConfirmer
             // 
-            this.buttonConfirmer.Location = new System.Drawing.Point(85, 15);
+            this.buttonConfirmer.Location = new System.Drawing.Point(44, 258);
             this.buttonConfirmer.Name = "buttonConfirmer";
             this.buttonConfirmer.Size = new System.Drawing.Size(75, 23);
             this.buttonConfirmer.TabIndex = 0;
@@ -277,11 +269,32 @@
             this.tableAdapterManager.TypeTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // ouvrageBindingSource
+            // 
+            this.ouvrageBindingSource.DataMember = "Ouvrage";
+            this.ouvrageBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
+            // biblioEPFCDataSet
+            // 
+            this.biblioEPFCDataSet.DataSetName = "BiblioEPFCDataSet";
+            this.biblioEPFCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // buttonRetour
+            // 
+            this.buttonRetour.Location = new System.Drawing.Point(132, 15);
+            this.buttonRetour.Name = "buttonRetour";
+            this.buttonRetour.Size = new System.Drawing.Size(75, 23);
+            this.buttonRetour.TabIndex = 0;
+            this.buttonRetour.Text = "Retour";
+            this.buttonRetour.UseVisualStyleBackColor = true;
+            this.buttonRetour.Click += new System.EventHandler(this.buttonRetour_Click);
+            // 
             // FormEmprunt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(256, 293);
+            this.Controls.Add(this.buttonConfirmer);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FormEmprunt";
             this.Text = "Emprunt";
@@ -293,8 +306,6 @@
             this.flowLayoutPanelEmprunt.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -303,6 +314,8 @@
             this.flowLayoutPanel4.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,6 +340,7 @@
         private System.Windows.Forms.TextBox textBoxIdMembre;
         private System.Windows.Forms.Label labelIdMembre;
         private System.Windows.Forms.Button buttonConfirmer;
+        private System.Windows.Forms.Button buttonRetour;
 
     }
 }

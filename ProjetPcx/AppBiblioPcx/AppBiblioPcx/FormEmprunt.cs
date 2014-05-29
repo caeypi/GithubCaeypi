@@ -42,6 +42,18 @@ namespace WindowsFormsApplication1
         private void buttonConfirmer_Click(object sender, EventArgs e)
         {
             this.ouvrageTableAdapter.UpdateNouvelEmprunt(DateTime.Today.ToString(), 14, idMembre, idOuvrage);// TODO: updateOuvrage(dateTime.Today,dureeEmprunt,idMembre), les 3 cases de l'ouvrage sont mise à jour avec les valeurs envoyées
+            FormBiblioPcx myForm = new FormBiblioPcx();
+            this.Hide();
+            myForm.ShowDialog();
+            this.Close();
+        }
+
+        private void buttonRetour_Click(object sender, EventArgs e)
+        {
+            FormBiblioPcx myForm = new FormBiblioPcx();
+            this.Hide();
+            myForm.ShowDialog();
+            this.Close();
         }
     }
 }

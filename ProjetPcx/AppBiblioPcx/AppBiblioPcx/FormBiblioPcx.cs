@@ -28,45 +28,10 @@ namespace WindowsFormsApplication1
             this.ouvrageTableAdapter.Fill(this.biblioEPFCDataSet.Ouvrage);
             // TODO: cette ligne de code charge les données dans la table 'biblioEPFCDataSet.AuteurSuperviseur'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
             this.auteurSuperviseurTableAdapter.Fill(this.biblioEPFCDataSet.AuteurSuperviseur);
-            //emptyBoxes();
             checkEmprunt();
-            updateReservations();
+            //updateReservations();
         }
 
-        private void emptyBoxes()
-        {
-            textBoxRecherche.Text = "";
-            idOuvrageTextBox.Text = "";
-            titreTextBox.Text = "";
-            localisationTextBox.Text = "";
-            dateCreationTextBox.Text = "";
-            sectionTextBox.Text = "";
-            dateEmpruntTextBox.Text = "";
-            dureeEmpruntTextBox.Text = "";
-            MembreTextBox.Text = "";
-            nomEntrepriseTextBox.Text = "";
-            SuperTextBox.Text = "";
-            typeTextBox.Text = "";
-            //listBoxAuteursOuvrage.Text = "";
-            idAuteurSuperTextBox.Text = "";
-            nomTextBox.Text = "";
-            prenomTextBox.Text = "";
-            statutTextBox.Text = "";
-            //listBoxOuvragesAuteur.Text = "";
-            
-            idMembreTextBox.Text = "";
-            nomTextBox1.Text = "";
-            prenomTextBox1.Text = "";
-            adresseRueTextBox.Text = "";
-            adresseNumTextBox.Text = "";
-            adresseCPTextBox.Text = "";
-            adresseVilleTextBox.Text = "";
-            telTextBox.Text = "";
-
-            idTypeTextBox.Text = "";
-            descriptionTextBox.Text = "";
-            sigleTextBox.Text = "";
-        }
 
         private void checkEmprunt()
         {
@@ -116,7 +81,6 @@ namespace WindowsFormsApplication1
 
         private void radioButtonOuvrage_CheckedChanged(object sender, EventArgs e)
         {
-            //emptyBoxes(); 
             tabController.SelectedTab = tabOuvrage;
             ouvrageDataGridView.Visible = true;
             auteurSuperviseurDataGridView.Visible = false;
@@ -126,7 +90,6 @@ namespace WindowsFormsApplication1
 
         private void radioButtonAuteurSuperviseur_CheckedChanged(object sender, EventArgs e)
         {
-            //emptyBoxes(); 
             tabController.SelectedTab = tabAuteurSuperviseur;
             ouvrageDataGridView.Visible = false;
             auteurSuperviseurDataGridView.Visible = true;
@@ -136,7 +99,6 @@ namespace WindowsFormsApplication1
 
         private void radioButtonMembre_CheckedChanged(object sender, EventArgs e)
         {
-            //emptyBoxes(); 
             tabController.SelectedTab = tabMembre;
             ouvrageDataGridView.Visible = false;
             auteurSuperviseurDataGridView.Visible = false;
@@ -146,7 +108,6 @@ namespace WindowsFormsApplication1
 
         private void radioButtonType_CheckedChanged(object sender, EventArgs e)
         {
-            //emptyBoxes(); 
             tabController.SelectedTab = tabType;
             ouvrageDataGridView.Visible = false;
             auteurSuperviseurDataGridView.Visible = false;
@@ -156,9 +117,6 @@ namespace WindowsFormsApplication1
 
         private void idOuvrageTextBox_TextChanged(object sender, EventArgs e)
         {
-            /*typeTextBox.Text = "";
-            MembreTextBox.Text = "";
-            MembreTextBox.Text = "";*/
             listBoxAuteursOuvrage.Hide();
             if (idOuvrageTextBox.Text != "")
             {
@@ -233,11 +191,6 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
-        private void tabController_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //emptyBoxes();
-        }
-
         private void MembreTextBox_TextChanged(object sender, EventArgs e)
         {
             checkEmprunt();
@@ -245,8 +198,6 @@ namespace WindowsFormsApplication1
 
         private void buttonEmprunter_Click(object sender, EventArgs e)
         {
-            //comboBoxIdMembre.DroppedDown = true;
-            //comboBoxIdMembre.DroppedDown = false; 
             if (isANumber(comboBoxIdMembre.Text))
             {
                 int idOuvrage = Convert.ToInt32(idOuvrageTextBox.Text);
@@ -269,7 +220,6 @@ namespace WindowsFormsApplication1
             return isNum;
         }
 
-
         private void fenetreEmprunt(int idO, int idM)
         {
             FormEmprunt myForm = new FormEmprunt(idO,idM);
@@ -286,20 +236,26 @@ namespace WindowsFormsApplication1
                 buttonReserver.Enabled = true;
         }
 
+        private void reload()
+        {
+            String idOuvrage = idOuvrageTextBox.Text;
+            idOuvrageTextBox.Text = "";
+            idOuvrageTextBox.Text = idOuvrage;
+        }
+
         private void buttonReserver_Click(object sender, EventArgs e)
         {
             int numMembre = Convert.ToInt32(comboBoxIdMembre.Text), numOuvrage = Convert.ToInt32(idOuvrageTextBox.Text);
             this.reserverTableAdapter.InsertReservation(numMembre, numOuvrage);// updateReserver(idOuvrage,idMembre),rajoute la ligne pour l'ouvrage courant
             if (MembreTextBox.Text == "") // si ouvrage pas emprunté
-            {
                 this.reserverTableAdapter.UpdateDateReservation(DateTime.Today.AddDays(14).ToString(), numMembre, numOuvrage);// updateReserver(idOuvrage,dateTime.Today.add(14))
-                
-            }
+            reload();
         }
 
         private void updateReservations()
         {
             this.reserverTableAdapter.DeleteReservationsDepassees();// updateReserver(dateTime.Today), si une date de réservation set supérieure la date du jour, la ligne est supprimée
+            this.reserverTableAdapter.Fill(this.biblioEPFCDataSet.reserver);
         }
 
         private void buttonRetourOuvrage_Click(object sender, EventArgs e)
@@ -308,7 +264,65 @@ namespace WindowsFormsApplication1
             this.ouvrageTableAdapter.UpdateRetourOuvrage(numOuvrage);// updateOuvrage; numMembre, dateEmprunt,dureeEmprunt sont mis à ""
             if (textBoxReserve.Text == "Oui")
                 this.reserverTableAdapter.UpdateDateReservation(DateTime.Today.AddDays(14).ToString(), numMembre, numOuvrage);//  updateReserver(idOuvrage,dateTime.Today.add(14)), la date de fin de réservation est actualisée à  la date du jour+14 jours
+            reload();
+        }
 
+        private void typeTextBox_DoubleClick(object sender, EventArgs e)
+        {
+            radioButtonType.Checked = true;
+            textBoxRecherche.Text = typeTextBox.Text;
+        }
+
+        private void MembreTextBox_DoubleClick(object sender, EventArgs e)
+        {
+            radioButtonMembre.Checked = true;
+            textBoxRecherche.Text = MembreTextBox.Text;
+        }
+
+        private void SuperTextBox_DoubleClick(object sender, EventArgs e)
+        {
+            radioButtonAuteurSuperviseur.Checked = true;
+            textBoxRecherche.Text = SuperTextBox.Text;
+        }
+
+        private void listBoxAuteursOuvrage_DoubleClick(object sender, EventArgs e)
+        {
+            radioButtonAuteurSuperviseur.Checked = true;
+            DataRowView drv = (DataRowView)listBoxAuteursOuvrage.SelectedItem;
+            String valueOfItem = drv["NomPrenom"].ToString();
+            textBoxRecherche.Text = valueOfItem;
+        }
+
+        private void listBoxOuvragesAuteur_DoubleClick(object sender, EventArgs e)
+        {
+            radioButtonOuvrage.Checked = true;
+            DataRowView drv = (DataRowView)listBoxOuvragesAuteur.SelectedItem;
+            String ValueOfItem = drv["titre"].ToString();
+            textBoxRecherche.Text = ValueOfItem;
+        }
+
+        private void listBoxOuvragesEmpruntes_DoubleClick(object sender, EventArgs e)
+        {
+            radioButtonOuvrage.Checked = true;
+            DataRowView drv = (DataRowView)listBoxOuvragesEmpruntes.SelectedItem;
+            String ValueOfItem = drv["titre"].ToString();
+            textBoxRecherche.Text = ValueOfItem;
+        }
+
+        private void listBoxReservationsMembre_DoubleClick(object sender, EventArgs e)
+        {
+            radioButtonOuvrage.Checked = true;
+            DataRowView drv = (DataRowView)listBoxReservationsMembre.SelectedItem;
+            String ValueOfItem = drv["titre"].ToString();
+            textBoxRecherche.Text = ValueOfItem;
+        }
+
+        private void listBoxOuvragesType_DoubleClick(object sender, EventArgs e)
+        {
+            radioButtonOuvrage.Checked = true;
+            DataRowView drv = (DataRowView)listBoxOuvragesType.SelectedItem;
+            String ValueOfItem = drv["titre"].ToString();
+            textBoxRecherche.Text = ValueOfItem;
         }
 
 
