@@ -30,6 +30,7 @@ namespace WindowsFormsApplication1
             this.auteurSuperviseurTableAdapter.Fill(this.biblioEPFCDataSet.AuteurSuperviseur);
             //emptyBoxes();
             checkEmprunt();
+            updateReservations();
         }
 
         private void emptyBoxes()
@@ -287,22 +288,27 @@ namespace WindowsFormsApplication1
 
         private void buttonReserver_Click(object sender, EventArgs e)
         {
-            // TODO: updateReserver(idOuvrage,idMembre),rajoute la ligne pour l'ouvrage courant
+            int numMembre = Convert.ToInt32(comboBoxIdMembre.Text), numOuvrage = Convert.ToInt32(idOuvrageTextBox.Text);
+            this.reserverTableAdapter.InsertReservation(numMembre, numOuvrage);// updateReserver(idOuvrage,idMembre),rajoute la ligne pour l'ouvrage courant
             if (MembreTextBox.Text == "") // si ouvrage pas emprunté
-                ;// TODO: updateReserver(idOuvrage,dateTime.Today.add(14))
-
+            {
+                this.reserverTableAdapter.UpdateDateReservation(DateTime.Today.AddDays(14).ToString(), numMembre, numOuvrage);// updateReserver(idOuvrage,dateTime.Today.add(14))
+                
+            }
         }
 
         private void updateReservations()
         {
-            // TODO: updateReserver(dateTime.Today), si une date de réservation set supérieure la date du jour, la ligne est supprimée
+            this.reserverTableAdapter.DeleteReservationsDepassees();// updateReserver(dateTime.Today), si une date de réservation set supérieure la date du jour, la ligne est supprimée
         }
 
         private void buttonRetourOuvrage_Click(object sender, EventArgs e)
         {
-            // TODO: updateOuvrage; numMembre, dateEmprunt,dureeEmprunt sont mis à ""
-            if (textBoxReserve.Text == "Oui") ;
-                // TODO: updateReserver(idOuvrage,dateTime.Today.add(14)), la date de fin de réservation est actualisée à  la date du jour+14 jours
+            int numMembre = Convert.ToInt32(comboBoxIdMembre.SelectedValue), numOuvrage = Convert.ToInt32(idOuvrageTextBox.Text);
+            this.ouvrageTableAdapter.UpdateRetourOuvrage(numOuvrage);// updateOuvrage; numMembre, dateEmprunt,dureeEmprunt sont mis à ""
+            if (textBoxReserve.Text == "Oui")
+                this.reserverTableAdapter.UpdateDateReservation(DateTime.Today.AddDays(14).ToString(), numMembre, numOuvrage);//  updateReserver(idOuvrage,dateTime.Today.add(14)), la date de fin de réservation est actualisée à  la date du jour+14 jours
+
         }
 
 

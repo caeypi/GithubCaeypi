@@ -63,6 +63,7 @@
             this.listBoxAuteurs = new System.Windows.Forms.ListBox();
             this.auteurSuperviseurAllBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelAuteur = new System.Windows.Forms.Label();
+            this.ecrireBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.superviseurAjoutOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,6 +75,7 @@
             this.typeAjoutOuvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TypeAjoutOuvrageTableAdapter();
             this.superviseurAjoutOuvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.SuperviseurAjoutOuvrageTableAdapter();
             this.auteurSuperviseurAllTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.AuteurSuperviseurAllTableAdapter();
+            this.ecrireTableAdapter1 = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.ecrireTableAdapter();
             titreLabel = new System.Windows.Forms.Label();
             localisationLabel = new System.Windows.Forms.Label();
             dateCreationLabel = new System.Windows.Forms.Label();
@@ -99,6 +101,7 @@
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurAllBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecrireBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -192,8 +195,8 @@
             // 
             this.splitContainerAjoutOuvrage.Panel2.AutoScroll = true;
             this.splitContainerAjoutOuvrage.Panel2.Controls.Add(this.buttonAjouter);
-            this.splitContainerAjoutOuvrage.Size = new System.Drawing.Size(513, 325);
-            this.splitContainerAjoutOuvrage.SplitterDistance = 264;
+            this.splitContainerAjoutOuvrage.Size = new System.Drawing.Size(513, 335);
+            this.splitContainerAjoutOuvrage.SplitterDistance = 272;
             this.splitContainerAjoutOuvrage.TabIndex = 0;
             // 
             // flowLayoutPanel9
@@ -209,7 +212,7 @@
             this.flowLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel9.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(513, 264);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(513, 272);
             this.flowLayoutPanel9.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -439,6 +442,11 @@
             this.labelAuteur.TabIndex = 0;
             this.labelAuteur.Text = "Auteur(s):";
             // 
+            // ecrireBindingSource
+            // 
+            this.ecrireBindingSource.DataMember = "ecrire";
+            this.ecrireBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
             // buttonAjouter
             // 
             this.buttonAjouter.Enabled = false;
@@ -496,11 +504,15 @@
             // 
             this.auteurSuperviseurAllTableAdapter.ClearBeforeFill = true;
             // 
+            // ecrireTableAdapter1
+            // 
+            this.ecrireTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormAjoutOuvrage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 325);
+            this.ClientSize = new System.Drawing.Size(513, 335);
             this.Controls.Add(this.splitContainerAjoutOuvrage);
             this.Name = "FormAjoutOuvrage";
             this.Text = "Ajout Ouvrage";
@@ -533,6 +545,7 @@
             this.flowLayoutPanel8.ResumeLayout(false);
             this.flowLayoutPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.auteurSuperviseurAllBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecrireBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.superviseurAjoutOuvrageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -581,5 +594,7 @@
         private BiblioEPFCDataSetTableAdapters.AuteurSuperviseurAllTableAdapter auteurSuperviseurAllTableAdapter;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
         private System.Windows.Forms.CheckBox checkBoxSuper;
+        private BiblioEPFCDataSetTableAdapters.ecrireTableAdapter ecrireTableAdapter1;
+        private System.Windows.Forms.BindingSource ecrireBindingSource;
     }
 }

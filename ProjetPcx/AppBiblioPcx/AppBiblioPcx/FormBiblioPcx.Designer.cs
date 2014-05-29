@@ -116,6 +116,8 @@
             this.listBoxAuteursOuvrage = new System.Windows.Forms.ListBox();
             this.auteursOuvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonRetourOuvrage = new System.Windows.Forms.Button();
+            this.comboBoxIdMembre = new System.Windows.Forms.ComboBox();
             this.buttonReserver = new System.Windows.Forms.Button();
             this.buttonEmprunter = new System.Windows.Forms.Button();
             this.buttonAjoutOuvrage = new System.Windows.Forms.Button();
@@ -189,8 +191,6 @@
             this.ouvragesTypeTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvragesTypeTableAdapter();
             this.reserverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reserverTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.reserverTableAdapter();
-            this.comboBoxIdMembre = new System.Windows.Forms.ComboBox();
-            this.buttonRetourOuvrage = new System.Windows.Forms.Button();
             idOuvrageLabel = new System.Windows.Forms.Label();
             titreLabel = new System.Windows.Forms.Label();
             localisationLabel = new System.Windows.Forms.Label();
@@ -595,9 +595,9 @@
             // 
             // radioButtonType
             // 
-            this.radioButtonType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonType.AutoSize = true;
             this.radioButtonType.Location = new System.Drawing.Point(12, 72);
             this.radioButtonType.Name = "radioButtonType";
@@ -610,9 +610,9 @@
             // 
             // radioButtonMembre
             // 
-            this.radioButtonMembre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonMembre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonMembre.AutoSize = true;
             this.radioButtonMembre.Location = new System.Drawing.Point(12, 49);
             this.radioButtonMembre.Name = "radioButtonMembre";
@@ -625,9 +625,9 @@
             // 
             // radioButtonAuteurSuperviseur
             // 
-            this.radioButtonAuteurSuperviseur.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonAuteurSuperviseur.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonAuteurSuperviseur.AutoSize = true;
             this.radioButtonAuteurSuperviseur.Location = new System.Drawing.Point(12, 26);
             this.radioButtonAuteurSuperviseur.Name = "radioButtonAuteurSuperviseur";
@@ -640,9 +640,9 @@
             // 
             // radioButtonOuvrage
             // 
-            this.radioButtonOuvrage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonOuvrage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonOuvrage.AutoSize = true;
             this.radioButtonOuvrage.Location = new System.Drawing.Point(12, 3);
             this.radioButtonOuvrage.Name = "radioButtonOuvrage";
@@ -1207,6 +1207,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Auteur(s):";
             // 
+            // buttonRetourOuvrage
+            // 
+            this.buttonRetourOuvrage.Location = new System.Drawing.Point(94, 51);
+            this.buttonRetourOuvrage.Name = "buttonRetourOuvrage";
+            this.buttonRetourOuvrage.Size = new System.Drawing.Size(100, 23);
+            this.buttonRetourOuvrage.TabIndex = 5;
+            this.buttonRetourOuvrage.Text = "Retour Ouvrage";
+            this.buttonRetourOuvrage.UseVisualStyleBackColor = true;
+            this.buttonRetourOuvrage.Click += new System.EventHandler(this.buttonRetourOuvrage_Click);
+            // 
+            // comboBoxIdMembre
+            // 
+            this.comboBoxIdMembre.DataSource = this.membreBindingSource;
+            this.comboBoxIdMembre.DisplayMember = "idMembre";
+            this.comboBoxIdMembre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxIdMembre.FormattingEnabled = true;
+            this.comboBoxIdMembre.Location = new System.Drawing.Point(294, 11);
+            this.comboBoxIdMembre.Name = "comboBoxIdMembre";
+            this.comboBoxIdMembre.Size = new System.Drawing.Size(75, 21);
+            this.comboBoxIdMembre.TabIndex = 4;
+            this.comboBoxIdMembre.ValueMember = "idMembre";
+            // 
             // buttonReserver
             // 
             this.buttonReserver.Location = new System.Drawing.Point(294, 67);
@@ -1450,6 +1472,7 @@
             this.idMembreTextBox.ReadOnly = true;
             this.idMembreTextBox.Size = new System.Drawing.Size(100, 20);
             this.idMembreTextBox.TabIndex = 1;
+            this.idMembreTextBox.Text = "w";
             this.idMembreTextBox.TextChanged += new System.EventHandler(this.idMembreTextBox_TextChanged);
             // 
             // flowLayoutPanel23
@@ -1851,28 +1874,6 @@
             // reserverTableAdapter
             // 
             this.reserverTableAdapter.ClearBeforeFill = true;
-            // 
-            // comboBoxIdMembre
-            // 
-            this.comboBoxIdMembre.DataSource = this.membreBindingSource;
-            this.comboBoxIdMembre.DisplayMember = "idMembre";
-            this.comboBoxIdMembre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxIdMembre.FormattingEnabled = true;
-            this.comboBoxIdMembre.Location = new System.Drawing.Point(294, 11);
-            this.comboBoxIdMembre.Name = "comboBoxIdMembre";
-            this.comboBoxIdMembre.Size = new System.Drawing.Size(75, 21);
-            this.comboBoxIdMembre.TabIndex = 4;
-            this.comboBoxIdMembre.ValueMember = "idMembre";
-            // 
-            // buttonRetourOuvrage
-            // 
-            this.buttonRetourOuvrage.Location = new System.Drawing.Point(94, 51);
-            this.buttonRetourOuvrage.Name = "buttonRetourOuvrage";
-            this.buttonRetourOuvrage.Size = new System.Drawing.Size(100, 23);
-            this.buttonRetourOuvrage.TabIndex = 5;
-            this.buttonRetourOuvrage.Text = "Retour Ouvrage";
-            this.buttonRetourOuvrage.UseVisualStyleBackColor = true;
-            this.buttonRetourOuvrage.Click += new System.EventHandler(this.buttonRetourOuvrage_Click);
             // 
             // FormBiblioPcx
             // 
