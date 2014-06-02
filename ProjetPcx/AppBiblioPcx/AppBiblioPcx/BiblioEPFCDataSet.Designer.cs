@@ -108,6 +108,8 @@ namespace WindowsFormsApplication1 {
         
         private global::System.Data.DataRelation relationFK_Ouvrage_AuteurSuperviseur3;
         
+        private global::System.Data.DataRelation relationFK_Ouvrage_Membre1;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -716,6 +718,7 @@ namespace WindowsFormsApplication1 {
             this.relationFK_Ouvrage_AuteurSuperviseur2 = this.Relations["FK_Ouvrage_AuteurSuperviseur2"];
             this.relationFK_ecrire_AuteurSuperviseur3 = this.Relations["FK_ecrire_AuteurSuperviseur3"];
             this.relationFK_Ouvrage_AuteurSuperviseur3 = this.Relations["FK_Ouvrage_AuteurSuperviseur3"];
+            this.relationFK_Ouvrage_Membre1 = this.Relations["FK_Ouvrage_Membre1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -854,6 +857,10 @@ namespace WindowsFormsApplication1 {
                         this.tableAuteurSuperviseurAll.idAuteurSuperColumn}, new global::System.Data.DataColumn[] {
                         this.tableOuvrage.numSuperColumn}, false);
             this.Relations.Add(this.relationFK_Ouvrage_AuteurSuperviseur3);
+            this.relationFK_Ouvrage_Membre1 = new global::System.Data.DataRelation("FK_Ouvrage_Membre1", new global::System.Data.DataColumn[] {
+                        this.tableMembre.idMembreColumn}, new global::System.Data.DataColumn[] {
+                        this.tableReservationsMembre.numMembreColumn}, false);
+            this.Relations.Add(this.relationFK_Ouvrage_Membre1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4664,6 +4671,8 @@ namespace WindowsFormsApplication1 {
             
             private global::System.Data.DataColumn columnidOuvrage;
             
+            private global::System.Data.DataColumn columnnumMembre;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ReservationsMembreDataTable() {
@@ -4715,6 +4724,14 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn numMembreColumn {
+                get {
+                    return this.columnnumMembre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4750,11 +4767,15 @@ namespace WindowsFormsApplication1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ReservationsMembreRow AddReservationsMembreRow(string titre) {
+            public ReservationsMembreRow AddReservationsMembreRow(string titre, MembreRow parentMembreRowByFK_Ouvrage_Membre1) {
                 ReservationsMembreRow rowReservationsMembreRow = ((ReservationsMembreRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         titre,
+                        null,
                         null};
+                if ((parentMembreRowByFK_Ouvrage_Membre1 != null)) {
+                    columnValuesArray[2] = parentMembreRowByFK_Ouvrage_Membre1[0];
+                }
                 rowReservationsMembreRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReservationsMembreRow);
                 return rowReservationsMembreRow;
@@ -4786,6 +4807,7 @@ namespace WindowsFormsApplication1 {
             internal void InitVars() {
                 this.columntitre = base.Columns["titre"];
                 this.columnidOuvrage = base.Columns["idOuvrage"];
+                this.columnnumMembre = base.Columns["numMembre"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4795,6 +4817,8 @@ namespace WindowsFormsApplication1 {
                 base.Columns.Add(this.columntitre);
                 this.columnidOuvrage = new global::System.Data.DataColumn("idOuvrage", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidOuvrage);
+                this.columnnumMembre = new global::System.Data.DataColumn("numMembre", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumMembre);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidOuvrage}, true));
                 this.columntitre.AllowDBNull = false;
@@ -4805,6 +4829,7 @@ namespace WindowsFormsApplication1 {
                 this.columnidOuvrage.AllowDBNull = false;
                 this.columnidOuvrage.ReadOnly = true;
                 this.columnidOuvrage.Unique = true;
+                this.columnnumMembre.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7214,6 +7239,17 @@ namespace WindowsFormsApplication1 {
                     return ((reserverRow[])(base.GetChildRows(this.Table.ChildRelations["FK_reserver_Membre"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ReservationsMembreRow[] GetReservationsMembreRows() {
+                if ((this.Table.ChildRelations["FK_Ouvrage_Membre1"] == null)) {
+                    return new ReservationsMembreRow[0];
+                }
+                else {
+                    return ((ReservationsMembreRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Ouvrage_Membre1"])));
+                }
+            }
         }
         
         /// <summary>
@@ -8060,6 +8096,28 @@ namespace WindowsFormsApplication1 {
                 }
                 set {
                     this[this.tableReservationsMembre.idOuvrageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int numMembre {
+                get {
+                    return ((int)(this[this.tableReservationsMembre.numMembreColumn]));
+                }
+                set {
+                    this[this.tableReservationsMembre.numMembreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MembreRow MembreRow {
+                get {
+                    return ((MembreRow)(this.GetParentRow(this.Table.ParentRelations["FK_Ouvrage_Membre1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Ouvrage_Membre1"]);
                 }
             }
             
@@ -11346,7 +11404,7 @@ SELECT numMembre, numOuvrage, dateReservation, dureeReservation FROM reserver WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT numMembre, numOuvrage, dateReservation, dureeReservation FROM dbo.reserver" +
@@ -11354,36 +11412,43 @@ SELECT numMembre, numOuvrage, dateReservation, dureeReservation FROM reserver WH
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM reserver\r\nWHERE        (dateReservation > GETDATE())";
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[reserver] WHERE (([numMembre] = @Original_numMembre) AND ([num" +
+                "Ouvrage] = @Original_numOuvrage))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numMembre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numOuvrage", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numOuvrage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO reserver\r\n                         (numMembre, numOuvrage,dateReserva" +
-                "tion,dureeReservation)\r\nVALUES        (@numMembre,@numOuvrage,\'01-01-3000\',14)";
+            this._commandCollection[2].CommandText = "DELETE FROM reserver\r\nWHERE        (dateReservation > GETDATE())";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numMembre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numOuvrage", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numOuvrage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT COUNT(*) FROM reserver WHERE numOuvrage = @numOuvrage";
+            this._commandCollection[3].CommandText = "INSERT INTO reserver\r\n                         (numMembre, numOuvrage,dateReserva" +
+                "tion,dureeReservation)\r\nVALUES        (@numMembre,@numOuvrage,\'01-01-3000\',14)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numMembre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numOuvrage", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numOuvrage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT COUNT(*) FROM reserver WHERE numOuvrage = @numOuvrage AND numMembre = @num" +
-                "Membre";
+            this._commandCollection[4].CommandText = "SELECT COUNT(*) FROM reserver WHERE numOuvrage = @numOuvrage";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numOuvrage", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numOuvrage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numMembre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE       reserver\r\nSET                dateReservation = @dateReservation\r\nWHE" +
-                "RE        (numMembre = @Original_numMembre) AND (numOuvrage = @Original_numOuvra" +
-                "ge) AND (dateReservation = @dateReservation);   ";
+            this._commandCollection[5].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            reserver\r\nWHERE        (numOuvra" +
+                "ge = @numOuvrage) AND (numMembre = @numMembre)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateReservation", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dateReservation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numMembre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numOuvrage", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numOuvrage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numOuvrage", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numOuvrage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numMembre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "UPDATE       reserver\r\nSET                dateReservation = @dateReservation\r\nWHE" +
+                "RE        (numMembre = @Original_numMembre) AND (numOuvrage = @Original_numOuvra" +
+                "ge) AND (dateReservation = @dateReservation);    ";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateReservation", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dateReservation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numMembre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numOuvrage", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numOuvrage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11530,8 +11595,33 @@ SELECT numMembre, numOuvrage, dateReservation, dureeReservation FROM reserver WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteReservationsDepassees() {
+        public virtual int DeleteReservationMembreOuvrage(int Original_numMembre, int Original_numOuvrage) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(Original_numMembre));
+            command.Parameters[1].Value = ((int)(Original_numOuvrage));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteReservationsDepassees() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11554,7 +11644,7 @@ SELECT numMembre, numOuvrage, dateReservation, dureeReservation FROM reserver WH
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertReservation(int numMembre, int numOuvrage) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((int)(numMembre));
             command.Parameters[1].Value = ((int)(numOuvrage));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -11578,7 +11668,7 @@ SELECT numMembre, numOuvrage, dateReservation, dureeReservation FROM reserver WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> ScalarQueryOuvrageReserve(int numOuvrage) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             command.Parameters[0].Value = ((int)(numOuvrage));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11607,7 +11697,7 @@ SELECT numMembre, numOuvrage, dateReservation, dureeReservation FROM reserver WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> ScalarQueryOuvrageReserveParMembre(int numOuvrage, int numMembre) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((int)(numOuvrage));
             command.Parameters[1].Value = ((int)(numMembre));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -11636,9 +11726,8 @@ SELECT numMembre, numOuvrage, dateReservation, dureeReservation FROM reserver WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateDateReservation(string dateReservation, int Original_numMembre, int Original_numOuvrage) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((dateReservation == null)) {
                 throw new global::System.ArgumentNullException("dateReservation");
             }
@@ -12992,20 +13081,24 @@ WHERE        (Ouvrage.idOuvrage = @idOuvrage)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Ouvrage.titre, Ouvrage.idOuvrage\nFROM            Ouvrage INNER JOIN" +
-                "\n                         Membre ON Ouvrage.numMembre = Membre.idMembre\nWHERE   " +
-                "     (Membre.idMembre = @idMembre)\norder by titre";
+            this._commandCollection[0].CommandText = "SELECT        titre, idOuvrage\r\nFROM            Ouvrage\r\nWHERE        (numMembre " +
+                "= @numMembre)\r\nORDER BY titre";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMembre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numMembre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillEmpruntsByIDMembre(BiblioEPFCDataSet.EmpruntsMembreDataTable dataTable, int idMembre) {
+        public virtual int FillEmpruntsByIDMembre(BiblioEPFCDataSet.EmpruntsMembreDataTable dataTable, global::System.Nullable<int> numMembre) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMembre));
+            if ((numMembre.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(numMembre.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -13017,9 +13110,14 @@ WHERE        (Ouvrage.idOuvrage = @idOuvrage)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BiblioEPFCDataSet.EmpruntsMembreDataTable GetDatalEmpruntsByIDMembre(int idMembre) {
+        public virtual BiblioEPFCDataSet.EmpruntsMembreDataTable GetDatalEmpruntsByIDMembre(global::System.Nullable<int> numMembre) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMembre));
+            if ((numMembre.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(numMembre.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             BiblioEPFCDataSet.EmpruntsMembreDataTable dataTable = new BiblioEPFCDataSet.EmpruntsMembreDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -13149,6 +13247,7 @@ WHERE        (Ouvrage.idOuvrage = @idOuvrage)";
             tableMapping.DataSetTable = "ReservationsMembre";
             tableMapping.ColumnMappings.Add("titre", "titre");
             tableMapping.ColumnMappings.Add("idOuvrage", "idOuvrage");
+            tableMapping.ColumnMappings.Add("numMembre", "numMembre");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13165,23 +13264,21 @@ WHERE        (Ouvrage.idOuvrage = @idOuvrage)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Ouvrage.titre, Ouvrage.idOuvrage
-FROM            Membre INNER JOIN
-                         reserver ON Membre.idMembre = reserver.numMembre INNER JOIN
-                         Ouvrage ON Membre.idMembre = Ouvrage.numMembre AND reserver.numOuvrage = Ouvrage.idOuvrage
-WHERE        (Membre.idMembre = @idMembre)
-order by titre";
+            this._commandCollection[0].CommandText = "SELECT        Ouvrage.titre, Ouvrage.idOuvrage, reserver.numMembre\r\nFROM         " +
+                "   reserver INNER JOIN\r\n                         Ouvrage ON reserver.numOuvrage " +
+                "= Ouvrage.idOuvrage\r\nWHERE        (reserver.numMembre = @numMembre)\r\nORDER BY Ou" +
+                "vrage.titre";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMembre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numMembre", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numMembre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillReservationsMembreByIDMembre(BiblioEPFCDataSet.ReservationsMembreDataTable dataTable, int idMembre) {
+        public virtual int FillReservationsMembreByIDMembre(BiblioEPFCDataSet.ReservationsMembreDataTable dataTable, int numMembre) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMembre));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(numMembre));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -13193,9 +13290,9 @@ order by titre";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BiblioEPFCDataSet.ReservationsMembreDataTable GetDataReservationsMembreByIDMembre(int idMembre) {
+        public virtual BiblioEPFCDataSet.ReservationsMembreDataTable GetDataReservationsMembreByIDMembre(int numMembre) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMembre));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(numMembre));
             BiblioEPFCDataSet.ReservationsMembreDataTable dataTable = new BiblioEPFCDataSet.ReservationsMembreDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

@@ -37,6 +37,8 @@
             this.flowLayoutPanelEmprunt = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.idOuvrageTextBox = new System.Windows.Forms.TextBox();
+            this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.biblioEPFCDataSet = new WindowsFormsApplication1.BiblioEPFCDataSet();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.titreTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -46,12 +48,11 @@
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBoxIdMembre = new System.Windows.Forms.TextBox();
             this.labelIdMembre = new System.Windows.Forms.Label();
+            this.buttonRetour = new System.Windows.Forms.Button();
             this.buttonConfirmer = new System.Windows.Forms.Button();
             this.ouvrageTableAdapter = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.OuvrageTableAdapter();
             this.tableAdapterManager = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager();
-            this.ouvrageBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.biblioEPFCDataSet = new WindowsFormsApplication1.BiblioEPFCDataSet();
-            this.buttonRetour = new System.Windows.Forms.Button();
+            this.reserverTableAdapter1 = new WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.reserverTableAdapter();
             idOuvrageLabel = new System.Windows.Forms.Label();
             titreLabel = new System.Windows.Forms.Label();
             dureeEmpruntLabel = new System.Windows.Forms.Label();
@@ -62,12 +63,12 @@
             this.splitContainer1.SuspendLayout();
             this.flowLayoutPanelEmprunt.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // idOuvrageLabel
@@ -156,6 +157,16 @@
             this.idOuvrageTextBox.Size = new System.Drawing.Size(100, 20);
             this.idOuvrageTextBox.TabIndex = 1;
             // 
+            // ouvrageBindingSource
+            // 
+            this.ouvrageBindingSource.DataMember = "Ouvrage";
+            this.ouvrageBindingSource.DataSource = this.biblioEPFCDataSet;
+            // 
+            // biblioEPFCDataSet
+            // 
+            this.biblioEPFCDataSet.DataSetName = "BiblioEPFCDataSet";
+            this.biblioEPFCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.titreTextBox);
@@ -242,6 +253,16 @@
             this.labelIdMembre.TabIndex = 0;
             this.labelIdMembre.Text = "IdMembre:";
             // 
+            // buttonRetour
+            // 
+            this.buttonRetour.Location = new System.Drawing.Point(132, 15);
+            this.buttonRetour.Name = "buttonRetour";
+            this.buttonRetour.Size = new System.Drawing.Size(75, 23);
+            this.buttonRetour.TabIndex = 0;
+            this.buttonRetour.Text = "Retour";
+            this.buttonRetour.UseVisualStyleBackColor = true;
+            this.buttonRetour.Click += new System.EventHandler(this.buttonRetour_Click);
+            // 
             // buttonConfirmer
             // 
             this.buttonConfirmer.Location = new System.Drawing.Point(44, 258);
@@ -269,25 +290,9 @@
             this.tableAdapterManager.TypeTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WindowsFormsApplication1.BiblioEPFCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // ouvrageBindingSource
+            // reserverTableAdapter1
             // 
-            this.ouvrageBindingSource.DataMember = "Ouvrage";
-            this.ouvrageBindingSource.DataSource = this.biblioEPFCDataSet;
-            // 
-            // biblioEPFCDataSet
-            // 
-            this.biblioEPFCDataSet.DataSetName = "BiblioEPFCDataSet";
-            this.biblioEPFCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // buttonRetour
-            // 
-            this.buttonRetour.Location = new System.Drawing.Point(132, 15);
-            this.buttonRetour.Name = "buttonRetour";
-            this.buttonRetour.Size = new System.Drawing.Size(75, 23);
-            this.buttonRetour.TabIndex = 0;
-            this.buttonRetour.Text = "Retour";
-            this.buttonRetour.UseVisualStyleBackColor = true;
-            this.buttonRetour.Click += new System.EventHandler(this.buttonRetour_Click);
+            this.reserverTableAdapter1.ClearBeforeFill = true;
             // 
             // FormEmprunt
             // 
@@ -306,6 +311,8 @@
             this.flowLayoutPanelEmprunt.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -314,8 +321,6 @@
             this.flowLayoutPanel4.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ouvrageBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioEPFCDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,6 +346,7 @@
         private System.Windows.Forms.Label labelIdMembre;
         private System.Windows.Forms.Button buttonConfirmer;
         private System.Windows.Forms.Button buttonRetour;
+        private BiblioEPFCDataSetTableAdapters.reserverTableAdapter reserverTableAdapter1;
 
     }
 }

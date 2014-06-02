@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1
         }
 
 
+        // si l'ouvrage est emprunté (la zone texte donnant l'utilisateur qui a emprunté l'ouvrage est alors non vide) => le bouton Emprunter est inaccessible
         private void checkEmprunt()
         {
             if (MembreTextBox.Text == "")
@@ -161,13 +162,13 @@ namespace WindowsFormsApplication1
             listBoxReservationsMembre.Hide();
             if (idMembreTextBox.Text != "")
             {
-                int idMembre = Convert.ToInt32(idMembreTextBox.Text);
+                int idM = Convert.ToInt32(idMembreTextBox.Text);
                 //affiche les titres des ouvrages empruntés par le membre
                 listBoxOuvragesEmpruntes.Show() ;
-                this.empruntsMembreTableAdapter.FillEmpruntsByIDMembre(this.biblioEPFCDataSet.EmpruntsMembre, idMembre);
+                this.empruntsMembreTableAdapter.FillEmpruntsByIDMembre(this.biblioEPFCDataSet.EmpruntsMembre, idM);
                 // affiche les titres des ouvrages réservés par le membre
                 listBoxReservationsMembre.Show();
-                this.reservationsMembreTableAdapter.FillReservationsMembreByIDMembre(this.biblioEPFCDataSet.ReservationsMembre, idMembre);
+                this.reservationsMembreTableAdapter.FillReservationsMembreByIDMembre(this.biblioEPFCDataSet.ReservationsMembre, idM);
             }
         }
 
@@ -204,8 +205,8 @@ namespace WindowsFormsApplication1
                 int idMembre = Convert.ToInt32(comboBoxIdMembre.Text);
                 if (textBoxReserve.Text == "Non") // ouvrage pas réservé
                     fenetreEmprunt(idOuvrage,idMembre);
-                else if (reserverTableAdapter.ScalarQueryOuvrageReserveParMembre(idOuvrage, idMembre) != 0) // ouvrage réservé par le membre qui veut l'emprunter
-                    fenetreEmprunt(idOuvrage,idMembre);
+                else if (reserverTableAdapter.ScalarQueryOuvrageReserveParMembre(idOuvrage, idMembre) != 0)// ouvrage réservé par le membre qui veut l'emprunter
+                    fenetreEmprunt(idOuvrage, idMembre);
                 else
                     MessageBox.Show("Ouvrage Réservé par un autre membre");
             }
@@ -238,6 +239,7 @@ namespace WindowsFormsApplication1
 
         private void reload()
         {
+            this.biblioEPFCDataSet.AcceptChanges();
             String idOuvrage = idOuvrageTextBox.Text;
             idOuvrageTextBox.Text = "";
             idOuvrageTextBox.Text = idOuvrage;

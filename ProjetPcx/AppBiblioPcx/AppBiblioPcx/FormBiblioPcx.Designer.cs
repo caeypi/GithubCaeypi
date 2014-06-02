@@ -1475,7 +1475,6 @@
             this.idMembreTextBox.ReadOnly = true;
             this.idMembreTextBox.Size = new System.Drawing.Size(100, 20);
             this.idMembreTextBox.TabIndex = 1;
-            this.idMembreTextBox.Text = "w";
             this.idMembreTextBox.TextChanged += new System.EventHandler(this.idMembreTextBox_TextChanged);
             // 
             // flowLayoutPanel23
